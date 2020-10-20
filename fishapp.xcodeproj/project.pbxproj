@@ -11,7 +11,18 @@
 		2F4EDA91253C3BFC00C5839C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDA90253C3BFC00C5839C /* ViewController.swift */; };
 		2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDA95253C3BFD00C5839C /* Assets.xcassets */; };
 		2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */; };
+		2F4EDAD2253E100000C5839C /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAD1253E100000C5839C /* ViewControllerTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F4EDAD4253E100000C5839C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F4EDA81253C3BFC00C5839C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F4EDA88253C3BFC00C5839C;
+			remoteInfo = fishapp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2F4EDA89253C3BFC00C5839C /* fishapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fishapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,10 +31,20 @@
 		2F4EDA95253C3BFD00C5839C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F4EDA98253C3BFD00C5839C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F4EDA9A253C3BFD00C5839C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F4EDACF253E100000C5839C /* fishappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fishappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F4EDAD1253E100000C5839C /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
+		2F4EDAD3253E100000C5839C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F4EDA86253C3BFC00C5839C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F4EDACC253E100000C5839C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4EDA8B253C3BFC00C5839C /* fishapp */,
+				2F4EDAD0253E100000C5839C /* fishappTests */,
 				2F4EDA8A253C3BFC00C5839C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4EDA89253C3BFC00C5839C /* fishapp.app */,
+				2F4EDACF253E100000C5839C /* fishappTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +82,15 @@
 				2F4EDA9A253C3BFD00C5839C /* Info.plist */,
 			);
 			path = fishapp;
+			sourceTree = "<group>";
+		};
+		2F4EDAD0253E100000C5839C /* fishappTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F4EDAD1253E100000C5839C /* ViewControllerTest.swift */,
+				2F4EDAD3253E100000C5839C /* Info.plist */,
+			);
+			path = fishappTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +113,24 @@
 			productReference = 2F4EDA89253C3BFC00C5839C /* fishapp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2F4EDACE253E100000C5839C /* fishappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F4EDAD6253E100000C5839C /* Build configuration list for PBXNativeTarget "fishappTests" */;
+			buildPhases = (
+				2F4EDACB253E100000C5839C /* Sources */,
+				2F4EDACC253E100000C5839C /* Frameworks */,
+				2F4EDACD253E100000C5839C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F4EDAD5253E100000C5839C /* PBXTargetDependency */,
+			);
+			name = fishappTests;
+			productName = fishappTests;
+			productReference = 2F4EDACF253E100000C5839C /* fishappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +142,10 @@
 				TargetAttributes = {
 					2F4EDA88253C3BFC00C5839C = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					2F4EDACE253E100000C5839C = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 2F4EDA88253C3BFC00C5839C;
 					};
 				};
 			};
@@ -109,6 +163,7 @@
 			projectRoot = "";
 			targets = (
 				2F4EDA88253C3BFC00C5839C /* fishapp */,
+				2F4EDACE253E100000C5839C /* fishappTests */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +175,13 @@
 			files = (
 				2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */,
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F4EDACD253E100000C5839C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +197,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F4EDACB253E100000C5839C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F4EDAD2253E100000C5839C /* ViewControllerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F4EDAD5253E100000C5839C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F4EDA88253C3BFC00C5839C /* fishapp */;
+			targetProxy = 2F4EDAD4253E100000C5839C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */ = {
@@ -303,6 +381,46 @@
 			};
 			name = Release;
 		};
+		2F4EDAD7253E100000C5839C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQDASF64MT;
+				INFOPLIST_FILE = fishappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.feuer.fishappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fishapp.app/fishapp";
+			};
+			name = Debug;
+		};
+		2F4EDAD8253E100000C5839C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQDASF64MT;
+				INFOPLIST_FILE = fishappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.feuer.fishappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fishapp.app/fishapp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -320,6 +438,15 @@
 			buildConfigurations = (
 				2F4EDA9E253C3BFD00C5839C /* Debug */,
 				2F4EDA9F253C3BFD00C5839C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F4EDAD6253E100000C5839C /* Build configuration list for PBXNativeTarget "fishappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F4EDAD7253E100000C5839C /* Debug */,
+				2F4EDAD8253E100000C5839C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
