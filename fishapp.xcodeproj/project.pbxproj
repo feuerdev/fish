@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F20E53A25402FE500AFF548 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F20E53925402FE500AFF548 /* AnimalListViewController.swift */; };
+		2F20E5482540368F00AFF548 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F20E5472540368F00AFF548 /* AnimalDetailViewController.swift */; };
+		2F20E54C254037BC00AFF548 /* AnimalDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F20E54B254037BC00AFF548 /* AnimalDetailView.xib */; };
 		2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */; };
-		2F4EDA91253C3BFC00C5839C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDA90253C3BFC00C5839C /* ViewController.swift */; };
 		2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDA95253C3BFD00C5839C /* Assets.xcassets */; };
 		2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */; };
-		2F4EDAD2253E100000C5839C /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAD1253E100000C5839C /* ViewControllerTest.swift */; };
+		2F4EDAE0253EF93000C5839C /* PickByCoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDADF253EF93000C5839C /* PickByCoordinateViewController.swift */; };
+		2F4EDAE4253EF95000C5839C /* PickByCoordinateViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAE3253EF95000C5839C /* PickByCoordinateViewControllerTest.swift */; };
+		2F4EDAF0253FFF7400C5839C /* PickByCoordinateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDAEF253FFF7300C5839C /* PickByCoordinateView.xib */; };
+		2F4EDAF42540025400C5839C /* PickCoordinateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAF32540025400C5839C /* PickCoordinateUseCase.swift */; };
+		2F4EDAF82540039500C5839C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAF72540039500C5839C /* Animal.swift */; };
+		2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAFB254007BE00C5839C /* GBIFManager.swift */; };
+		2F4EDB0025401A1000C5839C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAFF25401A1000C5839C /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,15 +33,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F20E53925402FE500AFF548 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
+		2F20E5472540368F00AFF548 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
+		2F20E54B254037BC00AFF548 /* AnimalDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailView.xib; sourceTree = "<group>"; };
 		2F4EDA89253C3BFC00C5839C /* fishapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fishapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F4EDA90253C3BFC00C5839C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F4EDA95253C3BFD00C5839C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F4EDA98253C3BFD00C5839C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F4EDA9A253C3BFD00C5839C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F4EDACF253E100000C5839C /* fishappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fishappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F4EDAD1253E100000C5839C /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
 		2F4EDAD3253E100000C5839C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F4EDADF253EF93000C5839C /* PickByCoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickByCoordinateViewController.swift; sourceTree = "<group>"; };
+		2F4EDAE3253EF95000C5839C /* PickByCoordinateViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickByCoordinateViewControllerTest.swift; sourceTree = "<group>"; };
+		2F4EDAEF253FFF7300C5839C /* PickByCoordinateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickByCoordinateView.xib; sourceTree = "<group>"; };
+		2F4EDAF32540025400C5839C /* PickCoordinateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCoordinateUseCase.swift; sourceTree = "<group>"; };
+		2F4EDAF72540039500C5839C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		2F4EDAFB254007BE00C5839C /* GBIFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBIFManager.swift; sourceTree = "<group>"; };
+		2F4EDAFF25401A1000C5839C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F20E53225402EB300AFF548 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2F4EDAFF25401A1000C5839C /* Router.swift */,
+				2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2F20E53325402ED300AFF548 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F4EDA9A253C3BFD00C5839C /* Info.plist */,
+				2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */,
+				2F4EDA95253C3BFD00C5839C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2F20E53425402EE700AFF548 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2F4EDAF72540039500C5839C /* Animal.swift */,
+				2F4EDAFB254007BE00C5839C /* GBIFManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2F20E53525402F2800AFF548 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2F4EDAF32540025400C5839C /* PickCoordinateUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2F20E53625402F3300AFF548 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2F4EDADF253EF93000C5839C /* PickByCoordinateViewController.swift */,
+				2F4EDAEF253FFF7300C5839C /* PickByCoordinateView.xib */,
+				2F20E53925402FE500AFF548 /* AnimalListViewController.swift */,
+				2F20E5472540368F00AFF548 /* AnimalDetailViewController.swift */,
+				2F20E54B254037BC00AFF548 /* AnimalDetailView.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		2F4EDA80253C3BFC00C5839C = {
 			isa = PBXGroup;
 			children = (
@@ -75,11 +139,11 @@
 		2F4EDA8B253C3BFC00C5839C /* fishapp */ = {
 			isa = PBXGroup;
 			children = (
-				2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */,
-				2F4EDA90253C3BFC00C5839C /* ViewController.swift */,
-				2F4EDA95253C3BFD00C5839C /* Assets.xcassets */,
-				2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */,
-				2F4EDA9A253C3BFD00C5839C /* Info.plist */,
+				2F20E53625402F3300AFF548 /* Presentation */,
+				2F20E53525402F2800AFF548 /* Domain */,
+				2F20E53425402EE700AFF548 /* Data */,
+				2F20E53225402EB300AFF548 /* Main */,
+				2F20E53325402ED300AFF548 /* Resources */,
 			);
 			path = fishapp;
 			sourceTree = "<group>";
@@ -87,8 +151,8 @@
 		2F4EDAD0253E100000C5839C /* fishappTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F4EDAD1253E100000C5839C /* ViewControllerTest.swift */,
 				2F4EDAD3253E100000C5839C /* Info.plist */,
+				2F4EDAE3253EF95000C5839C /* PickByCoordinateViewControllerTest.swift */,
 			);
 			path = fishappTests;
 			sourceTree = "<group>";
@@ -173,6 +237,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4EDAF0253FFF7400C5839C /* PickByCoordinateView.xib in Resources */,
+				2F20E54C254037BC00AFF548 /* AnimalDetailView.xib in Resources */,
 				2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */,
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
 			);
@@ -192,8 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F4EDA91253C3BFC00C5839C /* ViewController.swift in Sources */,
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
+				2F4EDAF82540039500C5839C /* Animal.swift in Sources */,
+				2F20E53A25402FE500AFF548 /* AnimalListViewController.swift in Sources */,
+				2F4EDAF42540025400C5839C /* PickCoordinateUseCase.swift in Sources */,
+				2F4EDAE0253EF93000C5839C /* PickByCoordinateViewController.swift in Sources */,
+				2F4EDB0025401A1000C5839C /* Router.swift in Sources */,
+				2F20E5482540368F00AFF548 /* AnimalDetailViewController.swift in Sources */,
+				2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F4EDAD2253E100000C5839C /* ViewControllerTest.swift in Sources */,
+				2F4EDAE4253EF95000C5839C /* PickByCoordinateViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +422,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQDASF64MT;
-				INFOPLIST_FILE = fishapp/Info.plist;
+				INFOPLIST_FILE = fishapp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQDASF64MT;
-				INFOPLIST_FILE = fishapp/Info.plist;
+				INFOPLIST_FILE = fishapp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
