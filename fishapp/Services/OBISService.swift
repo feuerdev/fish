@@ -36,7 +36,6 @@ class OBISService {
         uniques.forEach({ species in
             result.append(Animal(family: species.family, familyID: species.familyid, category: .edGreen))
         })
-        print(result.count)
         
         return result.sorted {
             $0.family ?? "None" < $1.family ?? "None"

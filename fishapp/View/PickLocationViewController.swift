@@ -36,7 +36,6 @@ class PickLocationViewController : UIViewController {
         
         let touchPoint = gestureRecognizer.location(in: self.mvMap)
         let touchCoordinate = mvMap.convert(touchPoint, toCoordinateFrom: self.mvMap)
-        print(touchCoordinate)
         let annotation = MKPointAnnotation()
         annotation.coordinate = touchCoordinate
         
