@@ -25,15 +25,6 @@ class AnimalListInteractor {
     }
 }
 
-class MyError: LocalizedError {
-    
-    var failureReason: String?
-    init(_ reason:String) {
-        failureReason = reason
-    }
-    
-}
-
 extension AnimalListInteractor: OBISServiceDelegate {
     func didSuccessfullyReturn(_ animals: [Animal]) {
         presenterDelegate?.loadAnimalsSuccess(animals: animals)
