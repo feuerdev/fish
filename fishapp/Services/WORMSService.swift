@@ -9,15 +9,20 @@ import Foundation
 
 class WORMSService {
     
-    static func getVernacular(id: Int, onResult: @escaping (String) -> Void) {
+    static func getVernacular(id: Int, onResult: @escaping (String?) -> Void) {
         let url = "https://www.marinespecies.org/rest/AphiaVernacularsByAphiaID/\(id)"
         
         JSONWebservice.callWebservice(url: url, responseClass: [WORMSResponse].self,onError: {print($0)}, onResult: { response in
-            onResult(self.getEnglishNameFromResponse(response: response.first!)) //TODO: Get actual vernacular name from array of responses
+            onResult(self.getEnglishNameFromResponse(response: response))
         })
     }
     
-    private static func getEnglishNameFromResponse(response: WORMSResponse) -> String {
-        return "TODO"
+    private static func getEnglishNameFromResponse(response: [WORMSResponse]) -> String? {
+        for item in response {
+            if item.language_code == "eng" {
+                return item.vernacular!.capitalized
+            }
+        }
+        return nil
     }
 }
