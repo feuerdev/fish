@@ -19,38 +19,42 @@ class AnimalListViewController : UIViewController {
         presenter?.viewDidLoad()
         
         self.aiLoading.startAnimating()
+        
+        tableView.dataSource = self
+    }
+}
+
+extension AnimalListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        guard let animal = presenter?.animals?[indexPath.row] else {
+            return cell
+        }
+        
+        cell.textLabel?.text = animal.family
+        return cell
     }
     
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return animals.count
-//        //TODO: presenter.numberOfRowsInSection()
-//    }
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//        //TODO: return presenter.numberOfSections()
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-//        cell.textLabel?.text = animals[indexPath.row].family
-//        return cell
-//    }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.navigationController?.pushViewController(AnimalDetailViewController(animal:animals[indexPath.row]), animated: true) //TODO: Should this be handled by the router?
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let count = presenter?.animals?.count else {
+            return 0
+        }
+        return count
+    }
+    
+    
     
 }
+
 
 extension AnimalListViewController: AnimalListPresenterDelegate {
     func refreshData() {
         self.tableView.reloadData()
     }
     
-    func showError(_ error: LocalizedError) {
-        let alert = UIAlertController(title: "Oops", message: error.failureReason, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Go Back", style: .default, handler: {_ in 
+    func showError(_ error: String) {
+        let alert = UIAlertController(title: "Oops", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Go Back", style: .default, handler: {_ in
             self.navigationController?.popViewController(animated: true)
         }))
         self.present(alert, animated: true)

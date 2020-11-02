@@ -11,7 +11,7 @@ protocol AnimalListPresenterDelegate {
     func updateLoadingStatus(status: String) -> Void
     func refreshData()
     func hideLoadingView()
-    func showError(_ error:LocalizedError)
+    func showError(_ error:String)
 }
 
 class AnimalListPresenter {
@@ -30,16 +30,23 @@ class AnimalListPresenter {
 extension AnimalListPresenter: AnimalListInteractorDelegate {
     func loadAnimalsSuccess(animals: [Animal]) {
         self.animals = animals
-        viewDelegate?.refreshData()
-        viewDelegate?.hideLoadingView()
+        
+        DispatchQueue.main.async {
+            self.viewDelegate?.refreshData()
+            self.viewDelegate?.hideLoadingView()
+        }
     }
     
-    func loadAnimalsFailure(error: LocalizedError) {
-        viewDelegate?.showError(error)
+    func loadAnimalsFailure(error: String) {
+        DispatchQueue.main.async {
+            self.viewDelegate?.showError(error)
+        }
     }
     
     func loadAnimalsStatusUpdate(status: String) {
-        viewDelegate?.updateLoadingStatus(status: status)
+        DispatchQueue.main.async {
+            self.viewDelegate?.updateLoadingStatus(status: status)
+        }
     }
     
     

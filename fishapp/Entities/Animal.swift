@@ -12,6 +12,6 @@ enum Danger {
 }
 
 struct Animal {
-    var family: String;
-    var category: Danger;
+    var family: String?
+    var category: Danger?
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol AnimalListInteractorDelegate {
     func loadAnimalsSuccess(animals: [Animal])
-    func loadAnimalsFailure(error: LocalizedError)
+    func loadAnimalsFailure(error: String)
     func loadAnimalsStatusUpdate(status: String)
 }
 
@@ -20,8 +20,8 @@ class AnimalListInteractor {
     var presenterDelegate: AnimalListInteractorDelegate?
     
     func loadAnimals() {
-        presenterDelegate?.loadAnimalsFailure(error: MyError("Noob"))
-//        OBISService.loadAnimals(location: location, delegate: self)
+        let service = OBISService()
+        service.getChecklist(location:location!, delegate:self)
     }
 }
 
@@ -34,6 +34,18 @@ class MyError: LocalizedError {
     
 }
 
-//extension AnimalListInteractor: OBISServiceDelegate {
-//
-//}
+extension AnimalListInteractor: OBISServiceDelegate {
+    func didSuccessfullyReturn(_ animals: [Animal]) {
+        presenterDelegate?.loadAnimalsSuccess(animals: animals)
+    }
+    
+    func didFailWithError(_ error: String) {
+        presenterDelegate?.loadAnimalsFailure(error: error)
+    }
+    
+    func updateStatus(_ status: String) {
+        presenterDelegate?.loadAnimalsStatusUpdate(status: status)
+    }
+    
+
+}
