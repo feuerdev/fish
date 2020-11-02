@@ -31,7 +31,7 @@ extension AnimalListViewController: UITableViewDataSource {
             return cell
         }
         
-        cell.textLabel?.text = animal.family
+        cell.textLabel?.text = animal.vernacular ?? animal.family
         return cell
     }
     
@@ -41,11 +41,7 @@ extension AnimalListViewController: UITableViewDataSource {
         }
         return count
     }
-    
-    
-    
 }
-
 
 extension AnimalListViewController: AnimalListPresenterDelegate {
     func refreshData() {

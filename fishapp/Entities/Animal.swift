@@ -13,5 +13,7 @@ enum Danger {
 
 struct Animal {
     var family: String?
+    var familyID: Int?
+    var vernacular: String?
     var category: Danger?
 }

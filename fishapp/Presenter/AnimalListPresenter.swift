@@ -28,6 +28,10 @@ class AnimalListPresenter {
 }
 
 extension AnimalListPresenter: AnimalListInteractorDelegate {
+    func refreshAnimal(animal: Animal) {
+        self.viewDelegate?.refreshData() //TODO: Only refresh relevant cell, also make the presenter get the correct index?
+    }
+    
     func loadAnimalsSuccess(animals: [Animal]) {
         self.animals = animals
         

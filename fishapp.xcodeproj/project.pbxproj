@@ -26,6 +26,8 @@
 		2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B72A25480B200064E244 /* PickLocationViewController.swift */; };
 		2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9B72E25480B530064E244 /* PickLocationView.xib */; };
 		2FB9B735254825700064E244 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B734254825700064E244 /* Util.swift */; };
+		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
+		2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BF1254FF984002213BE /* WORMSResponse.swift */; };
 		2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB300F254AD2FE0032D178 /* JSONWebService.swift */; };
 		2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		2FB9B72A25480B200064E244 /* PickLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 		2FB9B72E25480B530064E244 /* PickLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickLocationView.xib; sourceTree = "<group>"; };
 		2FB9B734254825700064E244 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
+		2FE06BF1254FF984002213BE /* WORMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSResponse.swift; sourceTree = "<group>"; };
 		2FEB300F254AD2FE0032D178 /* JSONWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWebService.swift; sourceTree = "<group>"; };
 		2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +111,8 @@
 		2F192F6F254942D100481573 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2FE06BED254FF871002213BE /* WORMSService.swift */,
+				2FE06BF1254FF984002213BE /* WORMSResponse.swift */,
 				2F4CA992254AA452006D6121 /* OBISService.swift */,
 				2F4CA996254AA594006D6121 /* OBISResponse.swift */,
 				2F4EDAFB254007BE00C5839C /* GBIFManager.swift */,
@@ -309,9 +315,11 @@
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Animal.swift in Sources */,
+				2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */,
 				2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */,
 				2F20E53A25402FE500AFF548 /* AnimalListViewController.swift in Sources */,
 				2F84D66F2549583D00FCAB65 /* Location.swift in Sources */,
+				2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */,
 				2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */,
 				2F84D67725495DF000FCAB65 /* AnimalListPresenter.swift in Sources */,
 				2F4CA993254AA452006D6121 /* OBISService.swift in Sources */,
