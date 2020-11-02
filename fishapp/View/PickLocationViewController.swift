@@ -46,7 +46,7 @@ class PickLocationViewController : UIViewController {
         self.location = Location(longitude: touchCoordinate.longitude, latitude: touchCoordinate.latitude)
     
         let circle = MKCircle(center: touchCoordinate,
-                                      radius: 30000)
+                                      radius: 100000)
         self.mvMap.addOverlay(circle)
         
         self.mvMap.addAnnotation(annotation)
