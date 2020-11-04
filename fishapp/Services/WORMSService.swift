@@ -11,8 +11,9 @@ class WORMSService {
     
     static func getVernacular(id: Int, onResult: @escaping (String?) -> Void) {
         let url = "https://www.marinespecies.org/rest/AphiaVernacularsByAphiaID/\(id)"
-        
-        JSONWebservice.callWebservice(url: url, responseClass: [WORMSResponse].self,onError: {print($0)}, onResult: { response in
+        JSONWebservice.callWebservice(url: url, responseClass: [WORMSResponse].self, onError: {_ in
+            onResult(nil)
+        }, onResult: { response in
             onResult(self.getEnglishNameFromResponse(response: response))
         })
     }
