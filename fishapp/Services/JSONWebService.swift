@@ -9,24 +9,26 @@ import Foundation
 
 class JSONWebservice {
     
-    static func callWebservice<T: Decodable>(url:String, responseClass: T.Type, onStatus: @escaping (String)->Void = {_ in }, onError: @escaping (String)->Void = {_ in}, onResult: @escaping (T)->Void) -> Void {
-        
+    static func callWebservice<T: Decodable>(url:String,
+                                             responseClass: T.Type,
+                                             onStatus: @escaping (String) -> Void = { _ in },
+                                             completionHandler: @escaping (Result<T, Error>) -> Void) {
         guard let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
-            onError("Can't encode URL: \(url)")
+            completionHandler(.failure(ServiceError.badUrl))
             return
         }
         guard let url = URL(string: encoded) else {
-            onError("Can't encode URL: \(encoded)")
+            completionHandler(.failure(ServiceError.badUrl))
             return
         }
         URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard error == nil else {
-                onError(error!.localizedDescription)
+                completionHandler(.failure(error!))
                 return
             }
             
             guard let data = data else {
-                onError("No Data: \(url)")
+                completionHandler(.failure(ServiceError.noData))
                 return
             }
             
@@ -34,9 +36,9 @@ class JSONWebservice {
             do {
                 onStatus("Parsing Response")
                 response = try JSONDecoder().decode(T.self, from: data)
-                onResult(response)
+                completionHandler(.success(response))
             } catch let error {
-                onError(error.localizedDescription)
+                completionHandler(.failure(error))
                 return
             }
         }).resume()

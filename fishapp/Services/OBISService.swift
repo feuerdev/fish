@@ -16,17 +16,22 @@ let MAX_RESULTS = 10000
 
 class OBISService {
     
-    static func getCheckList(location: Location, onStatus: @escaping (_ status: String) -> Void, onResult: @escaping ([Animal]?, String?/* TODO: This should be an Error type*/) -> Void) {
-        
+    static func getCheckList(location: Location,
+                             onStatus: @escaping (_ status: String) -> Void,
+                             completionHandler: @escaping (Result<[Animal], Error>) -> Void) {
         let url = "https://api.obis.org/v3/checklist?size=\(MAX_RESULTS)&geometry=\(locationToPolygon(location))"
         
         JSONWebservice.callWebservice(url: url, responseClass: OBISResponse.self, onStatus: {
             onStatus($0)
-        }, onError: { error in
-            onResult(nil, error)
-        }, onResult: { response in
-            onResult(self.cleanResult(response), nil)
-        })
+        }) { result in
+            switch result {
+            case .failure(let error):
+                completionHandler(.failure(error))
+            case .success(let response):
+                let result = self.cleanResult(response)
+                completionHandler(.success(result))
+            }
+        }
     }
     static func cleanResult(_ response:OBISResponse) -> [Animal] {
         var result = [Animal]()

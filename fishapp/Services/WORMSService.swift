@@ -9,13 +9,22 @@ import Foundation
 
 class WORMSService {
     
-    static func getVernacular(id: Int, onResult: @escaping (String?) -> Void) {
+    static func getVernacular(id: Int,
+                              completionHandler: @escaping (Result<String, Error>) -> Void) {
         let url = "https://www.marinespecies.org/rest/AphiaVernacularsByAphiaID/\(id)"
-        JSONWebservice.callWebservice(url: url, responseClass: [WORMSResponse].self, onError: {_ in
-            onResult(nil)
-        }, onResult: { response in
-            onResult(self.getEnglishNameFromResponse(response: response))
-        })
+        JSONWebservice.callWebservice(url: url, responseClass: [WORMSResponse].self) { result in
+            switch result {
+            case .failure(let error):
+                completionHandler(.failure(error))
+            case .success(let response):
+                let result = self.getEnglishNameFromResponse(response: response)
+                if result != nil {
+                    completionHandler(.success(result!))
+                } else {
+                    completionHandler(.failure(ServiceError.noData))
+                }
+            }
+        }
     }
     
     private static func getEnglishNameFromResponse(response: [WORMSResponse]) -> String? {

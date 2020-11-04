@@ -14,3 +14,10 @@ extension Double {
         return (self * divisor).rounded() / divisor
     }
 }
+
+enum ServiceError : Error {
+    case badUrl
+    case noNetwork
+    case noData
+    case parserError
+}

@@ -37,33 +37,34 @@ class AnimalListInteractor {
         
         OBISService.getCheckList(location: location, onStatus: {
             self.presenterDelegate?.loadAnimalsStatusUpdate(status: $0)
-        }) { result, error in
-            guard error == nil else {
-                self.presenterDelegate?.loadAnimalsFailure(error: error!)
-                return
-            }
-            
-            guard var animals = result else {
-                self.presenterDelegate?.loadAnimalsFailure(error: error!)
-                return
-            }
-            DispatchQueue.global(qos: .userInitiated).async {
-                let dGroup = DispatchGroup()
-                for index in 0..<animals.count {
-                    guard let id = animals[index].familyID else {
-                        continue
+        }) { result in
+            switch result {
+            case .success(var animals):
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let dGroup = DispatchGroup()
+                    for index in 0..<animals.count {
+                        guard let id = animals[index].familyID else {
+                            continue
+                        }
+                        
+                        dGroup.enter()
+                        WORMSService.getVernacular(id: id) {result in
+                            switch result {
+                            case .success(let name):
+                                animals[index].vernacular = name
+                            case .failure(_):
+                                break
+                                //Nothing to do
+                            }
+                            dGroup.leave()
+                        }
                     }
                     
-                    dGroup.enter()
-                    WORMSService.getVernacular(id: id) {name in
-                        animals[index].vernacular = name
-                        dGroup.leave()
-                    }
+                    dGroup.wait()
+                    self.presenterDelegate?.loadAnimalsSuccess(animals: animals)
                 }
-                
-                
-                dGroup.wait()
-                self.presenterDelegate?.loadAnimalsSuccess(animals: animals)
+            case .failure(let error):
+                self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
             }
         }
     }
