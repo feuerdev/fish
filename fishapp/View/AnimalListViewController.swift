@@ -21,6 +21,7 @@ class AnimalListViewController : UIViewController {
         self.aiLoading.startAnimating()
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -40,6 +41,12 @@ extension AnimalListViewController: UITableViewDataSource {
             return 0
         }
         return count
+    }
+}
+
+extension AnimalListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectRowAt(indexPath)
     }
 }
 
@@ -64,6 +71,4 @@ extension AnimalListViewController: AnimalListPresenterDelegate {
         self.aiLoading.stopAnimating()
         self.vLoading.isHidden = true
     }
-    
-    
 }

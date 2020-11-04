@@ -26,6 +26,9 @@
 		2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B72A25480B200064E244 /* PickLocationViewController.swift */; };
 		2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9B72E25480B530064E244 /* PickLocationView.xib */; };
 		2FB9B735254825700064E244 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B734254825700064E244 /* Util.swift */; };
+		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
+		2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */; };
+		2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */; };
 		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
 		2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BF1254FF984002213BE /* WORMSResponse.swift */; };
 		2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB300F254AD2FE0032D178 /* JSONWebService.swift */; };
@@ -66,6 +69,9 @@
 		2FB9B72A25480B200064E244 /* PickLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 		2FB9B72E25480B530064E244 /* PickLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickLocationView.xib; sourceTree = "<group>"; };
 		2FB9B734254825700064E244 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
+		2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
+		2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPresenter.swift; sourceTree = "<group>"; };
 		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
 		2FE06BF1254FF984002213BE /* WORMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSResponse.swift; sourceTree = "<group>"; };
 		2FEB300F254AD2FE0032D178 /* JSONWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWebService.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 			children = (
 				2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */,
 				2F84D67225495BD100FCAB65 /* AnimalListRouter.swift */,
+				2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 			children = (
 				2F84D664254954E900FCAB65 /* PickLocationPresenter.swift */,
 				2F84D67625495DF000FCAB65 /* AnimalListPresenter.swift */,
+				2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				2FB9B72E25480B530064E244 /* PickLocationView.xib */,
 				2F20E53925402FE500AFF548 /* AnimalListViewController.swift */,
 				2F84D686254968A800FCAB65 /* AnimalListViewController.xib */,
+				2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,8 +201,8 @@
 			children = (
 				2F20E53625402F3300AFF548 /* View */,
 				2F192F6C2549429200481573 /* Presenter */,
-				2F192F672549424800481573 /* Routing */,
 				2F20E53525402F2800AFF548 /* Interactor */,
+				2F192F672549424800481573 /* Routing */,
 				2F20E53425402EE700AFF548 /* Entities */,
 				2F20E53225402EB300AFF548 /* Main */,
 				2F192F6F254942D100481573 /* Services */,
@@ -312,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */,
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Animal.swift in Sources */,
@@ -320,7 +330,9 @@
 				2F20E53A25402FE500AFF548 /* AnimalListViewController.swift in Sources */,
 				2F84D66F2549583D00FCAB65 /* Location.swift in Sources */,
 				2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */,
+				2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */,
 				2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */,
+				2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */,
 				2F84D67725495DF000FCAB65 /* AnimalListPresenter.swift in Sources */,
 				2F4CA993254AA452006D6121 /* OBISService.swift in Sources */,
 				2F84D67B25495E0E00FCAB65 /* AnimalListInteractor.swift in Sources */,

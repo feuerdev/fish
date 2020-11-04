@@ -1,5 +1,5 @@
 //
-//  AnimalListViewRouter.swift
+//  AnimalDetailRouter.swift
 //  fishapp
 //
 //  Created by Jannik Feuerhahn on 28.10.20.
@@ -7,21 +7,17 @@
 
 import Foundation
 
-class AnimalListRouter {
+class AnimalDetailRouter {
     
-    static func createModule(location: Location) -> AnimalListViewController {
-        let vc = AnimalListViewController()
+    static func createModule(animal: Animal) -> AnimalDetailViewController {
+        let vc = AnimalDetailViewController()
         
-        let presenter = AnimalListPresenter()
-        let interactor = AnimalListInteractor()
-        let router = AnimalListRouter()
+        let presenter = AnimalDetailPresenter(animal: animal)
+        let router = AnimalDetailRouter()
 
         vc.presenter = presenter
         presenter.router = router
         presenter.viewDelegate = vc
-        presenter.interactor = interactor
-        interactor.location = location
-        interactor.presenterDelegate = presenter
         
         return vc
     }

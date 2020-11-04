@@ -25,6 +25,11 @@ class AnimalListPresenter {
     func viewDidLoad() {
         interactor?.loadAnimals()
     }
+    
+    func didSelectRowAt(_ indexPath:IndexPath) {
+        let animal = animals![indexPath.row]
+        router?.pushToAnimalDetailView(view: viewDelegate!, with: animal)
+    }
 }
 
 extension AnimalListPresenter: AnimalListInteractorDelegate {
