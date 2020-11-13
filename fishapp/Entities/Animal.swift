@@ -7,13 +7,25 @@
 
 import Foundation
 
-enum Danger {
+enum Risk {
     case edGreen, edYellow, edRed
 }
 
 struct Animal {
     var family: String?
     var familyID: Int?
+    var genus: String?
+    var kingdom: String?
+    var phylum: String?
+    var subphylum: String?
+    var superclass: String?
+    var aclass: String?
+    var subclass: String?
+    var order: String?
+    var records: Int?
+    var subfamily: String?
+    var superfamily: String?
+    var category: String?
     var vernacular: String?
-    var category: Danger?
+    var risk: Risk?
 }

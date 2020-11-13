@@ -15,36 +15,40 @@ struct OBISResponse: Decodable {
 struct OBISSpecies: Decodable, Hashable, Equatable {
 //    let acceptedNameUsage: String
 //    let acceptedNameUsageID: String
-//    //let class: String
+    let aclass: String?
 //    let classid: String
     let family: String?
     let familyid: Int?
-//    let genus: String
+    let genus: String?
 //    let genusid: String
 //    let is_brackish: Bool
 //    let is_freshwater: Bool
 //    let is_marine: Bool
 //    let is_terrestrial: Bool
-//    let kingdom: String
+    let kingdom: String?
 //    let kingdomid: String
-//    let order: String
+    let order: String?
 //    let orderid: String
-//    let phylum: String
+    let phylum: String?
 //    let phylumid: String
-//    let records: Int
+    let subphylum: String?
+//    let subphylumid: String
+    let records: Int?
 //    let scientificName: String
 //    let scientificNameAuthorship: String
 //    let species: String
 //    let speciesid: String
-//    let subclass: String
+    let superclass: String?
+    let subclass: String?
 //    let subclassid: String
-//    let subfamily: String
+    let subfamily: String?
 //    let subfamilyid: String
-//    let superfamily: String
+    let superfamily: String?
 //    let superfamilyid: String
 //    let taxonID: String
 //    let taxonomicStatus: String
 //    let taxonRank: String
+    let category: String?
     
     static func ==(left:OBISSpecies, right:OBISSpecies) -> Bool {
         return left.familyid == right.familyid
@@ -52,5 +56,23 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(familyid)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case family
+        case familyid
+        case genus
+        case kingdom
+        case order
+        case phylum
+        case subphylum
+        case records
+        case aclass = "class"
+        case subclass
+        case subfamily
+        case superfamily
+        case category
+        case superclass
+        
     }
 }

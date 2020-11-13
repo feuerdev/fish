@@ -70,7 +70,7 @@ class GBIFManager {
         let uniques = Array(Set(response.results))
         
         uniques.forEach({ occurence in
-            result.append(Animal(family: occurence.vernacularName, category: .edGreen))
+            result.append(Animal(family: occurence.vernacularName, risk: .edGreen))
         })
         
         return result

@@ -9,7 +9,7 @@ import MapKit
 import Foundation
 
 #if DEBUG
-let MAX_RESULTS = 10
+let MAX_RESULTS = 30
 #else
 let MAX_RESULTS = 10000
 #endif
@@ -39,8 +39,7 @@ class OBISService {
         let uniques = Array(Set(response.results))
         
         uniques.forEach({ species in
-            result.append(Animal(family: species.family, familyID: species.familyid, category: .edGreen))
-        })
+            result.append(Animal(family: species.family, familyID: species.familyid, genus: species.genus, kingdom: species.genus, phylum: species.phylum, subphylum: species.subphylum, superclass: species.superclass, aclass: species.aclass, subclass: species.subclass, order: species.order, records: species.records, subfamily: species.subfamily, superfamily: species.superfamily, category: species.category, vernacular: nil, risk: .edGreen))})
         
         return result.sorted {
             $0.family ?? "None" < $1.family ?? "None"
