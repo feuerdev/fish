@@ -12,6 +12,7 @@ class PickLocationRouter {
     static func createModule() -> UINavigationController {
         let vc = PickLocationViewController()
         let nc = UINavigationController(rootViewController: vc)
+        nc.navigationBar.isTranslucent = false
     
         let presenter = PickLocationPresenter()
         let router = PickLocationRouter()

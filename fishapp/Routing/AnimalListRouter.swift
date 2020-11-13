@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 class AnimalListRouter {
     
-    static func createModule(location: Location) -> AnimalListViewController {
-        let vc = AnimalListViewController()
+    static func createModule(location: Location) -> UIViewController {
+        let vc = AnimalListCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout()) // AnimalListViewController()
+        
         
         let presenter = AnimalListPresenter()
         let interactor = AnimalListInteractor()
@@ -29,7 +31,7 @@ class AnimalListRouter {
     func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Animal) {
         let newVC = AnimalDetailRouter.createModule(animal: animal)
         
-        let oldVC = view as! AnimalListViewController
+        let oldVC = view as! UIViewController
         oldVC.navigationController?.pushViewController(newVC, animated: true)
     }
 }
