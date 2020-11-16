@@ -16,7 +16,7 @@ protocol AnimalListInteractorDelegate {
 
 class AnimalListInteractor {
     
-    var animals: [Family]?
+    var animals = [Family]()
     
     var location: Location?
     
@@ -42,67 +42,74 @@ class AnimalListInteractor {
         }) { result in
             switch result {
             case .success(let result):
-                var families = [Family]()
-                for species in result.results {
-                    guard species.familyId != nil else {
-                        continue
-                    }
-                    var alreadyAdded = false
-                    for fam in families {
-                        if species.familyId == fam.familyId {
-                            if let name = species.species ?? species.scientificName {
-                                fam.species.append(name)
-                            }
-                            alreadyAdded = true
-                            break
-                        }
-                    }
-                    if !alreadyAdded {
-                        if let familyId = species.familyId {
-                            let new = Family(familyId)
-                            new.family = species.family
-                            new.genus = species.genus
-                            new.kingdom = species.genus
-                            new.phylum = species.phylum
-                            new.subphylum = species.subphylum
-                            new.superclass = species.superclass
-                            new.aclass = species.aclass
-                            new.subclass = species.subclass
-                            new.order = species.order
-                            new.records = species.records
-                            new.subfamily = species.subfamily
-                            new.superfamily = species.superfamily
-                            new.category = species.category
-                            new.vernacular = nil
-                            new.risk = self.getRisk(familyId)
-                            families.append(new)
-                        }
-                    }
-                }
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let dGroup = DispatchGroup()
-                    for index in 0..<families.count {
-                        dGroup.enter()
-                        WORMSService.getVernacular(id: families[index].familyId) {result in
-                            switch result {
-                            case .success(let name):
-                                families[index].vernacular = name
-                            case .failure(_):
-                                break
-                                //Nothing to do
-                            }
-                            dGroup.leave()
-                        }
-                    }
-                    
-                    dGroup.wait()
-                    self.animals = families
-                    self.presenterDelegate?.loadAnimalsSuccess()
-                }
+                self.animals = self.getFamilies(result)
+                self.presenterDelegate?.loadAnimalsSuccess()
+                
+                self.loadVernaculars()
+//                self.loadImages()
+                
             case .failure(let error):
                 self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
             }
         }
+    }
+    
+    func loadVernaculars() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            for family in self.animals {
+                WORMSService.getVernacular(id: family.familyId) { result in
+                    switch result {
+                    case .success(let name):
+                        family.vernacular = name
+                        self.presenterDelegate?.refreshAnimal(animal: family)
+                    case .failure(_):
+                        break
+                        //Nothing to do
+                    }
+                }
+            }
+        }
+    }
+    
+    func getFamilies(_ species:OBISResponse) -> [Family] {
+        var families = [Family]()
+        for species in species.results {
+            guard species.familyId != nil else {
+                continue
+            }
+            var alreadyAdded = false
+            for fam in families {
+                if species.familyId == fam.familyId {
+                    if let name = species.species ?? species.scientificName {
+                        fam.species.append(name)
+                    }
+                    alreadyAdded = true
+                    break
+                }
+            }
+            if !alreadyAdded {
+                if let familyId = species.familyId {
+                    let new = Family(familyId)
+                    new.family = species.family
+                    new.genus = species.genus
+                    new.kingdom = species.genus
+                    new.phylum = species.phylum
+                    new.subphylum = species.subphylum
+                    new.superclass = species.superclass
+                    new.aclass = species.aclass
+                    new.subclass = species.subclass
+                    new.order = species.order
+                    new.records = species.records
+                    new.subfamily = species.subfamily
+                    new.superfamily = species.superfamily
+                    new.category = species.category
+                    new.vernacular = nil
+                    new.risk = self.getRisk(familyId)
+                    families.append(new)
+                }
+            }
+        }
+        return families
     }
     
     func getRisk(_ familyId: Int) -> Risk {
