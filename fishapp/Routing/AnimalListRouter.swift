@@ -11,8 +11,7 @@ import UIKit
 class AnimalListRouter {
     
     static func createModule(location: Location) -> UIViewController {
-        let vc = AnimalListCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout()) // AnimalListViewController()
-        
+        let vc = AnimalListCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
         let presenter = AnimalListPresenter()
         let interactor = AnimalListInteractor()

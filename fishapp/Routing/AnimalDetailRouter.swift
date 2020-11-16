@@ -25,7 +25,7 @@ class AnimalDetailRouter {
     func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Family) {
         let newVC = AnimalDetailRouter.createModule(animal: animal)
         
-        let oldVC = view as! AnimalListViewController
+        let oldVC = view as! AnimalListCollectionViewController
         oldVC.navigationController?.pushViewController(newVC, animated: true)
     }
 }
