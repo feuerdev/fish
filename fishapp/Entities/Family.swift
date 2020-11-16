@@ -31,6 +31,9 @@ class Family {
     var risk: Risk?
     var species: [String] = []
     
+    var noPhoto: Bool = false
+    var photoFileName: String?
+    
     init(_ familyId: Int) {
         self.familyId = familyId
     }
