@@ -28,7 +28,7 @@ class AnimalListRouter {
         return vc
     }
     
-    func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Animal) {
+    func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Family) {
         let newVC = AnimalDetailRouter.createModule(animal: animal)
         
         let oldVC = view as! UIViewController

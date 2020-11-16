@@ -1,5 +1,5 @@
 //
-//  Animal.swift
+//  Family.swift
 //  fishapp
 //
 //  Created by Jannik Feuerhahn on 21.10.20.
@@ -11,7 +11,7 @@ enum Risk {
     case edGreen, edYellow, edRed
 }
 
-struct Animal {
+class Family {
     var family: String?
     var familyID: Int?
     var genus: String?
@@ -28,4 +28,5 @@ struct Animal {
     var category: String?
     var vernacular: String?
     var risk: Risk?
+    var species: [String] = []
 }

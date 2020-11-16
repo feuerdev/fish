@@ -15,7 +15,7 @@
 		2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDA95253C3BFD00C5839C /* Assets.xcassets */; };
 		2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */; };
 		2F4EDAE4253EF95000C5839C /* PickByCoordinateViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAE3253EF95000C5839C /* PickByCoordinateViewControllerTest.swift */; };
-		2F4EDAF82540039500C5839C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAF72540039500C5839C /* Animal.swift */; };
+		2F4EDAF82540039500C5839C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAF72540039500C5839C /* Family.swift */; };
 		2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDAFB254007BE00C5839C /* GBIFManager.swift */; };
 		2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D664254954E900FCAB65 /* PickLocationPresenter.swift */; };
 		2F84D66F2549583D00FCAB65 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D66E2549583D00FCAB65 /* Location.swift */; };
@@ -62,7 +62,7 @@
 		2F4EDACF253E100000C5839C /* fishappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fishappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4EDAD3253E100000C5839C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F4EDAE3253EF95000C5839C /* PickByCoordinateViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickByCoordinateViewControllerTest.swift; sourceTree = "<group>"; };
-		2F4EDAF72540039500C5839C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		2F4EDAF72540039500C5839C /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		2F4EDAFB254007BE00C5839C /* GBIFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBIFManager.swift; sourceTree = "<group>"; };
 		2F84D664254954E900FCAB65 /* PickLocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationPresenter.swift; sourceTree = "<group>"; };
 		2F84D66E2549583D00FCAB65 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		2F20E53425402EE700AFF548 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2F4EDAF72540039500C5839C /* Animal.swift */,
+				2F4EDAF72540039500C5839C /* Family.swift */,
 				2F84D66E2549583D00FCAB65 /* Location.swift */,
 			);
 			path = Entities;
@@ -340,7 +340,7 @@
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
 				2FE7F91B255A924E00FE7D1E /* AnimalListCell.swift in Sources */,
-				2F4EDAF82540039500C5839C /* Animal.swift in Sources */,
+				2F4EDAF82540039500C5839C /* Family.swift in Sources */,
 				2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */,
 				2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */,
 				2FE7F90D255A8B3100FE7D1E /* AnimalListCollectionViewController.swift in Sources */,

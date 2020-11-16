@@ -28,7 +28,7 @@ class AnimalListViewController : UIViewController {
 extension AnimalListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        guard let animal = presenter?.animals?[indexPath.row] else {
+        guard let animal = presenter?.interactor?.animals?[indexPath.row] else {
             return cell
         }
         
@@ -37,7 +37,7 @@ extension AnimalListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = presenter?.animals?.count else {
+        guard let count = presenter?.interactor?.animals?.count else {
             return 0
         }
         return count

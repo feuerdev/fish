@@ -14,7 +14,7 @@ class AnimalListCell: UICollectionViewCell {
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var ivPhoto: UIImageView!
     
-    var animal: Animal? {
+    var animal: Family? {
         didSet {
             lblLatin.text = animal?.family
             lblVernacular.text = animal?.vernacular

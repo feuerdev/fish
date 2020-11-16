@@ -22,7 +22,7 @@ class AnimalListCollectionViewController: UICollectionViewController {
     //MARK: - Datasource
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalListCell", for: indexPath) as! AnimalListCell
-        guard let animal = presenter?.animals?[indexPath.row] else {
+        guard let animal = presenter?.interactor?.animals?[indexPath.row] else {
             return cell
         }
         
@@ -56,7 +56,7 @@ extension AnimalListCollectionViewController : UICollectionViewDelegateFlowLayou
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = presenter?.animals?.count else {
+        guard let count = presenter?.interactor?.animals?.count else {
             return 0
         }
         return count

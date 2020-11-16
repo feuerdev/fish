@@ -9,7 +9,7 @@ import Foundation
 
 class AnimalDetailRouter {
     
-    static func createModule(animal: Animal) -> AnimalDetailViewController {
+    static func createModule(animal: Family) -> AnimalDetailViewController {
         let vc = AnimalDetailViewController()
         
         let presenter = AnimalDetailPresenter(animal: animal)
@@ -22,7 +22,7 @@ class AnimalDetailRouter {
         return vc
     }
     
-    func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Animal) {
+    func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Family) {
         let newVC = AnimalDetailRouter.createModule(animal: animal)
         
         let oldVC = view as! AnimalListViewController

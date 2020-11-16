@@ -34,9 +34,9 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     let subphylum: String?
 //    let subphylumid: String
     let records: Int?
-//    let scientificName: String
+    let scientificName: String?
 //    let scientificNameAuthorship: String
-//    let species: String
+    let species: String?
 //    let speciesid: String
     let superclass: String?
     let subclass: String?
@@ -73,6 +73,8 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
         case superfamily
         case category
         case superclass
+        case species
+        case scientificName
         
     }
 }

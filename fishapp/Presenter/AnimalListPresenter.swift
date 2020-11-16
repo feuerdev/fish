@@ -16,8 +16,6 @@ protocol AnimalListPresenterDelegate {
 
 class AnimalListPresenter {
     
-    var animals: [Animal]?
-    
     var interactor: AnimalListInteractor?
     var router: AnimalListRouter?
     var viewDelegate: AnimalListPresenterDelegate?
@@ -27,19 +25,18 @@ class AnimalListPresenter {
     }
     
     func didSelectRowAt(_ indexPath:IndexPath) {
-        let animal = animals![indexPath.row]
-        router?.pushToAnimalDetailView(view: viewDelegate!, with: animal)
+        if let animal = interactor?.animals![indexPath.row] {
+            router?.pushToAnimalDetailView(view: viewDelegate!, with: animal)
+        }
     }
 }
 
 extension AnimalListPresenter: AnimalListInteractorDelegate {
-    func refreshAnimal(animal: Animal) {
+    func refreshAnimal(animal: Family) {
         self.viewDelegate?.refreshData() //TODO: Only refresh relevant cell, also make the presenter get the correct index?
     }
     
-    func loadAnimalsSuccess(animals: [Animal]) {
-        self.animals = animals
-        
+    func loadAnimalsSuccess() {
         DispatchQueue.main.async {
             self.viewDelegate?.refreshData()
             self.viewDelegate?.hideLoadingView()
