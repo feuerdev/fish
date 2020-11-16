@@ -46,10 +46,28 @@ class AnimalListInteractor {
                 self.presenterDelegate?.loadAnimalsSuccess()
                 
                 self.loadVernaculars()
-//                self.loadImages()
+                self.loadPhotos()
                 
             case .failure(let error):
                 self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadPhotos() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            for family in self.animals {
+                if let name = family.family {
+                    WikiPhotoURLService.getPhotoUrl(scientificName: name, completionHandler: { result in
+                        switch result {
+                        case .failure(let error):
+                            print("'\(name)' encountered error: \(error)")
+                        case .success(let url):
+//                            family.photoUrl = url
+                            print("Found Photo: \(url)")
+                        }
+                    })
+                }
             }
         }
     }
