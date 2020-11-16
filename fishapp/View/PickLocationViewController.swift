@@ -10,8 +10,6 @@ import MapKit
 class PickLocationViewController : UIViewController {
     
     @IBOutlet weak var mvMap: MKMapView!
-    @IBOutlet weak var tfLatitude: UITextField!
-    @IBOutlet weak var tfLongitude: UITextField!
     @IBOutlet weak var btnSearch: UIButton!
     
     var presenter: PickLocationPresenter?
@@ -38,10 +36,7 @@ class PickLocationViewController : UIViewController {
         let touchCoordinate = mvMap.convert(touchPoint, toCoordinateFrom: self.mvMap)
         let annotation = MKPointAnnotation()
         annotation.coordinate = touchCoordinate
-        
-        self.tfLongitude.text = String(touchCoordinate.longitude)
-        self.tfLatitude.text = String(touchCoordinate.latitude)
-        
+
         self.location = Location(longitude: touchCoordinate.longitude, latitude: touchCoordinate.latitude)
     
         let circle = MKCircle(center: touchCoordinate,
