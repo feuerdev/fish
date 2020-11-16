@@ -12,8 +12,9 @@ enum Risk {
 }
 
 class Family {
+    let familyId: Int
+    
     var family: String?
-    var familyID: Int?
     var genus: String?
     var kingdom: String?
     var phylum: String?
@@ -29,4 +30,8 @@ class Family {
     var vernacular: String?
     var risk: Risk?
     var species: [String] = []
+    
+    init(_ familyId: Int) {
+        self.familyId = familyId
+    }
 }

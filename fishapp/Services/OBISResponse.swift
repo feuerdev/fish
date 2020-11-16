@@ -18,7 +18,7 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     let aclass: String?
 //    let classid: String
     let family: String?
-    let familyid: Int?
+    let familyId: Int?
     let genus: String?
 //    let genusid: String
 //    let is_brackish: Bool
@@ -51,16 +51,16 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     let category: String?
     
     static func ==(left:OBISSpecies, right:OBISSpecies) -> Bool {
-        return left.familyid == right.familyid
+        return left.familyId == right.familyId
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(familyid)
+        hasher.combine(familyId)
     }
     
     enum CodingKeys: String, CodingKey {
         case family
-        case familyid
+        case familyId = "familyid"
         case genus
         case kingdom
         case order

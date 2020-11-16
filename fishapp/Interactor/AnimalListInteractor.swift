@@ -49,7 +49,7 @@ class AnimalListInteractor {
                     }
                     var alreadyAdded = false
                     for fam in families {
-                        if species.familyid == fam.familyID {
+                        if species.familyId == fam.familyId {
                             if let name = species.species ?? species.scientificName {
                                 fam.species.append(name)
                             }
@@ -58,9 +58,9 @@ class AnimalListInteractor {
                         }
                     }
                     if !alreadyAdded {
-                        let new = Family()
+                        if let familyId = species.familyId {
+                            let new = Family(familyId)
                         new.family = species.family
-                        new.familyID = species.familyid
                         new.genus = species.genus
                         new.kingdom = species.genus
                         new.phylum = species.phylum
@@ -74,19 +74,16 @@ class AnimalListInteractor {
                         new.superfamily = species.superfamily
                         new.category = species.category
                         new.vernacular = nil
-                        new.risk = self.getRisk(species.familyid!)
+                            new.risk = self.getRisk(familyId)
                         families.append(new)
                     }
+                }
                 }
                 DispatchQueue.global(qos: .userInitiated).async {
                     let dGroup = DispatchGroup()
                     for index in 0..<families.count {
-                        guard let id = families[index].familyID else {
-                            continue
-                        }
-                        
                         dGroup.enter()
-                        WORMSService.getVernacular(id: id) {result in
+                        WORMSService.getVernacular(id: families[index].familyId) {result in
                             switch result {
                             case .success(let name):
                                 families[index].vernacular = name
