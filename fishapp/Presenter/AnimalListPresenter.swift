@@ -9,7 +9,8 @@ import Foundation
 
 protocol AnimalListPresenterDelegate {
     func updateLoadingStatus(status: String) -> Void
-    func refreshData()
+    func refreshCells()
+    func refreshCell(indexPath: IndexPath)
     func hideLoadingView()
     func showError(_ error:String)
 }
@@ -25,7 +26,7 @@ class AnimalListPresenter {
     }
     
     func didSelectRowAt(_ indexPath:IndexPath) {
-        if let animal = interactor?.animals![indexPath.row] {
+        if let animal = interactor?.animals[indexPath.row] {
             router?.pushToAnimalDetailView(view: viewDelegate!, with: animal)
         }
     }
@@ -33,12 +34,15 @@ class AnimalListPresenter {
 
 extension AnimalListPresenter: AnimalListInteractorDelegate {
     func refreshAnimal(animal: Family) {
-        self.viewDelegate?.refreshData() //TODO: Only refresh relevant cell, also make the presenter get the correct index?
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.viewDelegate?.refreshCell(indexPath: indexPath) //TODO: Only refresh relevant cell, also make the presenter get the correct index?
+        }
     }
     
     func loadAnimalsSuccess() {
         DispatchQueue.main.async {
-            self.viewDelegate?.refreshData()
+            self.viewDelegate?.refreshCells()
             self.viewDelegate?.hideLoadingView()
         }
     }
