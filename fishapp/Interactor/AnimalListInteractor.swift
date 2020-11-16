@@ -44,8 +44,8 @@ class AnimalListInteractor {
             case .success(let result):
                 var families = [Family]()
                 for species in result.results {
-                    guard species.familyid != nil else {
-                        break
+                    guard species.familyId != nil else {
+                        continue
                     }
                     var alreadyAdded = false
                     for fam in families {
@@ -60,24 +60,24 @@ class AnimalListInteractor {
                     if !alreadyAdded {
                         if let familyId = species.familyId {
                             let new = Family(familyId)
-                        new.family = species.family
-                        new.genus = species.genus
-                        new.kingdom = species.genus
-                        new.phylum = species.phylum
-                        new.subphylum = species.subphylum
-                        new.superclass = species.superclass
-                        new.aclass = species.aclass
-                        new.subclass = species.subclass
-                        new.order = species.order
-                        new.records = species.records
-                        new.subfamily = species.subfamily
-                        new.superfamily = species.superfamily
-                        new.category = species.category
-                        new.vernacular = nil
+                            new.family = species.family
+                            new.genus = species.genus
+                            new.kingdom = species.genus
+                            new.phylum = species.phylum
+                            new.subphylum = species.subphylum
+                            new.superclass = species.superclass
+                            new.aclass = species.aclass
+                            new.subclass = species.subclass
+                            new.order = species.order
+                            new.records = species.records
+                            new.subfamily = species.subfamily
+                            new.superfamily = species.superfamily
+                            new.category = species.category
+                            new.vernacular = nil
                             new.risk = self.getRisk(familyId)
-                        families.append(new)
+                            families.append(new)
+                        }
                     }
-                }
                 }
                 DispatchQueue.global(qos: .userInitiated).async {
                     let dGroup = DispatchGroup()

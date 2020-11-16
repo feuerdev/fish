@@ -39,7 +39,6 @@ class JSONWebservice {
                 completionHandler(.success(response))
             } catch let error {
                 completionHandler(.failure(error))
-                return
             }
         }).resume()
         onStatus("Request sent")
