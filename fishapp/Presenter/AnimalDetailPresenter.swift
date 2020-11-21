@@ -24,22 +24,22 @@ class AnimalDetailPresenter {
     func presentableHierarchy() -> String {
         var result = ""
         if animal.kingdom != nil {
-            result.append("> Kingdom:\(animal.kingdom!)")
+            result.append("> Kingdom: \(animal.kingdom!)")
         }
         if animal.phylum != nil {
-            result.append("\n> Phylum:\(animal.phylum!)")
+            result.append("\n> Phylum: \(animal.phylum!)")
         }
         if animal.subphylum != nil {
-            result.append("\n> Subphylum:\(animal.subphylum!)")
+            result.append("\n> Subphylum: \(animal.subphylum!)")
         }
         if animal.superclass != nil {
-            result.append("\n> Superclass:\(animal.superclass!)")
+            result.append("\n> Superclass: \(animal.superclass!)")
         }
         if animal.aclass != nil {
-            result.append("\n> Class:\(animal.aclass!)")
+            result.append("\n> Class: \(animal.aclass!)")
         }
         if animal.subclass != nil {
-            result.append("\n> Subclass:\(animal.subclass!)")
+            result.append("\n> Subclass: \(animal.subclass!)")
         }
 //        if animal.infraclass != nil {
 //            result.append("\n> Subclass:\(animal.infraclass!)")
@@ -48,10 +48,10 @@ class AnimalDetailPresenter {
 //            result.append("\n> Order\(animal.superorder!)")
 //        }
         if animal.order != nil {
-            result.append("\n> Order:\(animal.order!)")
+            result.append("\n> Order: \(animal.order!)")
         }
         if animal.family != nil {
-            result.append("\n> Family:\(animal.family!)")
+            result.append("\n> Family: \(animal.family!)")
         }
         return result
     }
@@ -61,7 +61,7 @@ class AnimalDetailPresenter {
     }
     
     func presentableCategory() -> String {
-        switch animal.category {
+        switch animal.species[0].category {
         case "NT":
             return "Not Threatened"
         default:
@@ -70,7 +70,7 @@ class AnimalDetailPresenter {
     }
     
     func presentableCategoryColor() -> String {
-        switch animal.category {
+        switch animal.species[0].category {
         case "NT":
             return "#AAAAAA"
         default:

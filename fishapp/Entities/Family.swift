@@ -11,6 +11,15 @@ enum Risk {
     case edGreen, edYellow, edRed
 }
 
+class Species {
+    var species: String
+    var category: String?
+    
+    init(_ species: String) {
+        self.species = species
+    }
+}
+
 class Family {
     let familyId: Int
     
@@ -26,10 +35,9 @@ class Family {
     var records: Int?
     var subfamily: String?
     var superfamily: String?
-    var category: String?
     var vernacular: String?
     var risk: Risk?
-    var species: [String] = []
+    var species: [Species] = []
     
     var noPhoto: Bool = false
     var photoFileName: String?

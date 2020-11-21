@@ -130,7 +130,9 @@ class AnimalListInteractor {
             for fam in families {
                 if species.familyId == fam.familyId {
                     if let name = species.species ?? species.scientificName {
-                        fam.species.append(name)
+                        let sp = Species(name)
+                        sp.category = species.category
+                        fam.species.append(Species(name))
                     }
                     alreadyAdded = true
                     break
@@ -151,7 +153,6 @@ class AnimalListInteractor {
                     new.records = species.records
                     new.subfamily = species.subfamily
                     new.superfamily = species.superfamily
-                    new.category = species.category
                     new.vernacular = nil
                     new.risk = self.getRisk(familyId)
                     families.append(new)
