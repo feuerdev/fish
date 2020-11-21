@@ -156,12 +156,22 @@ class AnimalListInteractor {
                     new.risk = self.getRisk(familyId)
                     
                     let newSpecies = createSpecies(from: species)
+                    if let records = newSpecies.records {
+                        new.sumRecords += records
+                    }
                     new.species.append(newSpecies)
                     families.append(new)
                 }
             }
         }
         return families
+    }
+    
+    func addSpecies(_ species:Species, to family: Family) {
+        family.species.append(species)
+        if let records = species.records {
+            family.sumRecords += records
+        }
     }
     
     func createSpecies(from species:OBISSpecies) -> Species {

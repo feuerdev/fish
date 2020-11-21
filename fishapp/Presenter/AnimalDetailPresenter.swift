@@ -73,21 +73,8 @@ class AnimalDetailPresenter {
         return "\(animal.sumRecords) Sightings"
     }
     
-    func getPresentableSpeciesName(at indexPath:IndexPath) -> String? {
+    func getPresentableSpeciesName(at indexPath:IndexPath) -> String {
         let species = animal.species[indexPath.row]
-        var name: String
-        if let taxonRank = species.taxonRank {
-            switch taxonRank {
-            case "Species":
-                name = species.species!
-            case "Genus":
-                name = species.genus!
-            default:
-                return nil
-            }
-            return "\(name) (\(taxonRank))"
-        } else {
-            return nil
-        }
+        return species.getPresentableName()
     }
 }
