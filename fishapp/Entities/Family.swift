@@ -24,9 +24,81 @@ class Species {
     var isFreshwater: Bool?
     var isTerrestrial: Bool?
     var records: Int?
+    var vernacular: String?
     
     init(_ taxonId: Int) {
         self.taxonId = taxonId
+    }
+    
+    func getPresentableName() -> String {
+        var name: String = ""
+        if let taxonRank = self.taxonRank {
+            switch taxonRank {
+            case "Species":
+                name = self.species ?? ""
+            case "Genus":
+                name = self.genus ?? ""
+            default:
+                break
+            }
+        }
+        return name
+    }
+    
+    func getPresentableCategory() -> String {
+        switch category {
+        case "EX":
+            return "Extinct"
+        case "EW":
+            return "Extinct in the Wild"
+        case "CR":
+            return "Critically Endangered"
+        case "EN":
+            return "Endangered"
+        case "VU":
+            return "Vulnerable"
+        case "NT":
+            return "Near Threatened"
+        case "CD":
+            return "Conservation Dependent"
+        case "LC":
+            return "Least Concern"
+        default:
+            return "Not Threatened"
+        }
+    }
+    
+    func getPresentableCategoryColor() -> String {
+        switch category {
+        case "EX":
+            return "FF0000"
+        case "EW":
+            return "FF0000"
+        case "CR":
+            return "FF0000"
+        case "EN":
+            return "FF0000"
+        case "VU":
+            return "FFA500"
+        case "NT":
+            return "FFA500"
+        case "CD":
+            return "FFA500"
+        case "LC":
+            return "999900"
+        default:
+            return "000000"
+        }
+    }
+    
+    func getPresentableAuthorship() -> String {
+        if let authorship = self.authorship {
+            return authorship
+                .replacingOccurrences(of: "(", with: "")
+                .replacingOccurrences(of: ")", with: "")
+        } else {
+            return "Unkown"
+        }
     }
 }
 
