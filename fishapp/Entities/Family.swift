@@ -12,17 +12,26 @@ enum Risk {
 }
 
 class Species {
-    var species: String
+    var taxonId: Int
+    var genus: String?
+    var species: String?
+    var taxonRank: String?
+    var taxonomicStatus: String?
+    var authorship: String?
     var category: String?
+    var isMarine: Bool?
+    var isBrackish: Bool?
+    var isFreshwater: Bool?
+    var isTerrestrial: Bool?
+    var records: Int?
     
-    init(_ species: String) {
-        self.species = species
+    init(_ taxonId: Int) {
+        self.taxonId = taxonId
     }
 }
 
 class Family {
     let familyId: Int
-    
     var family: String?
     var genus: String?
     var kingdom: String?
@@ -32,7 +41,7 @@ class Family {
     var aclass: String?
     var subclass: String?
     var order: String?
-    var records: Int?
+    var sumRecords: Int = 0
     var subfamily: String?
     var superfamily: String?
     var vernacular: String?

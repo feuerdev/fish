@@ -60,15 +60,6 @@ class AnimalDetailPresenter {
         return "#ffffff"
     }
     
-    func presentableCategory() -> String {
-        switch animal.species[0].category {
-        case "NT":
-            return "Not Threatened"
-        default:
-            return ""
-        }
-    }
-    
     func presentableCategoryColor() -> String {
         switch animal.species[0].category {
         case "NT":
@@ -79,6 +70,24 @@ class AnimalDetailPresenter {
     }
     
     func presentableSightings() -> String {
-        return "\(animal.records!) Sightings"
+        return "\(animal.sumRecords) Sightings"
+    }
+    
+    func getPresentableSpeciesName(at indexPath:IndexPath) -> String? {
+        let species = animal.species[indexPath.row]
+        var name: String
+        if let taxonRank = species.taxonRank {
+            switch taxonRank {
+            case "Species":
+                name = species.species!
+            case "Genus":
+                name = species.genus!
+            default:
+                return nil
+            }
+            return "\(name) (\(taxonRank))"
+        } else {
+            return nil
+        }
     }
 }

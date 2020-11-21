@@ -129,10 +129,10 @@ class AnimalListInteractor {
             var alreadyAdded = false
             for fam in families {
                 if species.familyId == fam.familyId {
-                    if let name = species.species ?? species.scientificName {
-                        let sp = Species(name)
-                        sp.category = species.category
-                        fam.species.append(Species(name))
+                    let new = createSpecies(from: species)
+                    fam.species.append(new)
+                    if let records = new.records {
+                        fam.sumRecords += records
                     }
                     alreadyAdded = true
                     break
@@ -150,16 +150,35 @@ class AnimalListInteractor {
                     new.aclass = species.aclass
                     new.subclass = species.subclass
                     new.order = species.order
-                    new.records = species.records
                     new.subfamily = species.subfamily
                     new.superfamily = species.superfamily
                     new.vernacular = nil
                     new.risk = self.getRisk(familyId)
+                    
+                    let newSpecies = createSpecies(from: species)
+                    new.species.append(newSpecies)
                     families.append(new)
                 }
             }
         }
         return families
+    }
+    
+    func createSpecies(from species:OBISSpecies) -> Species {
+        let new = Species(species.taxonID)
+        new.category = species.category
+        new.genus = species.genus
+        new.species = species.species
+        new.taxonRank = species.taxonRank
+        new.taxonomicStatus = species.taxonomicStatus
+        new.authorship = species.scientificNameAuthorship
+        new.category = species.category
+        new.isMarine = species.is_marine
+        new.isBrackish = species.is_brackish
+        new.isFreshwater = species.is_freshwater
+        new.isTerrestrial = species.is_terrestrial
+        new.records = species.records
+        return new
     }
     
     func getRisk(_ familyId: Int) -> Risk {
