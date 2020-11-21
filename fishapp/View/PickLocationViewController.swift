@@ -20,9 +20,9 @@ class PickLocationViewController : UIViewController {
         let grTap = UITapGestureRecognizer(target: self, action: #selector(onMapTap(gestureRecognizer:)))
         mvMap.addGestureRecognizer(grTap)
         mvMap.delegate = self
-        if #available(iOS 11.0, *) {
-            mvMap.mapType = .mutedStandard
-        }
+//        if #available(iOS 11.0, *) {
+//            mvMap.mapType = .mutedStandard
+//        }
     }
     
     @objc func onMapTap(gestureRecognizer:UITapGestureRecognizer) {

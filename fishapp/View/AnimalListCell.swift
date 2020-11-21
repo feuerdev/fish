@@ -38,6 +38,5 @@ class AnimalListCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         self.view.layer.cornerRadius = 15
-        
     }
 }
