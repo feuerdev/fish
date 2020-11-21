@@ -25,6 +25,8 @@ class AnimalDetailViewController: UIViewController {
             return
         }
         tvSpecies.dataSource = self
+        let nib = UINib(nibName: "SpeciesListCell", bundle: nil)
+        tvSpecies.register(nib, forCellReuseIdentifier: "SpeciesListCell")
         vImageContainer.layer.cornerRadius = 10
         ivPhoto.layer.cornerRadius = 10
         
@@ -34,7 +36,6 @@ class AnimalDetailViewController: UIViewController {
         lblScientific.text = presenter!.animal.family
         lblTaxonHierarchy.text = presenter!.presentableHierarchy()
         lblSightings.text = presenter?.presentableSightings()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,20 +43,12 @@ class AnimalDetailViewController: UIViewController {
     }
 }
 
-
-
 extension AnimalDetailViewController: AnimalDetailPresenterDelegate {
     
 }
 
+
 extension AnimalDetailViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
-        cell.textLabel?.text = presenter?.getPresentableSpeciesName(at: indexPath)
-        return cell
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = presenter?.animal.species.count {
@@ -63,5 +56,16 @@ extension AnimalDetailViewController: UITableViewDataSource {
         } else {
             return 0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tvSpecies.dequeueReusableCell(withIdentifier: "SpeciesListCell", for: indexPath) as! SpeciesListCell
+        guard let species = presenter?.animal.species[indexPath.row] else {
+            return cell
+        }
+        
+        cell.species = species
+        
+        return cell
     }
 }

@@ -10,13 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimalDetailViewController" customModule="fishapp" customModuleProvider="target">
             <connections>
-                <outlet property="conTvHeight" destination="9gc-h7-Ikb" id="rfq-Pc-wPO"/>
+                <outlet property="conTvHeight" destination="ABj-1G-cuR" id="Odb-3Q-UAs"/>
                 <outlet property="ivPhoto" destination="Up1-PK-jib" id="fQL-Ey-M5c"/>
                 <outlet property="lblScientific" destination="ciL-vP-nku" id="guI-s0-SPz"/>
                 <outlet property="lblSightings" destination="JHn-ay-n5U" id="ehl-Dm-FEk"/>
                 <outlet property="lblTaxonHierarchy" destination="MXn-Gm-fgF" id="SJY-Us-qUZ"/>
                 <outlet property="lblVernacular" destination="Zxl-ca-Wy5" id="rwj-ls-Yxb"/>
-                <outlet property="tvSpecies" destination="gZM-Qt-ETO" id="Pjb-i4-xKM"/>
+                <outlet property="tvSpecies" destination="DLB-BD-usi" id="cje-Zb-YLq"/>
                 <outlet property="vImageContainer" destination="amS-ig-Qon" id="tD4-aG-zeB"/>
                 <outlet property="view" destination="dyY-9r-3Ix" id="pYU-yH-KmI"/>
             </connections>
@@ -30,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3V-Tv-uKH">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="686.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amS-ig-Qon">
                                     <rect key="frame" x="40" y="16" width="334" height="200"/>
@@ -91,41 +91,41 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZM-Qt-ETO">
-                                    <rect key="frame" x="16" y="570.5" width="382" height="100"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="9gc-h7-Ikb"/>
-                                    </constraints>
-                                </tableView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vd-k9-6Mb">
                                     <rect key="frame" x="16" y="544.5" width="69" height="22"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLB-BD-usi">
+                                    <rect key="frame" x="0.0" y="570.5" width="414" height="325.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="325.5" id="ABj-1G-cuR"/>
+                                    </constraints>
+                                </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="DLB-BD-usi" secondAttribute="trailing" id="0Do-lQ-ADZ"/>
                                 <constraint firstItem="Zxl-ca-Wy5" firstAttribute="top" secondItem="amS-ig-Qon" secondAttribute="bottom" constant="16" id="3N6-B0-c4V"/>
                                 <constraint firstItem="Zxl-ca-Wy5" firstAttribute="centerX" secondItem="R3V-Tv-uKH" secondAttribute="centerX" id="4AM-X5-rQb"/>
                                 <constraint firstItem="0vd-k9-6Mb" firstAttribute="leading" secondItem="JHn-ay-n5U" secondAttribute="leading" id="BHX-29-Z8a"/>
-                                <constraint firstItem="gZM-Qt-ETO" firstAttribute="leading" secondItem="JHn-ay-n5U" secondAttribute="leading" id="ETF-3t-7eA"/>
                                 <constraint firstItem="MXn-Gm-fgF" firstAttribute="top" secondItem="ETc-vj-Tek" secondAttribute="bottom" constant="4" id="O5Q-fS-MeJ"/>
-                                <constraint firstItem="gZM-Qt-ETO" firstAttribute="top" secondItem="0vd-k9-6Mb" secondAttribute="bottom" constant="4" id="S2M-Om-jar"/>
-                                <constraint firstAttribute="trailing" secondItem="gZM-Qt-ETO" secondAttribute="trailing" constant="16" id="Slz-Fd-Lyt"/>
                                 <constraint firstItem="ciL-vP-nku" firstAttribute="top" secondItem="Zxl-ca-Wy5" secondAttribute="bottom" constant="8" id="a7z-C8-hxs"/>
+                                <constraint firstAttribute="bottom" secondItem="DLB-BD-usi" secondAttribute="bottom" id="aO4-JL-pDn"/>
                                 <constraint firstItem="MXn-Gm-fgF" firstAttribute="leading" secondItem="ETc-vj-Tek" secondAttribute="leading" id="ajt-lv-hk1"/>
                                 <constraint firstItem="tYt-8N-us1" firstAttribute="top" secondItem="MXn-Gm-fgF" secondAttribute="bottom" constant="4" id="cOo-Xg-dce"/>
                                 <constraint firstItem="amS-ig-Qon" firstAttribute="top" secondItem="R3V-Tv-uKH" secondAttribute="top" constant="16" id="ctr-8n-gdD"/>
+                                <constraint firstItem="DLB-BD-usi" firstAttribute="leading" secondItem="R3V-Tv-uKH" secondAttribute="leading" id="fHu-TH-CV0"/>
                                 <constraint firstItem="ETc-vj-Tek" firstAttribute="leading" secondItem="R3V-Tv-uKH" secondAttribute="leading" constant="16" id="fQD-fc-CM9"/>
                                 <constraint firstItem="amS-ig-Qon" firstAttribute="leading" secondItem="R3V-Tv-uKH" secondAttribute="leading" constant="40" id="iaU-XZ-Dpq"/>
                                 <constraint firstAttribute="trailing" secondItem="amS-ig-Qon" secondAttribute="trailing" constant="40" id="inP-ga-kTW"/>
                                 <constraint firstItem="tYt-8N-us1" firstAttribute="leading" secondItem="MXn-Gm-fgF" secondAttribute="leading" id="kUk-2m-rSK"/>
                                 <constraint firstItem="0vd-k9-6Mb" firstAttribute="top" secondItem="JHn-ay-n5U" secondAttribute="bottom" constant="4" id="l64-jV-b7U"/>
                                 <constraint firstItem="ciL-vP-nku" firstAttribute="centerX" secondItem="R3V-Tv-uKH" secondAttribute="centerX" id="pL2-9G-qqE"/>
+                                <constraint firstItem="DLB-BD-usi" firstAttribute="top" secondItem="0vd-k9-6Mb" secondAttribute="bottom" constant="4" id="uFz-AN-24s"/>
                                 <constraint firstItem="ETc-vj-Tek" firstAttribute="top" secondItem="ciL-vP-nku" secondAttribute="bottom" constant="16" id="vWO-wL-ra5"/>
-                                <constraint firstAttribute="bottom" secondItem="gZM-Qt-ETO" secondAttribute="bottom" constant="16" id="xb3-e8-Qcq"/>
                                 <constraint firstItem="JHn-ay-n5U" firstAttribute="top" secondItem="tYt-8N-us1" secondAttribute="bottom" constant="4" id="xpg-Ke-mVD"/>
                                 <constraint firstItem="JHn-ay-n5U" firstAttribute="leading" secondItem="tYt-8N-us1" secondAttribute="leading" id="ySy-HA-tjV"/>
                             </constraints>
