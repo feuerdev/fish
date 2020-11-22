@@ -43,3 +43,17 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+extension UIImageView {
+    
+    func loadImagefromDocuments(filename: String) {
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        DispatchQueue.global(qos: .userInitiated).async {
+            let fileUrl = documents.appendingPathComponent(filename)
+            let img = UIImage(contentsOfFile: fileUrl.path) //TODO: Which thread does this run in?
+            DispatchQueue.main.async {
+                self.image = img
+            }
+        }
+    }
+}

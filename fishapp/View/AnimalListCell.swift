@@ -18,16 +18,14 @@ class AnimalListCell: UICollectionViewCell {
         didSet {
             lblLatin.text = animal?.family
             lblVernacular.text = animal?.vernacular
-            
-            let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            if let fileName = animal?.photoFileName {
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let fileUrl = documents.appendingPathComponent(fileName)
-                    let img = UIImage(contentsOfFile: fileUrl.path) //TODO: Which thread does this run in?
-                    DispatchQueue.main.async {
-                        self.ivPhoto.image = img
-                    }
+            if let filename = animal?.photoFileName {
+                ivPhoto.loadImagefromDocuments(filename: filename)
+            } else if let noPhoto = animal?.noPhoto {
+                if noPhoto {
+                    ivPhoto.image = UIImage(named: "logo_png")
                 }
+            } else {
+                ivPhoto.image = UIImage(named: "logo_full")
             }
         }
     }
