@@ -12,9 +12,11 @@ class AnimalDetailRouter {
     static func createModule(animal: Family) -> AnimalDetailViewController {
         let vc = AnimalDetailViewController()
         
-        let presenter = AnimalDetailPresenter(animal: animal)
+        let interactor = AnimalDetailInteractor(family: animal)
+        let presenter = AnimalDetailPresenter(interactor: interactor)
         let router = AnimalDetailRouter()
 
+        interactor.presenterDelegate = presenter
         vc.presenter = presenter
         presenter.router = router
         presenter.viewDelegate = vc

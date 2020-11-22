@@ -23,6 +23,9 @@ class SpeciesListCell: UITableViewCell {
         didSet {
 //            ivImage.image =
             if let species = species {
+                if let filename = species.photoFileName {
+                    ivImage.loadImagefromDocuments(filename: filename)
+                }
                 lblName.text = species.vernacular
                 lblScientificName.text = species.getPresentableName()
                 lblAuthorship.text = species.getPresentableAuthorship()

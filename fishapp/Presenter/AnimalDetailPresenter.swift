@@ -8,73 +8,73 @@
 import Foundation
 
 protocol AnimalDetailPresenterDelegate {
-    //
+    func refreshCell(indexPath: IndexPath)
 }
 
 class AnimalDetailPresenter {
-    var animal: Family
     
+    var interactor: AnimalDetailInteractor
     var viewDelegate: AnimalDetailPresenterDelegate?
     var router: AnimalDetailRouter?
     
-    init(animal: Family) {
-        self.animal = animal
+    init(interactor: AnimalDetailInteractor) {
+        self.interactor = interactor
+    }
+    
+    func viewDidLoad() {
+        self.interactor.loadSpecies()
     }
     
     func presentableHierarchy() -> String {
         var result = ""
-        if animal.kingdom != nil {
-            result.append("> Kingdom: \(animal.kingdom!)")
+        if interactor.family.kingdom != nil {
+            result.append("> Kingdom: \(interactor.family.kingdom!)")
         }
-        if animal.phylum != nil {
-            result.append("\n> Phylum: \(animal.phylum!)")
+        if interactor.family.phylum != nil {
+            result.append("\n> Phylum: \(interactor.family.phylum!)")
         }
-        if animal.subphylum != nil {
-            result.append("\n> Subphylum: \(animal.subphylum!)")
+        if interactor.family.subphylum != nil {
+            result.append("\n> Subphylum: \(interactor.family.subphylum!)")
         }
-        if animal.superclass != nil {
-            result.append("\n> Superclass: \(animal.superclass!)")
+        if interactor.family.superclass != nil {
+            result.append("\n> Superclass: \(interactor.family.superclass!)")
         }
-        if animal.aclass != nil {
-            result.append("\n> Class: \(animal.aclass!)")
+        if interactor.family.aclass != nil {
+            result.append("\n> Class: \(interactor.family.aclass!)")
         }
-        if animal.subclass != nil {
-            result.append("\n> Subclass: \(animal.subclass!)")
+        if interactor.family.subclass != nil {
+            result.append("\n> Subclass: \(interactor.family.subclass!)")
         }
-//        if animal.infraclass != nil {
-//            result.append("\n> Subclass:\(animal.infraclass!)")
-//        }
-//        if animal.superorder != nil {
-//            result.append("\n> Order\(animal.superorder!)")
-//        }
-        if animal.order != nil {
-            result.append("\n> Order: \(animal.order!)")
+        //        if animal.infraclass != nil {
+        //            result.append("\n> Subclass:\(animal.infraclass!)")
+        //        }
+        //        if animal.superorder != nil {
+        //            result.append("\n> Order\(animal.superorder!)")
+        //        }
+        if interactor.family.order != nil {
+            result.append("\n> Order: \(interactor.family.order!)")
         }
-        if animal.family != nil {
-            result.append("\n> Family: \(animal.family!)")
+        if interactor.family.family != nil {
+            result.append("\n> Family: \(interactor.family.family!)")
         }
         return result
     }
     
-    func presentableDangerColor() -> String {
-        return "#ffffff"
-    }
-    
-    func presentableCategoryColor() -> String {
-        switch animal.species[0].category {
-        case "NT":
-            return "#AAAAAA"
-        default:
-            return "#BBBBBB#"
-        }
-    }
-    
     func presentableSightings() -> String {
-        return "\(animal.sumRecords) Sightings"
+        return "\(interactor.family.sumRecords) Sightings"
     }
     
     func getPresentableSpeciesName(at indexPath:IndexPath) -> String {
-        let species = animal.species[indexPath.row]
-        return species.getPresentableName()
+        return interactor.family.species[indexPath.row].getPresentableName()
+    }
+}
+
+extension AnimalDetailPresenter: AnimalDetailInteractorDelegate {
+    func refreshSpecies(species: Species) {
+        DispatchQueue.main.async {
+            if let index = self.interactor.family.species.firstIndex(where: {$0 === species}) {
+                self.viewDelegate?.refreshCell(indexPath: IndexPath(row: index, section: 0))
+            }
+        }
     }
 }

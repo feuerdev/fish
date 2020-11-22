@@ -33,6 +33,7 @@
 		2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */; };
 		2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */; };
 		2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D4256A63510078550D /* LoadPhotoService.swift */; };
+		2FDEF3D9256A72730078550D /* AnimalDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */; };
 		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
 		2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BF1254FF984002213BE /* WORMSResponse.swift */; };
 		2FE7F90D255A8B3100FE7D1E /* AnimalListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */; };
@@ -83,6 +84,7 @@
 		2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPresenter.swift; sourceTree = "<group>"; };
 		2FDEF3D4256A63510078550D /* LoadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoService.swift; sourceTree = "<group>"; };
+		2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailInteractor.swift; sourceTree = "<group>"; };
 		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
 		2FE06BF1254FF984002213BE /* WORMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSResponse.swift; sourceTree = "<group>"; };
 		2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCollectionViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				2F84D67A25495E0E00FCAB65 /* AnimalListInteractor.swift */,
+				2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */,
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
+				2FDEF3D9256A72730078550D /* AnimalDetailInteractor.swift in Sources */,
 				2FE7F91B255A924E00FE7D1E /* AnimalListCell.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Family.swift in Sources */,
 				2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */,
