@@ -36,6 +36,9 @@ class AnimalDetailViewController: UIViewController {
         lblScientific.text = presenter!.animal.family
         lblTaxonHierarchy.text = presenter!.presentableHierarchy()
         lblSightings.text = presenter?.presentableSightings()
+        if let photoFileName = presenter?.animal.photoFileName {
+            ivPhoto.loadImagefromDocuments(filename: photoFileName)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
