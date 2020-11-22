@@ -35,8 +35,9 @@ class AnimalListPresenter {
 extension AnimalListPresenter: AnimalListInteractorDelegate {
     func refreshAnimal(animal: Family) {
         DispatchQueue.main.async {
-            let indexPath = IndexPath(row: 0, section: 0)
-            self.viewDelegate?.refreshCell(indexPath: indexPath) //TODO: Only refresh relevant cell, also make the presenter get the correct index?
+            if let index = self.interactor?.animals.firstIndex(where: {$0 === animal}) {
+                self.viewDelegate?.refreshCell(indexPath: IndexPath(row: index, section: 0))
+            }
         }
     }
     
