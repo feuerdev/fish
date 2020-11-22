@@ -26,6 +26,9 @@ class Species {
     var records: Int?
     var vernacular: String?
     
+    var noPhoto: Bool = false
+    var photoFileName: String?
+    
     init(_ taxonId: Int) {
         self.taxonId = taxonId
     }

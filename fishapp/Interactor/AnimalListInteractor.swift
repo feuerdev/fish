@@ -55,49 +55,16 @@ class AnimalListInteractor {
     }
     
     func loadPhotos() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            for family in self.animals {
-                //Step 1: Check in UserDefaults for Image
-                if let fileName = UserDefaults.standard.string(forKey: String(family.familyId)) {
-                    //Step 2: Check if family doesn't have photo
-                    if fileName == FAMILY_NO_PHOTO {
+        for family in self.animals {
+            if let param = family.family {
+                LoadPhotoService.loadPhoto(id: String(family.familyId), searchParameter: param) { result in
+                    switch result {
+                    case .success(let url):
+                        family.photoFileName = url
+                    case .failure(_):
                         family.noPhoto = true
-                        self.presenterDelegate?.refreshAnimal(animal: family)
-                    } else {
-                        family.photoFileName = fileName
-                        self.presenterDelegate?.refreshAnimal(animal: family)
                     }
-                } else {
-                    //Step 4: Never looked for Photo. Ask Wiki for it.
-                    if let name = family.family {
-                        WikiPhotoURLService.getPhotoUrl(scientificName: name, completionHandler: { result in
-                            switch result {
-                            case .failure(let error):
-                                if error as! ServiceError == ServiceError.noData {
-                                    UserDefaults.standard.setValue(FAMILY_NO_PHOTO, forKey: String(family.familyId))
-                                    family.noPhoto = true
-                                    self.presenterDelegate?.refreshAnimal(animal: family)
-                                }
-                                print("'\(name)' encountered error: \(error)")
-                            case .success(let url):
-                                //Step 5: Download and save the photo in Documents
-                                if let url = URL(string: url) {
-                                    if let data = try? Data(contentsOf: url) {
-                                        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                                        let fileUrl = documents.appendingPathComponent(url.lastPathComponent)
-                                        do {
-                                            try data.write(to: fileUrl)
-                                            UserDefaults.standard.setValue(fileUrl.lastPathComponent, forKey: String(family.familyId))
-                                            family.photoFileName = fileUrl.lastPathComponent
-                                            self.presenterDelegate?.refreshAnimal(animal: family)
-                                        } catch(let error) {
-                                            print(error)
-                                        }
-                                    }
-                                }
-                            }
-                        })
-                    }
+                    self.presenterDelegate?.refreshAnimal(animal: family)
                 }
             }
         }
@@ -165,13 +132,6 @@ class AnimalListInteractor {
             }
         }
         return families
-    }
-    
-    func addSpecies(_ species:Species, to family: Family) {
-        family.species.append(species)
-        if let records = species.records {
-            family.sumRecords += records
-        }
     }
     
     func createSpecies(from species:OBISSpecies) -> Species {

@@ -32,6 +32,7 @@
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
 		2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */; };
 		2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */; };
+		2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D4256A63510078550D /* LoadPhotoService.swift */; };
 		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
 		2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BF1254FF984002213BE /* WORMSResponse.swift */; };
 		2FE7F90D255A8B3100FE7D1E /* AnimalListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */; };
@@ -81,6 +82,7 @@
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
 		2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPresenter.swift; sourceTree = "<group>"; };
+		2FDEF3D4256A63510078550D /* LoadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoService.swift; sourceTree = "<group>"; };
 		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
 		2FE06BF1254FF984002213BE /* WORMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSResponse.swift; sourceTree = "<group>"; };
 		2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCollectionViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				2F20E54F2541993500AFF548 /* GBIFResponse.swift */,
 				2F7F370C25622C2300DBF6ED /* WikiPhotoURLService.swift */,
 				2FEB300F254AD2FE0032D178 /* JSONWebService.swift */,
+				2FDEF3D4256A63510078550D /* LoadPhotoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */,
 				2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */,
 				2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */,
+				2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */,
 				2F11E7D52562C3FC005A13A6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

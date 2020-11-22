@@ -21,6 +21,7 @@ enum ServiceError : Error {
     case noNetwork
     case noData
     case parserError
+    case couldNotWrite
 }
 
 extension UIColor {
