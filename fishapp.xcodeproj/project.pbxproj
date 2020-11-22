@@ -41,6 +41,8 @@
 		2FE7F91B255A924E00FE7D1E /* AnimalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F91A255A924E00FE7D1E /* AnimalListCell.swift */; };
 		2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB300F254AD2FE0032D178 /* JSONWebService.swift */; };
 		2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */; };
+		4FCE7620D89E4ABB6CD73D8C /* Pods_fishapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2383300974FF113C629B4DCB /* Pods_fishapp.framework */; };
+		C71DAE8793713157543FD5AC /* Pods_fishappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD8317868B97422D9EDC333 /* Pods_fishappTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2383300974FF113C629B4DCB /* Pods_fishapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fishapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F11E7D42562C3FC005A13A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2F20E54F2541993500AFF548 /* GBIFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBIFResponse.swift; sourceTree = "<group>"; };
 		2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListCell.swift; sourceTree = "<group>"; };
@@ -92,6 +95,11 @@
 		2FE7F91A255A924E00FE7D1E /* AnimalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCell.swift; sourceTree = "<group>"; };
 		2FEB300F254AD2FE0032D178 /* JSONWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWebService.swift; sourceTree = "<group>"; };
 		2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationRouter.swift; sourceTree = "<group>"; };
+		5C58029826E1B7AED9E038A0 /* Pods-fishapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fishapp.release.xcconfig"; path = "Target Support Files/Pods-fishapp/Pods-fishapp.release.xcconfig"; sourceTree = "<group>"; };
+		6FD8317868B97422D9EDC333 /* Pods_fishappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fishappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B611E65723748F78D948D2 /* Pods-fishapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fishapp.debug.xcconfig"; path = "Target Support Files/Pods-fishapp/Pods-fishapp.debug.xcconfig"; sourceTree = "<group>"; };
+		CB27854BCD4F23F6F1846F94 /* Pods-fishappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fishappTests.release.xcconfig"; path = "Target Support Files/Pods-fishappTests/Pods-fishappTests.release.xcconfig"; sourceTree = "<group>"; };
+		CC87A5D5B1142BCB03060F7A /* Pods-fishappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fishappTests.debug.xcconfig"; path = "Target Support Files/Pods-fishappTests/Pods-fishappTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCE7620D89E4ABB6CD73D8C /* Pods_fishapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71DAE8793713157543FD5AC /* Pods_fishappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +218,8 @@
 				2F4EDA8B253C3BFC00C5839C /* fishapp */,
 				2F4EDAD0253E100000C5839C /* fishappTests */,
 				2F4EDA8A253C3BFC00C5839C /* Products */,
+				B224D84093E22DC099C2669A /* Pods */,
+				89765AF633454FF28EFECBED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +256,27 @@
 			path = fishappTests;
 			sourceTree = "<group>";
 		};
+		89765AF633454FF28EFECBED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2383300974FF113C629B4DCB /* Pods_fishapp.framework */,
+				6FD8317868B97422D9EDC333 /* Pods_fishappTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B224D84093E22DC099C2669A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90B611E65723748F78D948D2 /* Pods-fishapp.debug.xcconfig */,
+				5C58029826E1B7AED9E038A0 /* Pods-fishapp.release.xcconfig */,
+				CC87A5D5B1142BCB03060F7A /* Pods-fishappTests.debug.xcconfig */,
+				CB27854BCD4F23F6F1846F94 /* Pods-fishappTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F4EDA9D253C3BFD00C5839C /* Build configuration list for PBXNativeTarget "fishapp" */;
 			buildPhases = (
+				C0487AE9BA0F0C2A4394589D /* [CP] Check Pods Manifest.lock */,
 				2F4EDA85253C3BFC00C5839C /* Sources */,
 				2F4EDA86253C3BFC00C5839C /* Frameworks */,
 				2F4EDA87253C3BFC00C5839C /* Resources */,
+				A535CCE6860D9F8A79CFD7CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +303,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F4EDAD6253E100000C5839C /* Build configuration list for PBXNativeTarget "fishappTests" */;
 			buildPhases = (
+				1CBFE472FA6F08FE22701842 /* [CP] Check Pods Manifest.lock */,
 				2F4EDACB253E100000C5839C /* Sources */,
 				2F4EDACC253E100000C5839C /* Frameworks */,
 				2F4EDACD253E100000C5839C /* Resources */,
@@ -342,6 +378,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1CBFE472FA6F08FE22701842 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fishappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A535CCE6860D9F8A79CFD7CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fishapp/Pods-fishapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fishapp/Pods-fishapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fishapp/Pods-fishapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0487AE9BA0F0C2A4394589D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fishapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F4EDA85253C3BFC00C5839C /* Sources */ = {
@@ -526,6 +626,7 @@
 		};
 		2F4EDA9E253C3BFD00C5839C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B611E65723748F78D948D2 /* Pods-fishapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,6 +648,7 @@
 		};
 		2F4EDA9F253C3BFD00C5839C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C58029826E1B7AED9E038A0 /* Pods-fishapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -567,6 +669,7 @@
 		};
 		2F4EDAD7253E100000C5839C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC87A5D5B1142BCB03060F7A /* Pods-fishappTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -587,6 +690,7 @@
 		};
 		2F4EDAD8253E100000C5839C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB27854BCD4F23F6F1846F94 /* Pods-fishappTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
