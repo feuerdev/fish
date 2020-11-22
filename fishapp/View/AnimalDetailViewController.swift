@@ -42,15 +42,19 @@ class AnimalDetailViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    func updateSpeciesTableHeightConstraint() {
         conTvHeight.constant = tvSpecies.contentSize.height
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateSpeciesTableHeightConstraint()
     }
 }
 
 extension AnimalDetailViewController: AnimalDetailPresenterDelegate {
     func refreshCell(indexPath: IndexPath) {
         self.tvSpecies.reloadRows(at: [indexPath], with: .automatic)
-        conTvHeight.constant = tvSpecies.contentSize.height
+        updateSpeciesTableHeightConstraint()
     }
 }
 
