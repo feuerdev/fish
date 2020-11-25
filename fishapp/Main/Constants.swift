@@ -9,3 +9,4 @@ import Foundation
 
 
 let FAMILY_NO_PHOTO = "NONE"
+let FAMILY_NO_VERNACULAR = "NONE"

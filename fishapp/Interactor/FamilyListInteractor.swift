@@ -50,33 +50,34 @@ class FamilyListInteractor {
                 
                 func loadingString() -> String {
                     return "Loading Photos: \(photosLoaded)/\(self.animals.count)\nLoading Vernaculars: \(namesLoaded)/\(self.animals.count)"
-    }
-    
-        for family in self.animals {
+                }
+                
+                for family in self.animals {
                     //Photos
-            if let param = family.family {
+                    if let param = family.family {
                         group.enter()
-                LoadPhotoService.loadPhoto(id: String(family.familyId), searchParameter: param) { result in
-                    switch result {
-                    case .success(let url):
-                        family.photoFileName = url
-                    case .failure(_):
-                        family.noPhoto = true
-                    }
+                        LoadPhotoService.loadPhoto(id: String(family.familyId), searchParameter: param) { result in
+                            switch result {
+                            case .success(let url):
+                                family.photoFileName = url
+                            case .failure(_):
+                                family.noPhoto = true
+                            }
                             photosLoaded += 1
                             self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
                             group.leave()
-                }
-            }
-    
+                        }
+                    }
+                    
                     //Vernaculars
                     group.enter()
                     LoadVernacularService.loadVernacular(id: family.familyId) { result in
-                    switch result {
-                    case .success(let name):
-                        family.vernacular = name
-                    case .failure(_):
-                        break
+                        switch result {
+                        case .success(let name):
+                            family.vernacular = name
+                        case .failure(_):
+                            family.noVernacular = true
+                            break
                         }
                         namesLoaded += 1
                         self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
