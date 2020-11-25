@@ -90,7 +90,7 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
     }
     
     func updateLoadingStatus(status: String) {
-        //
+        print(status)
     }
     
     func hideLoadingView() {

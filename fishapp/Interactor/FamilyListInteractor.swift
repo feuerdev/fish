@@ -37,21 +37,19 @@ class FamilyListInteractor {
             return
         }
         
-        OBISService.getCheckList(location: location, onStatus: {
-            self.presenterDelegate?.loadAnimalsStatusUpdate(status: $0)
+        OBISService.getCheckList(location: location, onStatus: {_ in
+            self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Searching Animals...")
         }) { result in
             switch result {
             case .success(let result):
                 self.animals = self.getFamilies(result)
+                self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Found \(self.animals.count) Animals")
+                var photosLoaded = 0
+                var namesLoaded = 0
                 let group = DispatchGroup()
                 
-                self.loadVernaculars()
-                self.loadPhotos()
-                
-            case .failure(let error):
-                self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
-            }
-        }
+                func loadingString() -> String {
+                    return "Loading Photos: \(photosLoaded)/\(self.animals.count)\nLoading Vernaculars: \(namesLoaded)/\(self.animals.count)"
     }
     
         for family in self.animals {
@@ -78,6 +76,9 @@ class FamilyListInteractor {
                         self.presenterDelegate?.refreshAnimal(animal: family)
                     case .failure(_):
                         break
+                        }
+                        namesLoaded += 1
+                        self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
                         group.leave()
                     }
                 }
