@@ -119,12 +119,14 @@ class Family {
     var sumRecords: Int = 0
     var subfamily: String?
     var superfamily: String?
-    var vernacular: String?
     var risk: Risk?
     var species: [Species] = []
     
-    var noPhoto: Bool = false
+    var noPhoto = false
     var photoFileName: String?
+    
+    var noVernacular = false
+    var vernacular: String?
     
     init(_ familyId: Int) {
         self.familyId = familyId
