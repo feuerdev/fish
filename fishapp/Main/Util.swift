@@ -29,6 +29,7 @@ enum ServiceError : Error {
     case noData
     case parserError
     case couldNotWrite
+    case wrongFiletype
 }
 
 extension UIColor {

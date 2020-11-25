@@ -19,7 +19,11 @@ class WikiPhotoURLService {
                     completionHandler(.failure(error))
                 case .success(let result):
                     if let url = result.query.pages.values.first?.original?.source {
-                        completionHandler(.success(url))
+                        if(url.contains(".png") || url.contains(".jpg")) {
+                            completionHandler(.success(url))
+                        } else {
+                            completionHandler(.failure(ServiceError.wrongFiletype))
+                        }
                     } else {
                         completionHandler(.failure(ServiceError.noData))
                     }
