@@ -54,9 +54,10 @@ class FamilyListInteractor {
         }
     }
     
-    func loadPhotos() {
         for family in self.animals {
+                    //Photos
             if let param = family.family {
+                        group.enter()
                 LoadPhotoService.loadPhoto(id: String(family.familyId), searchParameter: param) { result in
                     switch result {
                     case .success(let url):
@@ -64,25 +65,28 @@ class FamilyListInteractor {
                     case .failure(_):
                         family.noPhoto = true
                     }
-                    self.presenterDelegate?.refreshAnimal(animal: family)
+                            group.leave()
                 }
             }
-        }
-    }
     
-    func loadVernaculars() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            for family in self.animals {
-                WORMSService.getVernacular(id: family.familyId) { result in
+                    //Vernaculars
+                    group.enter()
+                    LoadVernacularService.loadVernacular(id: family.familyId) { result in
                     switch result {
                     case .success(let name):
                         family.vernacular = name
                         self.presenterDelegate?.refreshAnimal(animal: family)
                     case .failure(_):
                         break
-                        //Nothing to do
+                        group.leave()
                     }
                 }
+                group.notify(queue: DispatchQueue.main) {
+                    self.presenterDelegate?.loadAnimalsSuccess()
+                }
+                
+            case .failure(let error):
+                self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
             }
         }
     }

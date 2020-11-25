@@ -20,8 +20,6 @@ class FamilyListCell: UICollectionViewCell {
                 return
             }
             
-            
-            
             if let filename = family!.photoFileName {
                 ivPhoto.loadImagefromDocuments(filename: filename)
             } else if family!.noPhoto {
@@ -40,6 +38,10 @@ class FamilyListCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
+        self.ivPhoto.image = nil
+        self.lblLatin.text = ""
+        self.lblVernacular.text = ""
+        
         self.isSkeletonable = true
         self.lblLatin.isSkeletonable = true
         self.lblVernacular.isSkeletonable = true
