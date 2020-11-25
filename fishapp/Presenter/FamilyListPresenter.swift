@@ -9,6 +9,7 @@ import Foundation
 
 protocol AnimalListPresenterDelegate {
     func updateLoadingStatus(status: String) -> Void
+    func updateLoadingStatus(percent: Float) -> Void
     func refreshCells()
     func refreshCell(indexPath: IndexPath)
     func hideLoadingView()
@@ -57,6 +58,12 @@ extension FamilyListPresenter: FamilyListInteractorDelegate {
     func loadAnimalsStatusUpdate(status: String) {
         DispatchQueue.main.async {
             self.viewDelegate?.updateLoadingStatus(status: status)
+        }
+    }
+    
+    func loadAnimalsStatusUpdate(percent: Float) {
+        DispatchQueue.main.async {
+            self.viewDelegate?.updateLoadingStatus(percent: percent)
         }
     }
     

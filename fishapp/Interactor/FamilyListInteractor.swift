@@ -11,6 +11,7 @@ protocol FamilyListInteractorDelegate {
     func loadAnimalsSuccess()
     func loadAnimalsFailure(error: String)
     func loadAnimalsStatusUpdate(status: String)
+    func loadAnimalsStatusUpdate(percent: Float)
     func refreshAnimal(animal:Family)
 }
 
@@ -39,17 +40,23 @@ class FamilyListInteractor {
         
         OBISService.getCheckList(location: location, onStatus: {_ in
             self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Searching Animals...")
+            self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 0.05)
         }) { result in
             switch result {
             case .success(let result):
                 self.animals = self.getFamilies(result)
                 self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Found \(self.animals.count) Animals")
+                self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 0.3)
                 var photosLoaded = 0
                 var namesLoaded = 0
                 let group = DispatchGroup()
                 
                 func loadingString() -> String {
                     return "Loading Photos: \(photosLoaded)/\(self.animals.count)\nLoading Vernaculars: \(namesLoaded)/\(self.animals.count)"
+                }
+                
+                func loadingPercent() -> Float {
+                    return max(0.3, min(1, Float(photosLoaded+namesLoaded)/Float(self.animals.count*2)))
                 }
                 
                 for family in self.animals {
@@ -64,6 +71,7 @@ class FamilyListInteractor {
                                 family.noPhoto = true
                             }
                             photosLoaded += 1
+                            self.presenterDelegate?.loadAnimalsStatusUpdate(percent: loadingPercent())
                             self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
                             group.leave()
                         }
@@ -80,6 +88,7 @@ class FamilyListInteractor {
                             break
                         }
                         namesLoaded += 1
+                        self.presenterDelegate?.loadAnimalsStatusUpdate(percent: loadingPercent())
                         self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
                         group.leave()
                     }
