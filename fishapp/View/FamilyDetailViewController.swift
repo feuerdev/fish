@@ -17,7 +17,7 @@ class FamilyDetailViewController: UIViewController {
     @IBOutlet weak var lblSightings: UILabel!
     @IBOutlet weak var tvSpecies: UITableView!
     @IBOutlet weak var conTvHeight: NSLayoutConstraint!
-    var presenter: AnimalDetailPresenter?
+    var presenter: FamilyDetailPresenter?
     
     override func viewDidLoad() {
         
@@ -51,7 +51,7 @@ class FamilyDetailViewController: UIViewController {
     }
 }
 
-extension FamilyDetailViewController: AnimalDetailPresenterDelegate {
+extension FamilyDetailViewController: FamilyDetailPresenterDelegate {
     func refreshCell(indexPath: IndexPath) {
         self.tvSpecies.reloadRows(at: [indexPath], with: .automatic)
         updateSpeciesTableHeightConstraint()

@@ -17,7 +17,7 @@ protocol AnimalListPresenterDelegate {
 
 class FamilyListPresenter {
     
-    var interactor: AnimalListInteractor?
+    var interactor: FamilyListInteractor?
     var router: AnimalListRouter?
     var viewDelegate: AnimalListPresenterDelegate?
     
@@ -32,7 +32,7 @@ class FamilyListPresenter {
     }
 }
 
-extension FamilyListPresenter: AnimalListInteractorDelegate {
+extension FamilyListPresenter: FamilyListInteractorDelegate {
     func refreshAnimal(animal: Family) {
         DispatchQueue.main.async {
             if let index = self.interactor?.animals.firstIndex(where: {$0 === animal}) {

@@ -42,11 +42,11 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: IDENTIFIER_CELL, for: indexPath) as! FamilyListCell
-        guard let animal = presenter?.interactor?.animals[safe: indexPath.row] else {
+        guard let family = presenter?.interactor?.animals[safe: indexPath.row] else {
             return cell
         }
         
-        cell.family = animal
+        cell.family = family
         
         return cell
     }
