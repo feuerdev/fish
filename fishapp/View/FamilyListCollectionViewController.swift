@@ -13,6 +13,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
     let IDENTIFIER_CELL = "FamilyListCell"
     
     var presenter: FamilyListPresenter?
+    var loadingView: FamilyListLoadingView?
     
     override func viewDidLoad() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -24,6 +25,8 @@ class FamilyListCollectionViewController: UICollectionViewController {
         let nib = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: IDENTIFIER_CELL)
         self.collectionView.backgroundColor = .white
+
+        self.loadingView = FamilyListLoadingView(centerIn: UIApplication.shared.keyWindow!)
     }
     
     //MARK: - Datasource
@@ -74,6 +77,8 @@ extension FamilyListCollectionViewController : UICollectionViewDelegateFlowLayou
 }
 
 extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
+   
+    
     func refreshCell(indexPath: IndexPath) {
         self.collectionView.reloadItems(at: [indexPath])
     }
@@ -90,12 +95,17 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
         self.present(alert, animated: true)
     }
     
+    func updateLoadingStatus(percent: Float) {
+        self.loadingView?.pvProgress.setProgress(percent, animated: true)
+    }
+    
     func updateLoadingStatus(status: String) {
-        print(status)
+        self.loadingView?.lblProgress.text = status
     }
     
     func hideLoadingView() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        self.loadingView?.isHidden = true
         self.collectionView.stopSkeletonAnimation()
         self.collectionView.hideSkeleton()
     }
