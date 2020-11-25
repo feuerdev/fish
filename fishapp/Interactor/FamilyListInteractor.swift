@@ -75,7 +75,6 @@ class FamilyListInteractor {
                     switch result {
                     case .success(let name):
                         family.vernacular = name
-                        self.presenterDelegate?.refreshAnimal(animal: family)
                     case .failure(_):
                         break
                         }
