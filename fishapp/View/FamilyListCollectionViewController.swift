@@ -15,6 +15,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
     var presenter: FamilyListPresenter?
     
     override func viewDidLoad() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         presenter?.viewDidLoad()
         
         self.collectionView.isSkeletonable = true
@@ -94,6 +95,7 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
     }
     
     func hideLoadingView() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         self.collectionView.stopSkeletonAnimation()
         self.collectionView.hideSkeleton()
     }
