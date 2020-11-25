@@ -10,7 +10,7 @@ import UIKit
 class SpeciesListCell: UITableViewCell {
     
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var ivImage: UIImageView!
+    @IBOutlet weak var ivImage: UIDocumentImageView!
     @IBOutlet weak var lblAuthorship: UILabel!
     @IBOutlet weak var lblRank: UILabel!
     @IBOutlet weak var lblRisk: UILabel!

@@ -12,26 +12,29 @@ class AnimalListCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var lblLatin: UILabel!
     @IBOutlet weak var lblVernacular: UILabel!
-    @IBOutlet weak var ivPhoto: UIImageView!
+    @IBOutlet weak var ivPhoto: UIDocumentImageView!
     
     var animal: Family? {
         didSet {
-            lblLatin.text = animal?.family
-            lblVernacular.text = animal?.vernacular
-            if let filename = animal?.photoFileName {
+            guard animal != nil else {
+                return
+            }
+            
+            if let filename = animal!.photoFileName {
                 ivPhoto.loadImagefromDocuments(filename: filename)
-            } else if let noPhoto = animal?.noPhoto {
-                if noPhoto {
+            } else if animal!.noPhoto {
+                //TODO: we dont have a photo, import no_photo.png or smth
                     ivPhoto.image = UIImage(named: "logo_png")
                 }
-            } else {
-                ivPhoto.image = UIImage(named: "logo_full")
-            }
-        }
+            
+            if let vernacular = animal?.vernacular {
+                lblVernacular.text = vernacular
+            } else if animal!.noVernacular {
+                lblVernacular.text = "-"
     }
     
-    override func prepareForReuse() {
-        ivPhoto.image = nil
+            lblLatin.text = animal?.family
+        }
     }
     
     override func awakeFromNib() {

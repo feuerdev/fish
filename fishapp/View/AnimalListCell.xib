@@ -30,7 +30,7 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-6z-4nC">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-6z-4nC" customClass="UIDocumentImageView" customModule="fishapp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
                     </imageView>
                 </subviews>
@@ -53,7 +53,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="150" height="150"/>
             <connections>
-                <outlet property="ivPhoto" destination="wmF-6z-4nC" id="79w-jP-mJI"/>
+                <outlet property="ivPhoto" destination="wmF-6z-4nC" id="o1o-4d-S7J"/>
                 <outlet property="lblLatin" destination="59N-pV-qQg" id="U9k-Iv-9CC"/>
                 <outlet property="lblVernacular" destination="PgE-LZ-y0u" id="rOo-V6-eH6"/>
                 <outlet property="view" destination="Pax-Bx-KOF" id="uhO-Sb-FIm"/>
@@ -62,7 +62,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="logo_shadow" width="600" height="600"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

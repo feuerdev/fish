@@ -10,7 +10,7 @@ import UIKit
 class AnimalDetailViewController: UIViewController {
     
     @IBOutlet weak var vImageContainer: UIView!
-    @IBOutlet weak var ivPhoto: UIImageView!
+    @IBOutlet weak var ivPhoto: UIDocumentImageView!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblTaxonHierarchy: UILabel!
