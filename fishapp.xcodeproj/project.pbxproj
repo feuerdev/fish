@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
 		2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */; };
 		2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */; };
+		2FDEF1A1256E66E4004DDB9B /* UIDocumentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */; };
 		2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D4256A63510078550D /* LoadPhotoService.swift */; };
 		2FDEF3D9256A72730078550D /* AnimalDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */; };
 		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
@@ -86,6 +87,7 @@
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
 		2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPresenter.swift; sourceTree = "<group>"; };
+		2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDocumentImageView.swift; sourceTree = "<group>"; };
 		2FDEF3D4256A63510078550D /* LoadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoService.swift; sourceTree = "<group>"; };
 		2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailInteractor.swift; sourceTree = "<group>"; };
 		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */,
 				2FB9B734254825700064E244 /* Util.swift */,
 				2F11E7D42562C3FC005A13A6 /* Constants.swift */,
+				2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -273,7 +276,6 @@
 				CC87A5D5B1142BCB03060F7A /* Pods-fishappTests.debug.xcconfig */,
 				CB27854BCD4F23F6F1846F94 /* Pods-fishappTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -463,6 +465,7 @@
 				2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */,
 				2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */,
 				2F7F370D25622C2300DBF6ED /* WikiPhotoURLService.swift in Sources */,
+				2FDEF1A1256E66E4004DDB9B /* UIDocumentImageView.swift in Sources */,
 				2F84D67725495DF000FCAB65 /* AnimalListPresenter.swift in Sources */,
 				2F4CA993254AA452006D6121 /* OBISService.swift in Sources */,
 				2F84D67B25495E0E00FCAB65 /* AnimalListInteractor.swift in Sources */,

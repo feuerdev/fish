@@ -24,20 +24,24 @@ class AnimalListCell: UICollectionViewCell {
                 ivPhoto.loadImagefromDocuments(filename: filename)
             } else if animal!.noPhoto {
                 //TODO: we dont have a photo, import no_photo.png or smth
-                    ivPhoto.image = UIImage(named: "logo_png")
-                }
+                ivPhoto.image = UIImage(named: "logo_png")
+            }
             
             if let vernacular = animal?.vernacular {
                 lblVernacular.text = vernacular
             } else if animal!.noVernacular {
                 lblVernacular.text = "-"
-    }
-    
+            }
+            
             lblLatin.text = animal?.family
         }
     }
     
     override func awakeFromNib() {
+        self.isSkeletonable = true
+        self.lblLatin.isSkeletonable = true
+        self.lblVernacular.isSkeletonable = true
+        self.ivPhoto.isSkeletonable = true
         self.view.layer.cornerRadius = 15
     }
 }

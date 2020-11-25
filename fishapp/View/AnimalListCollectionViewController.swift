@@ -6,15 +6,21 @@
 //
 
 import UIKit
+import SkeletonView
 
 class AnimalListCollectionViewController: UICollectionViewController {
+    
+    let IDENTIFIER_CELL = "AnimalListCell"
     
     var presenter: AnimalListPresenter?
     
     override func viewDidLoad() {
         presenter?.viewDidLoad()
         
-        let nib = UINib(nibName: "AnimalListCell", bundle: nil)
+        self.collectionView.isSkeletonable = true
+        self.collectionView.showAnimatedSkeleton()
+        
+        let nib = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "AnimalListCell")
         self.collectionView.backgroundColor = .white
     }
@@ -39,6 +45,10 @@ class AnimalListCollectionViewController: UICollectionViewController {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
    
+extension AnimalListCollectionViewController: SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return IDENTIFIER_CELL
+    }
     
 }
 
@@ -81,12 +91,11 @@ extension AnimalListCollectionViewController: AnimalListPresenterDelegate {
     }
     
     func updateLoadingStatus(status: String) {
-        print(status)
-//        self.lblLoadingStatus.text = status
+        //
     }
     
     func hideLoadingView() {
-//        self.aiLoading.stopAnimating()
-//        self.vLoading.isHidden = true
+        self.collectionView.stopSkeletonAnimation()
+        self.collectionView.hideSkeleton()
     }
 }
