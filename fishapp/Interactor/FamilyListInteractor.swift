@@ -63,6 +63,8 @@ class FamilyListInteractor {
                     case .failure(_):
                         family.noPhoto = true
                     }
+                            photosLoaded += 1
+                            self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
                             group.leave()
                 }
             }
