@@ -43,7 +43,7 @@ class FamilyListInteractor {
             switch result {
             case .success(let result):
                 self.animals = self.getFamilies(result)
-                self.presenterDelegate?.loadAnimalsSuccess()
+                let group = DispatchGroup()
                 
                 self.loadVernaculars()
                 self.loadPhotos()
