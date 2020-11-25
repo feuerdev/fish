@@ -23,23 +23,23 @@
 		2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D664254954E900FCAB65 /* PickLocationPresenter.swift */; };
 		2F84D66F2549583D00FCAB65 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D66E2549583D00FCAB65 /* Location.swift */; };
 		2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67225495BD100FCAB65 /* AnimalListRouter.swift */; };
-		2F84D67725495DF000FCAB65 /* AnimalListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67625495DF000FCAB65 /* AnimalListPresenter.swift */; };
-		2F84D67B25495E0E00FCAB65 /* AnimalListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67A25495E0E00FCAB65 /* AnimalListInteractor.swift */; };
-		2F943B8D255EC33400F20236 /* AnimalDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F943B8C255EC33400F20236 /* AnimalDetailView.xib */; };
+		2F84D67725495DF000FCAB65 /* FamilyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67625495DF000FCAB65 /* FamilyListPresenter.swift */; };
+		2F84D67B25495E0E00FCAB65 /* FamilyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67A25495E0E00FCAB65 /* FamilyListInteractor.swift */; };
+		2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F943B8C255EC33400F20236 /* FamilyDetailView.xib */; };
 		2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B72A25480B200064E244 /* PickLocationViewController.swift */; };
 		2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9B72E25480B530064E244 /* PickLocationView.xib */; };
 		2FB9B735254825700064E244 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B734254825700064E244 /* Util.swift */; };
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
-		2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */; };
-		2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */; };
+		2FC01C972552C55E00EDC211 /* FamilyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */; };
+		2FC01C9B2552C59800EDC211 /* FamilyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */; };
 		2FDEF1A1256E66E4004DDB9B /* UIDocumentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */; };
 		2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D4256A63510078550D /* LoadPhotoService.swift */; };
-		2FDEF3D9256A72730078550D /* AnimalDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */; };
+		2FDEF3D9256A72730078550D /* FamilyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */; };
 		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
 		2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BF1254FF984002213BE /* WORMSResponse.swift */; };
-		2FE7F90D255A8B3100FE7D1E /* AnimalListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */; };
-		2FE7F917255A920D00FE7D1E /* AnimalListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE7F916255A920D00FE7D1E /* AnimalListCell.xib */; };
-		2FE7F91B255A924E00FE7D1E /* AnimalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F91A255A924E00FE7D1E /* AnimalListCell.swift */; };
+		2FE7F90D255A8B3100FE7D1E /* FamilyListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F90C255A8B3100FE7D1E /* FamilyListCollectionViewController.swift */; };
+		2FE7F917255A920D00FE7D1E /* FamilyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE7F916255A920D00FE7D1E /* FamilyListCell.xib */; };
+		2FE7F91B255A924E00FE7D1E /* FamilyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F91A255A924E00FE7D1E /* FamilyListCell.swift */; };
 		2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB300F254AD2FE0032D178 /* JSONWebService.swift */; };
 		2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */; };
 		4FCE7620D89E4ABB6CD73D8C /* Pods_fishapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2383300974FF113C629B4DCB /* Pods_fishapp.framework */; };
@@ -78,23 +78,23 @@
 		2F84D664254954E900FCAB65 /* PickLocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationPresenter.swift; sourceTree = "<group>"; };
 		2F84D66E2549583D00FCAB65 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2F84D67225495BD100FCAB65 /* AnimalListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListRouter.swift; sourceTree = "<group>"; };
-		2F84D67625495DF000FCAB65 /* AnimalListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListPresenter.swift; sourceTree = "<group>"; };
-		2F84D67A25495E0E00FCAB65 /* AnimalListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListInteractor.swift; sourceTree = "<group>"; };
-		2F943B8C255EC33400F20236 /* AnimalDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailView.xib; sourceTree = "<group>"; };
+		2F84D67625495DF000FCAB65 /* FamilyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListPresenter.swift; sourceTree = "<group>"; };
+		2F84D67A25495E0E00FCAB65 /* FamilyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListInteractor.swift; sourceTree = "<group>"; };
+		2F943B8C255EC33400F20236 /* FamilyDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailView.xib; sourceTree = "<group>"; };
 		2FB9B72A25480B200064E244 /* PickLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 		2FB9B72E25480B530064E244 /* PickLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickLocationView.xib; sourceTree = "<group>"; };
 		2FB9B734254825700064E244 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
-		2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
-		2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailPresenter.swift; sourceTree = "<group>"; };
+		2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailViewController.swift; sourceTree = "<group>"; };
+		2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailPresenter.swift; sourceTree = "<group>"; };
 		2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDocumentImageView.swift; sourceTree = "<group>"; };
 		2FDEF3D4256A63510078550D /* LoadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoService.swift; sourceTree = "<group>"; };
-		2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailInteractor.swift; sourceTree = "<group>"; };
+		2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailInteractor.swift; sourceTree = "<group>"; };
 		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
 		2FE06BF1254FF984002213BE /* WORMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSResponse.swift; sourceTree = "<group>"; };
-		2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCollectionViewController.swift; sourceTree = "<group>"; };
-		2FE7F916255A920D00FE7D1E /* AnimalListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalListCell.xib; sourceTree = "<group>"; };
-		2FE7F91A255A924E00FE7D1E /* AnimalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCell.swift; sourceTree = "<group>"; };
+		2FE7F90C255A8B3100FE7D1E /* FamilyListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListCollectionViewController.swift; sourceTree = "<group>"; };
+		2FE7F916255A920D00FE7D1E /* FamilyListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyListCell.xib; sourceTree = "<group>"; };
+		2FE7F91A255A924E00FE7D1E /* FamilyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListCell.swift; sourceTree = "<group>"; };
 		2FEB300F254AD2FE0032D178 /* JSONWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWebService.swift; sourceTree = "<group>"; };
 		2FFAE70D2546F91600B928CF /* PickLocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationRouter.swift; sourceTree = "<group>"; };
 		5C58029826E1B7AED9E038A0 /* Pods-fishapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fishapp.release.xcconfig"; path = "Target Support Files/Pods-fishapp/Pods-fishapp.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				2F84D664254954E900FCAB65 /* PickLocationPresenter.swift */,
-				2F84D67625495DF000FCAB65 /* AnimalListPresenter.swift */,
-				2FC01C9A2552C59800EDC211 /* AnimalDetailPresenter.swift */,
+				2F84D67625495DF000FCAB65 /* FamilyListPresenter.swift */,
+				2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -193,8 +193,8 @@
 		2F20E53525402F2800AFF548 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				2F84D67A25495E0E00FCAB65 /* AnimalListInteractor.swift */,
-				2FDEF3D8256A72730078550D /* AnimalDetailInteractor.swift */,
+				2F84D67A25495E0E00FCAB65 /* FamilyListInteractor.swift */,
+				2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -204,11 +204,11 @@
 			children = (
 				2FB9B72A25480B200064E244 /* PickLocationViewController.swift */,
 				2FB9B72E25480B530064E244 /* PickLocationView.xib */,
-				2FC01C962552C55E00EDC211 /* AnimalDetailViewController.swift */,
-				2F943B8C255EC33400F20236 /* AnimalDetailView.xib */,
-				2FE7F90C255A8B3100FE7D1E /* AnimalListCollectionViewController.swift */,
-				2FE7F916255A920D00FE7D1E /* AnimalListCell.xib */,
-				2FE7F91A255A924E00FE7D1E /* AnimalListCell.swift */,
+				2FE7F90C255A8B3100FE7D1E /* FamilyListCollectionViewController.swift */,
+				2FE7F916255A920D00FE7D1E /* FamilyListCell.xib */,
+				2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */,
+				2F943B8C255EC33400F20236 /* FamilyDetailView.xib */,
+				2FE7F91A255A924E00FE7D1E /* FamilyListCell.swift */,
 				2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */,
 				2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */,
 			);
@@ -363,12 +363,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FE7F917255A920D00FE7D1E /* AnimalListCell.xib in Resources */,
+				2FE7F917255A920D00FE7D1E /* FamilyListCell.xib in Resources */,
 				2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */,
 				2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */,
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
 				2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */,
-				2F943B8D255EC33400F20236 /* AnimalDetailView.xib in Resources */,
+				2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,25 +450,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC01C9B2552C59800EDC211 /* AnimalDetailPresenter.swift in Sources */,
+				2FC01C9B2552C59800EDC211 /* FamilyDetailPresenter.swift in Sources */,
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
-				2FDEF3D9256A72730078550D /* AnimalDetailInteractor.swift in Sources */,
-				2FE7F91B255A924E00FE7D1E /* AnimalListCell.swift in Sources */,
+				2FDEF3D9256A72730078550D /* FamilyDetailInteractor.swift in Sources */,
+				2FE7F91B255A924E00FE7D1E /* FamilyListCell.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Family.swift in Sources */,
 				2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */,
 				2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */,
-				2FE7F90D255A8B3100FE7D1E /* AnimalListCollectionViewController.swift in Sources */,
+				2FE7F90D255A8B3100FE7D1E /* FamilyListCollectionViewController.swift in Sources */,
 				2F84D66F2549583D00FCAB65 /* Location.swift in Sources */,
 				2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */,
 				2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */,
 				2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */,
-				2FC01C972552C55E00EDC211 /* AnimalDetailViewController.swift in Sources */,
+				2FC01C972552C55E00EDC211 /* FamilyDetailViewController.swift in Sources */,
 				2F7F370D25622C2300DBF6ED /* WikiPhotoURLService.swift in Sources */,
 				2FDEF1A1256E66E4004DDB9B /* UIDocumentImageView.swift in Sources */,
-				2F84D67725495DF000FCAB65 /* AnimalListPresenter.swift in Sources */,
+				2F84D67725495DF000FCAB65 /* FamilyListPresenter.swift in Sources */,
 				2F4CA993254AA452006D6121 /* OBISService.swift in Sources */,
-				2F84D67B25495E0E00FCAB65 /* AnimalListInteractor.swift in Sources */,
+				2F84D67B25495E0E00FCAB65 /* FamilyListInteractor.swift in Sources */,
 				2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */,
 				2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */,
 				2FB9B735254825700064E244 /* Util.swift in Sources */,

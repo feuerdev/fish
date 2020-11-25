@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol AnimalListInteractorDelegate {
+protocol FamilyListInteractorDelegate {
     func loadAnimalsSuccess()
     func loadAnimalsFailure(error: String)
     func loadAnimalsStatusUpdate(status: String)
     func refreshAnimal(animal:Family)
 }
 
-class AnimalListInteractor {
+class FamilyListInteractor {
     
     var animals = [Family]()
     
     var location: Location?
     
-    var presenterDelegate: AnimalListInteractorDelegate?
+    var presenterDelegate: FamilyListInteractorDelegate?
     
     func loadAnimals() {
         /*

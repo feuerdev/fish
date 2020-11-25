@@ -11,10 +11,10 @@ import UIKit
 class AnimalListRouter {
     
     static func createModule(location: Location) -> UIViewController {
-        let vc = AnimalListCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let vc = FamilyListCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
-        let presenter = AnimalListPresenter()
-        let interactor = AnimalListInteractor()
+        let presenter = FamilyListPresenter()
+        let interactor = FamilyListInteractor()
         let router = AnimalListRouter()
 
         vc.presenter = presenter

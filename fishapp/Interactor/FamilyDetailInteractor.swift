@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol AnimalDetailInteractorDelegate {
+protocol FamilyDetailInteractorDelegate {
     func refreshSpecies(species: Species)
 }
 
-class AnimalDetailInteractor {
+class FamilyDetailInteractor {
     
     init(family: Family) {
         self.family = family
     }
     
     let family: Family
-    var presenterDelegate: AnimalDetailInteractorDelegate?
+    var presenterDelegate: FamilyDetailInteractorDelegate?
     
     func loadSpecies() {
         for species in family.species {

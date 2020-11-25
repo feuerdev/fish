@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AnimalDetailViewController: UIViewController {
+class FamilyDetailViewController: UIViewController {
     
     @IBOutlet weak var vImageContainer: UIView!
     @IBOutlet weak var ivPhoto: UIDocumentImageView!
@@ -51,14 +51,14 @@ class AnimalDetailViewController: UIViewController {
     }
 }
 
-extension AnimalDetailViewController: AnimalDetailPresenterDelegate {
+extension FamilyDetailViewController: AnimalDetailPresenterDelegate {
     func refreshCell(indexPath: IndexPath) {
         self.tvSpecies.reloadRows(at: [indexPath], with: .automatic)
         updateSpeciesTableHeightConstraint()
     }
 }
 
-extension AnimalDetailViewController: UITableViewDataSource {
+extension FamilyDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = presenter?.interactor.family.species.count {

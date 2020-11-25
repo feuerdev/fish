@@ -15,7 +15,7 @@ protocol AnimalListPresenterDelegate {
     func showError(_ error:String)
 }
 
-class AnimalListPresenter {
+class FamilyListPresenter {
     
     var interactor: AnimalListInteractor?
     var router: AnimalListRouter?
@@ -32,7 +32,7 @@ class AnimalListPresenter {
     }
 }
 
-extension AnimalListPresenter: AnimalListInteractorDelegate {
+extension FamilyListPresenter: AnimalListInteractorDelegate {
     func refreshAnimal(animal: Family) {
         DispatchQueue.main.async {
             if let index = self.interactor?.animals.firstIndex(where: {$0 === animal}) {

@@ -1,5 +1,5 @@
 //
-//  AnimalListCollectionViewController.swift
+//  FamilyListCollectionViewController.swift
 //  fishapp
 //
 //  Created by Jannik Feuerhahn on 10.11.20.
@@ -8,11 +8,11 @@
 import UIKit
 import SkeletonView
 
-class AnimalListCollectionViewController: UICollectionViewController {
+class FamilyListCollectionViewController: UICollectionViewController {
     
-    let IDENTIFIER_CELL = "AnimalListCell"
+    let IDENTIFIER_CELL = "FamilyListCell"
     
-    var presenter: AnimalListPresenter?
+    var presenter: FamilyListPresenter?
     
     override func viewDidLoad() {
         presenter?.viewDidLoad()
@@ -21,22 +21,11 @@ class AnimalListCollectionViewController: UICollectionViewController {
         self.collectionView.showAnimatedSkeleton()
         
         let nib = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
-        self.collectionView.register(nib, forCellWithReuseIdentifier: "AnimalListCell")
+        self.collectionView.register(nib, forCellWithReuseIdentifier: IDENTIFIER_CELL)
         self.collectionView.backgroundColor = .white
     }
     
     //MARK: - Datasource
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalListCell", for: indexPath) as! AnimalListCell
-        guard let animal = presenter?.interactor?.animals[indexPath.row] else {
-            return cell
-        }
-        
-        cell.animal = animal
-        
-        return cell
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelectRowAt(indexPath)
     }
@@ -44,21 +33,22 @@ class AnimalListCollectionViewController: UICollectionViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-   
-extension AnimalListCollectionViewController: SkeletonCollectionViewDataSource {
+}
+
+extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return IDENTIFIER_CELL
     }
     
-}
-
-extension AnimalListCollectionViewController : UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: IDENTIFIER_CELL, for: indexPath) as! FamilyListCell
+        guard let animal = presenter?.interactor?.animals[safe: indexPath.row] else {
+            return cell
+        }
         
-        let padding:CGFloat = 30
-        let fullWidth = self.collectionView.frame.width - padding
-        return CGSize(width: fullWidth/2, height: fullWidth/2)
+        cell.family = animal
+        
+        return cell
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -73,7 +63,16 @@ extension AnimalListCollectionViewController : UICollectionViewDelegateFlowLayou
     }
 }
 
-extension AnimalListCollectionViewController: AnimalListPresenterDelegate {
+extension FamilyListCollectionViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding:CGFloat = 30
+        let fullWidth = self.collectionView.frame.width - padding
+        return CGSize(width: fullWidth/2, height: fullWidth/2)
+    }
+}
+
+extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
     func refreshCell(indexPath: IndexPath) {
         self.collectionView.reloadItems(at: [indexPath])
     }

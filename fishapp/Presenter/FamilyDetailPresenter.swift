@@ -7,17 +7,17 @@
 
 import Foundation
 
-protocol AnimalDetailPresenterDelegate {
+protocol FamilyDetailPresenterDelegate {
     func refreshCell(indexPath: IndexPath)
 }
 
-class AnimalDetailPresenter {
+class FamilyDetailPresenter {
     
-    var interactor: AnimalDetailInteractor
-    var viewDelegate: AnimalDetailPresenterDelegate?
+    var interactor: FamilyDetailInteractor
+    var viewDelegate: FamilyDetailPresenterDelegate?
     var router: AnimalDetailRouter?
     
-    init(interactor: AnimalDetailInteractor) {
+    init(interactor: FamilyDetailInteractor) {
         self.interactor = interactor
     }
     
@@ -69,7 +69,7 @@ class AnimalDetailPresenter {
     }
 }
 
-extension AnimalDetailPresenter: AnimalDetailInteractorDelegate {
+extension FamilyDetailPresenter: FamilyDetailInteractorDelegate {
     func refreshSpecies(species: Species) {
         DispatchQueue.main.async {
             if let index = self.interactor.family.species.firstIndex(where: {$0 === species}) {

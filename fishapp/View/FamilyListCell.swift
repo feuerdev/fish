@@ -1,5 +1,5 @@
 //
-//  AnimalListCell.swift
+//  FamilyListCell.swift
 //  fishapp
 //
 //  Created by Jannik Feuerhahn on 10.11.20.
@@ -7,33 +7,35 @@
 
 import UIKit
 
-class AnimalListCell: UICollectionViewCell {
+class FamilyListCell: UICollectionViewCell {
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var lblLatin: UILabel!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var ivPhoto: UIDocumentImageView!
     
-    var animal: Family? {
+    var family: Family? {
         didSet {
-            guard animal != nil else {
+            guard family != nil else {
                 return
             }
             
-            if let filename = animal!.photoFileName {
+            
+            
+            if let filename = family!.photoFileName {
                 ivPhoto.loadImagefromDocuments(filename: filename)
-            } else if animal!.noPhoto {
+            } else if family!.noPhoto {
                 //TODO: we dont have a photo, import no_photo.png or smth
                 ivPhoto.image = UIImage(named: "logo_png")
             }
             
-            if let vernacular = animal?.vernacular {
+            if let vernacular = family?.vernacular {
                 lblVernacular.text = vernacular
-            } else if animal!.noVernacular {
+            } else if family!.noVernacular {
                 lblVernacular.text = "-"
             }
             
-            lblLatin.text = animal?.family
+            lblLatin.text = family?.family
         }
     }
     

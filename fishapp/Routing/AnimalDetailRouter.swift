@@ -9,11 +9,11 @@ import Foundation
 
 class AnimalDetailRouter {
     
-    static func createModule(animal: Family) -> AnimalDetailViewController {
-        let vc = AnimalDetailViewController()
+    static func createModule(animal: Family) -> FamilyDetailViewController {
+        let vc = FamilyDetailViewController()
         
-        let interactor = AnimalDetailInteractor(family: animal)
-        let presenter = AnimalDetailPresenter(interactor: interactor)
+        let interactor = FamilyDetailInteractor(family: animal)
+        let presenter = FamilyDetailPresenter(interactor: interactor)
         let router = AnimalDetailRouter()
 
         interactor.presenterDelegate = presenter
@@ -27,7 +27,7 @@ class AnimalDetailRouter {
     func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Family) {
         let newVC = AnimalDetailRouter.createModule(animal: animal)
         
-        let oldVC = view as! AnimalListCollectionViewController
+        let oldVC = view as! FamilyListCollectionViewController
         oldVC.navigationController?.pushViewController(newVC, animated: true)
     }
 }
