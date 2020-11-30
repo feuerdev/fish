@@ -108,5 +108,6 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
         self.loadingView?.isHidden = true
         self.collectionView.stopSkeletonAnimation()
         self.collectionView.hideSkeleton()
+        self.collectionView.isSkeletonable = false
     }
 }

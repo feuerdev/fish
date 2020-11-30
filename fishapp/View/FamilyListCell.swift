@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FamilyListCell: UICollectionViewCell {
     
@@ -16,36 +17,65 @@ class FamilyListCell: UICollectionViewCell {
     
     var family: Family? {
         didSet {
-            guard family != nil else {
+            
+            //Reset
+            self.ivPhoto.image = nil
+            self.lblVernacular.text = ""
+            self.lblLatin.text = ""
+            
+            guard let family = family else {
                 return
             }
             
-            if let filename = family!.photoFileName {
-                ivPhoto.loadImagefromDocuments(filename: filename)
-            } else if family!.noPhoto {
-                //TODO: we dont have a photo, import no_photo.png or smth
-                ivPhoto.image = UIImage(named: "logo_png")
+            //Skeleton
+            self.view.isSkeletonable = true
+            self.lblLatin.isSkeletonable = true
+            self.lblVernacular.isSkeletonable = true
+            self.ivPhoto.isSkeletonable = true
+            
+            self.view.showAnimatedSkeleton()
+            
+            self.lblLatin.text = family.family
+            self.lblLatin.hideSkeleton()
+            
+            LoadVernacularService.loadVernacular(id: family.familyId) { result in
+                switch result {
+                case .failure(_):
+                    return
+                case .success(let result):
+                    if(family.familyId == result.familyId) { //Prevent loading the result after the cell has already been reused
+                        DispatchQueue.main.async {
+                            self.lblVernacular.text = result.vernacular
+                            self.lblVernacular.hideSkeleton()
+                        }
+                    }
+                }
             }
             
-            if let vernacular = family?.vernacular {
-                lblVernacular.text = vernacular
-            } else if family!.noVernacular {
-                lblVernacular.text = "-"
-            }
             
-            lblLatin.text = family?.family
+//            if let filename = family!.photoFileName {
+//                ivPhoto.loadImagefromDocuments(filename: filename)
+//            } else if family!.noPhoto {
+//                //TODO: we dont have a photo, import no_photo.png or smth
+//                ivPhoto.image = UIImage(named: "logo_png")
+//            }
+//
+//            if let vernacular = family?.vernacular {
+//                lblVernacular.text = vernacular
+//            } else if family!.noVernacular {
+//                lblVernacular.text = "-"
+//            }
+            
         }
     }
     
     override func awakeFromNib() {
+        //Reset
         self.ivPhoto.image = nil
         self.lblLatin.text = ""
         self.lblVernacular.text = ""
         
-        self.isSkeletonable = true
-        self.lblLatin.isSkeletonable = true
-        self.lblVernacular.isSkeletonable = true
-        self.ivPhoto.isSkeletonable = true
+        //Style
         self.view.layer.cornerRadius = 15
     }
 }

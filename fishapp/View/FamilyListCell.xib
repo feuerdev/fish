@@ -18,14 +18,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Latin Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="59N-pV-qQg">
-                        <rect key="frame" x="43" y="131.5" width="64" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Latin Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="59N-pV-qQg">
+                        <rect key="frame" x="4" y="131.5" width="142" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="systemGray2Color"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Vernacular Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-LZ-y0u">
-                        <rect key="frame" x="13" y="104" width="124.5" height="23.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Vernacular Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-LZ-y0u">
+                        <rect key="frame" x="4" y="104" width="142" height="23.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -39,16 +39,14 @@
                     <constraint firstItem="wmF-6z-4nC" firstAttribute="top" secondItem="Pax-Bx-KOF" secondAttribute="top" id="GUp-8N-lrb"/>
                     <constraint firstItem="PgE-LZ-y0u" firstAttribute="top" secondItem="wmF-6z-4nC" secondAttribute="bottom" constant="4" id="Lml-xC-MU7"/>
                     <constraint firstItem="59N-pV-qQg" firstAttribute="top" secondItem="PgE-LZ-y0u" secondAttribute="bottom" constant="4" id="NXv-Le-ziw"/>
-                    <constraint firstItem="59N-pV-qQg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="20" symbolic="YES" id="OFg-2m-QuR"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="59N-pV-qQg" secondAttribute="trailing" constant="20" symbolic="YES" id="OT7-HF-6ou"/>
+                    <constraint firstItem="59N-pV-qQg" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="4" id="OFg-2m-QuR"/>
+                    <constraint firstAttribute="trailing" secondItem="59N-pV-qQg" secondAttribute="trailing" constant="4" id="OT7-HF-6ou"/>
                     <constraint firstItem="wmF-6z-4nC" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" id="Oqa-MR-RMr"/>
                     <constraint firstAttribute="bottom" secondItem="59N-pV-qQg" secondAttribute="bottom" constant="4" id="Tcc-lD-MyM"/>
-                    <constraint firstItem="PgE-LZ-y0u" firstAttribute="centerX" secondItem="Pax-Bx-KOF" secondAttribute="centerX" id="aIi-Zc-ItO"/>
                     <constraint firstItem="wmF-6z-4nC" firstAttribute="height" secondItem="Pax-Bx-KOF" secondAttribute="height" multiplier="0.666667" id="d3x-JB-Z88"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PgE-LZ-y0u" secondAttribute="trailing" constant="4" id="hia-QN-W4a"/>
-                    <constraint firstItem="59N-pV-qQg" firstAttribute="centerX" secondItem="Pax-Bx-KOF" secondAttribute="centerX" id="kcc-hP-1lM"/>
+                    <constraint firstAttribute="trailing" secondItem="PgE-LZ-y0u" secondAttribute="trailing" constant="4" id="hia-QN-W4a"/>
                     <constraint firstAttribute="trailing" secondItem="wmF-6z-4nC" secondAttribute="trailing" id="lUD-DL-rrJ"/>
-                    <constraint firstItem="PgE-LZ-y0u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="4" id="t7J-Tf-u6p"/>
+                    <constraint firstItem="PgE-LZ-y0u" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="4" id="t7J-Tf-u6p"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="150" height="150"/>
@@ -58,7 +56,7 @@
                 <outlet property="lblVernacular" destination="PgE-LZ-y0u" id="rOo-V6-eH6"/>
                 <outlet property="view" destination="Pax-Bx-KOF" id="uhO-Sb-FIm"/>
             </connections>
-            <point key="canvasLocation" x="-1535" y="-380"/>
+            <point key="canvasLocation" x="-1536.2318840579712" y="-380.35714285714283"/>
         </collectionViewCell>
     </objects>
     <resources>
