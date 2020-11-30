@@ -46,57 +46,8 @@ class FamilyListInteractor {
             case .success(let result):
                 self.animals = self.getFamilies(result)
                 self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Found \(self.animals.count) Animals")
-                self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 0.3)
-                var photosLoaded = 0
-                var namesLoaded = 0
-                let group = DispatchGroup()
-                
-                func loadingString() -> String {
-                    return "Loading Photos: \(photosLoaded)/\(self.animals.count)\nLoading Vernaculars: \(namesLoaded)/\(self.animals.count)"
-                }
-                
-                func loadingPercent() -> Float {
-                    return max(0.3, min(1, Float(photosLoaded+namesLoaded)/Float(self.animals.count*2)))
-                }
-                
-                for family in self.animals {
-                    //Photos
-                    if let param = family.family {
-                        group.enter()
-                        LoadPhotoService.loadPhoto(id: String(family.familyId), searchParameter: param) { result in
-                            switch result {
-                            case .success(let url):
-                                family.photoFileName = url
-                            case .failure(_):
-                                family.noPhoto = true
-                            }
-                            photosLoaded += 1
-                            self.presenterDelegate?.loadAnimalsStatusUpdate(percent: loadingPercent())
-                            self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
-                            group.leave()
-                        }
-                    }
-                    
-                    //Vernaculars
-                    group.enter()
-                    LoadVernacularService.loadVernacular(id: family.familyId) { result in
-                        switch result {
-                        case .success(let name):
-                            family.vernacular = name
-                        case .failure(_):
-                            family.noVernacular = true
-                            break
-                        }
-                        namesLoaded += 1
-                        self.presenterDelegate?.loadAnimalsStatusUpdate(percent: loadingPercent())
-                        self.presenterDelegate?.loadAnimalsStatusUpdate(status: loadingString())
-                        group.leave()
-                    }
-                }
-                group.notify(queue: DispatchQueue.main) {
-                    self.presenterDelegate?.loadAnimalsSuccess()
-                }
-                
+                self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 1)
+                self.presenterDelegate?.loadAnimalsSuccess()
             case .failure(let error):
                 self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
             }
