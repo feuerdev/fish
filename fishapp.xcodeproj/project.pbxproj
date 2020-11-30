@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F11E7D52562C3FC005A13A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F11E7D42562C3FC005A13A6 /* Constants.swift */; };
 		2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F20E54F2541993500AFF548 /* GBIFResponse.swift */; };
+		2F45B24B2575368A00D28B35 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F45B24A2575368A00D28B35 /* ImageCache.swift */; };
 		2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */; };
 		2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */; };
 		2F4CA993254AA452006D6121 /* OBISService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CA992254AA452006D6121 /* OBISService.swift */; };
@@ -63,6 +64,7 @@
 		2383300974FF113C629B4DCB /* Pods_fishapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fishapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F11E7D42562C3FC005A13A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2F20E54F2541993500AFF548 /* GBIFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBIFResponse.swift; sourceTree = "<group>"; };
+		2F45B24A2575368A00D28B35 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListCell.swift; sourceTree = "<group>"; };
 		2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeciesListCell.xib; sourceTree = "<group>"; };
 		2F4CA992254AA452006D6121 /* OBISService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBISService.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				2FEB300F254AD2FE0032D178 /* JSONWebService.swift */,
 				2FDEF3D4256A63510078550D /* LoadPhotoService.swift */,
 				2F5120CC256E80C300715612 /* LoadVernacularService.swift */,
+				2F45B24A2575368A00D28B35 /* ImageCache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				2FB9B735254825700064E244 /* Util.swift in Sources */,
 				2F4CA997254AA594006D6121 /* OBISResponse.swift in Sources */,
 				2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */,
+				2F45B24B2575368A00D28B35 /* ImageCache.swift in Sources */,
 				2F5120CD256E80C300715612 /* LoadVernacularService.swift in Sources */,
 				2F5120D1256E9BD000715612 /* FamilyListLoadingView.swift in Sources */,
 				2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */,

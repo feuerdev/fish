@@ -50,7 +50,7 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
             return cell
         }
         
-        cell.family = family
+        cell.setFamily(family)
         
         return cell
     }

@@ -22,10 +22,10 @@ class FamilyDetailInteractor {
     
     func loadSpecies() {
         for species in family.species {
-            LoadPhotoService.loadPhoto(id: String(species.taxonId), searchParameter: species.getPresentableName()) { result in
+            LoadPhotoService.loadPhoto(id: species.taxonId, searchParameter: species.getPresentableName()) { result in
                 switch result {
-                case .success(let url):
-                    species.photoFileName = url
+                case .success(let result):
+                    species.photoFileName = result.url
                 case .failure(_):
                     species.noPhoto = true
                 }
