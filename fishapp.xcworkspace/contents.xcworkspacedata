@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/jannik/DEV/PROJECTS/iOS/feuerdev/feuerlib/Feuerlib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:fishapp.xcodeproj">
    </FileRef>
    <FileRef
