@@ -7,7 +7,6 @@ target 'fishapp' do
 
   # Pods for fishapp
   pod 'SkeletonView'
-  pod 'Kingfisher'
 
 
   target 'fishappTests' do
