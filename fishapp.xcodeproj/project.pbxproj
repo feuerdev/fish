@@ -31,7 +31,6 @@
 		2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F943B8C255EC33400F20236 /* FamilyDetailView.xib */; };
 		2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B72A25480B200064E244 /* PickLocationViewController.swift */; };
 		2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9B72E25480B530064E244 /* PickLocationView.xib */; };
-		2FB9B735254825700064E244 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B734254825700064E244 /* Util.swift */; };
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
 		2FC01C972552C55E00EDC211 /* FamilyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */; };
 		2FC01C9B2552C59800EDC211 /* FamilyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */; };
@@ -105,7 +104,6 @@
 		2F943B8C255EC33400F20236 /* FamilyDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailView.xib; sourceTree = "<group>"; };
 		2FB9B72A25480B200064E244 /* PickLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 		2FB9B72E25480B530064E244 /* PickLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickLocationView.xib; sourceTree = "<group>"; };
-		2FB9B734254825700064E244 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
 		2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailViewController.swift; sourceTree = "<group>"; };
 		2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailPresenter.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */,
-				2FB9B734254825700064E244 /* Util.swift */,
 				2F11E7D42562C3FC005A13A6 /* Constants.swift */,
 				2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */,
 			);
@@ -501,7 +498,6 @@
 				2F84D67B25495E0E00FCAB65 /* FamilyListInteractor.swift in Sources */,
 				2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */,
 				2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */,
-				2FB9B735254825700064E244 /* Util.swift in Sources */,
 				2F4CA997254AA594006D6121 /* OBISResponse.swift in Sources */,
 				2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */,
 				2F5120CD256E80C300715612 /* LoadVernacularService.swift in Sources */,

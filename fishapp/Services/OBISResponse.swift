@@ -10,6 +10,7 @@ import Foundation
 struct OBISResponse: Decodable {
     let results: [OBISSpecies]
     let total: Int
+    let error: String?
 }
 
 struct OBISSpecies: Decodable, Hashable, Equatable {

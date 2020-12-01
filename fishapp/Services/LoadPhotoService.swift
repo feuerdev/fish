@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Feuerlib
 
 /**
  Service combines url cache of images and downloading 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Feuerlib
 
 class SpeciesListCell: UITableViewCell {
     

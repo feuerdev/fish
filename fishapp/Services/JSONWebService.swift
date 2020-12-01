@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Feuerlib
 
 class JSONWebservice {
     
@@ -32,13 +33,11 @@ class JSONWebservice {
                 return
             }
             
-            let response: T
-            do {
-                onStatus("Parsing Response")
-                response = try JSONDecoder().decode(T.self, from: data)
+            onStatus("Parsing Response")
+            if let response: T = try? JSONDecoder().decode(T.self, from: data) {
                 completionHandler(.success(response))
-            } catch let error {
-                completionHandler(.failure(error))
+            } else {
+                completionHandler(.failure(ServiceError.parserError))
             }
         }).resume()
         onStatus("Request sent")
