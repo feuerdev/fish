@@ -30,6 +30,10 @@ class FamilyListCollectionViewController: UICollectionViewController {
         self.loadingView = FamilyListLoadingView(centerIn: UIApplication.shared.keyWindow!)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        hideLoadingView()
+    }
+    
     //MARK: - Datasource
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelectRowAt(indexPath)
