@@ -30,7 +30,7 @@ class FamilyListCell: UICollectionViewCell {
         self.lblVernacular.isSkeletonable = true
         self.ivPhoto.isSkeletonable = true
         
-        self.view.showAnimatedSkeleton()
+        self.view.showAnimatedSkeleton(usingColor: .wetAsphalt)
         
         self.lblLatin.text = family.family
         self.lblLatin.hideSkeleton()

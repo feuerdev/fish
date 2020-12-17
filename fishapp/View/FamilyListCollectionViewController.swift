@@ -21,7 +21,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
         presenter?.viewDidLoad()
         
         self.collectionView.isSkeletonable = true
-        self.collectionView.showAnimatedSkeleton()
+        self.collectionView.showAnimatedSkeleton(usingColor: .wetAsphalt)
         
         let nib = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: IDENTIFIER_CELL)
