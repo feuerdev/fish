@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import Feuerlib
 
 class FamilyDetailViewController: UIViewController {
     
-    @IBOutlet weak var vImageContainer: UIView!
-    @IBOutlet weak var ivPhoto: UIDocumentImageView!
+    @IBOutlet weak var ivPhoto: UIImageView!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblTaxonHierarchy: UILabel!
@@ -28,22 +28,48 @@ class FamilyDetailViewController: UIViewController {
         presenter?.viewDidLoad()
         
         tvSpecies.dataSource = self
+        
         let nib = UINib(nibName: "SpeciesListCell", bundle: nil)
         tvSpecies.register(nib, forCellReuseIdentifier: "SpeciesListCell")
-        vImageContainer.layer.cornerRadius = 10
-        ivPhoto.layer.cornerRadius = 10
         
-        lblVernacular.text = presenter!.interactor.family.vernacular
         lblScientific.text = presenter!.interactor.family.family
         lblTaxonHierarchy.text = presenter!.presentableHierarchy()
-        lblSightings.text = presenter?.presentableSightings()
-        if let photoFileName = presenter?.interactor.family.photoFileName {
-            ivPhoto.loadImagefromDocuments(filename: photoFileName)
+        
+        LoadVernacularService.loadVernacular(id: presenter!.interactor.family.familyId) { result in
+            switch result {
+            case .failure(_):
+                break
+            case .success(let result):
+                DispatchQueue.main.async {
+                    self.lblVernacular.text = result.vernacular
+                    self.lblVernacular.hideSkeleton()
         }
     }
+        }
     
-    func updateSpeciesTableHeightConstraint() {
-        conTvHeight.constant = tvSpecies.contentSize.height
+        if let searchTerm = presenter!.interactor.family.family {
+            LoadPhotoService.loadPhoto(id: presenter!.interactor.family.familyId, searchParameter: searchTerm) { result in
+                switch result {
+                case .failure(_):
+                    break
+                case .success(let result):
+                    ImageCache.shared.getImage(from: result.url) { [weak self] result in
+                        guard let self = self else {
+                            return
+                        }
+                        switch result {
+                        case .success((_, let image)):
+                            DispatchQueue.main.async() {
+                                self.ivPhoto.image = image
+                                self.ivPhoto.hideSkeleton()
+                            }
+                        case .failure(_):
+                            break
+                        }
+                    }
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,11 +78,9 @@ class FamilyDetailViewController: UIViewController {
 }
 
 extension FamilyDetailViewController: FamilyDetailPresenterDelegate {
-    func refreshCell(indexPath: IndexPath) {
-        self.tvSpecies.reloadRows(at: [indexPath], with: .automatic)
-        updateSpeciesTableHeightConstraint()
-    }
+    //
 }
+
 
 extension FamilyDetailViewController: UITableViewDataSource {
     
