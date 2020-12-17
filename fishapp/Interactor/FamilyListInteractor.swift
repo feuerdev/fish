@@ -86,7 +86,6 @@ class FamilyListInteractor {
                     new.order = species.order
                     new.subfamily = species.subfamily
                     new.superfamily = species.superfamily
-                    new.vernacular = nil
                     new.risk = self.getRisk(familyId)
                     
                     let newSpecies = createSpecies(from: species)

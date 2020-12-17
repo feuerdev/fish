@@ -24,10 +24,6 @@ class Species {
     var isFreshwater: Bool?
     var isTerrestrial: Bool?
     var records: Int?
-    var vernacular: String?
-    
-    var noPhoto: Bool = false
-    var photoFileName: String?
     
     init(_ taxonId: Int) {
         self.taxonId = taxonId
@@ -121,12 +117,6 @@ class Family {
     var superfamily: String?
     var risk: Risk?
     var species: [Species] = []
-    
-    var noPhoto = false
-    var photoFileName: String?
-    
-    var noVernacular = false
-    var vernacular: String?
     
     init(_ familyId: Int) {
         self.familyId = familyId
