@@ -10,13 +10,15 @@ import Feuerlib
 
 class FamilyDetailViewController: UIViewController {
     
+
+    @IBOutlet var svContent: UIScrollView!
+    @IBOutlet weak var stvContent: UIStackView!
     @IBOutlet weak var ivPhoto: UIImageView!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblTaxonHierarchy: UILabel!
-    @IBOutlet weak var lblSightings: UILabel!
     @IBOutlet weak var tvSpecies: UITableView!
-    @IBOutlet weak var conTvHeight: NSLayoutConstraint!
+    @IBOutlet weak var conTableHeight: NSLayoutConstraint!
     var presenter: FamilyDetailPresenter?
     
     override func viewDidLoad() {
@@ -43,10 +45,10 @@ class FamilyDetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.lblVernacular.text = result.vernacular
                     self.lblVernacular.hideSkeleton()
+                }
+            }
         }
-    }
-        }
-    
+        
         if let searchTerm = presenter!.interactor.family.family {
             LoadPhotoService.loadPhoto(id: presenter!.interactor.family.familyId, searchParameter: searchTerm) { result in
                 switch result {
@@ -73,7 +75,14 @@ class FamilyDetailViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        updateSpeciesTableHeightConstraint()
+        //Update the height constraint of the table view. I think this is necessary because the table view is inside a stack view
+        conTableHeight.constant = tvSpecies.contentSize.height
+        
+        //Then call layout if needed on said stack view to update its frame
+        stvContent.layoutIfNeeded()
+        
+        //Finally manually set the content size of the parent scroll view to the newly calculated stack view height
+        svContent.contentSize = CGSize(width: svContent.frame.width, height: stvContent.frame.height)
     }
 }
 
