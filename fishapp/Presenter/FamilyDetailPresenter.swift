@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FamilyDetailPresenterDelegate {
-    func refreshCell(indexPath: IndexPath)
+    //
 }
 
 class FamilyDetailPresenter {
@@ -22,7 +22,7 @@ class FamilyDetailPresenter {
     }
     
     func viewDidLoad() {
-        self.interactor.loadSpecies()
+        //
     }
     
     func presentableHierarchy() -> String {
@@ -70,11 +70,5 @@ class FamilyDetailPresenter {
 }
 
 extension FamilyDetailPresenter: FamilyDetailInteractorDelegate {
-    func refreshSpecies(species: Species) {
-        DispatchQueue.main.async {
-            if let index = self.interactor.family.species.firstIndex(where: {$0 === species}) {
-                self.viewDelegate?.refreshCell(indexPath: IndexPath(row: index, section: 0))
-            }
-        }
-    }
+    //
 }
