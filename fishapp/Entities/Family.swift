@@ -43,6 +43,26 @@ enum Danger {
 
 class Species {
     var taxonId: Int
+    var kingdomId: Int?
+    var phylumId: Int?
+    var subphylumId: Int?
+    var superclassId: Int?
+    var aclassId: Int?
+    var subclassId: Int?
+    var orderId: Int?
+    var superfamilyId: Int?
+    var familyId: Int?
+    var genusId: Int?
+    
+    var kingdom: String?
+    var phylum: String?
+    var subphylum: String?
+    var superclass: String?
+    var aclass: String?
+    var subclass: String?
+    var order: String?
+    var superfamily: String?
+    var family: String?
     var genus: String?
     var species: String?
     var taxonRank: String?
@@ -54,6 +74,7 @@ class Species {
     var isFreshwater: Bool?
     var isTerrestrial: Bool?
     var records: Int?
+    var danger: Danger = .edGreen
     
     init(_ taxonId: Int) {
         self.taxonId = taxonId
@@ -133,8 +154,7 @@ class Species {
 
 class Family {
     let familyId: Int
-    var family: String?
-    var genus: String?
+    
     var kingdom: String?
     var phylum: String?
     var subphylum: String?
@@ -142,11 +162,28 @@ class Family {
     var aclass: String?
     var subclass: String?
     var order: String?
-    var sumRecords: Int = 0
-    var subfamily: String?
     var superfamily: String?
-    var risk: Risk?
+    var family: String?
+    var sumRecords: Int = 0
+    
     var species: [Species] = []
+    
+    var danger: Danger {
+        var yellow = false
+        for species in self.species {
+            if species.danger == .edRed {
+                return .edRed
+            } else if species.danger == .edYellow {
+                yellow = true
+            }
+        }
+        
+        if yellow {
+            return .edYellow
+        } else {
+            return .edGreen
+        }
+    }
     
     init(_ familyId: Int) {
         self.familyId = familyId

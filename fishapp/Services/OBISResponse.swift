@@ -14,10 +14,20 @@ struct OBISResponse: Decodable {
 }
 
 struct OBISSpecies: Decodable, Hashable, Equatable {
+    
+    let kingdomId: Int?
+    let phylumId: Int?
+    let subphylumId: Int?
+    let superclassId: Int?
+    let aclassId: Int?
+    let subclassId: Int?
+    let orderId: Int?
+    let superfamilyId: Int?
+    let familyId: Int?
+    let genusId: Int?
 
     let aclass: String?
     let family: String?
-    let familyId: Int?
     let genus: String?
     let is_brackish: Bool?
     let is_freshwater: Bool?
@@ -50,7 +60,6 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     
     enum CodingKeys: String, CodingKey {
         case family
-        case familyId = "familyid"
         case genus
         case kingdom
         case order
@@ -73,5 +82,15 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
         case taxonID
         case taxonRank
         case taxonomicStatus
+        case kingdomId = "kingdomid"
+        case phylumId = "phylumid"
+        case subphylumId = "subphylumid"
+        case superclassId = "superclassid"
+        case aclassId = "classId"
+        case subclassId = "subclassid"
+        case orderId = "orderid"
+        case superfamilyId = "superfamilyid"
+        case familyId = "familyid"
+        case genusId = "genusid"
     }
 }

@@ -44,7 +44,7 @@ class FamilyListInteractor {
         }) { result in
             switch result {
             case .success(let result):
-                self.animals = self.getFamilies(result)
+                self.animals = self.createFamilies(result)
                 self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Found \(self.animals.count) Animals")
                 self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 1)
                 self.presenterDelegate?.loadAnimalsSuccess()
@@ -54,7 +54,7 @@ class FamilyListInteractor {
         }
     }
     
-    func getFamilies(_ species:OBISResponse) -> [Family] {
+    func createFamilies(_ species:OBISResponse) -> [Family] {
         var families = [Family]()
         for species in species.results {
             guard species.familyId != nil else {
@@ -76,7 +76,6 @@ class FamilyListInteractor {
                 if let familyId = species.familyId {
                     let new = Family(familyId)
                     new.family = species.family
-                    new.genus = species.genus
                     new.kingdom = species.genus
                     new.phylum = species.phylum
                     new.subphylum = species.subphylum
@@ -84,9 +83,7 @@ class FamilyListInteractor {
                     new.aclass = species.aclass
                     new.subclass = species.subclass
                     new.order = species.order
-                    new.subfamily = species.subfamily
                     new.superfamily = species.superfamily
-                    new.risk = self.getRisk(familyId)
                     
                     let newSpecies = createSpecies(from: species)
                     if let records = newSpecies.records {
@@ -97,12 +94,34 @@ class FamilyListInteractor {
                 }
             }
         }
+        evaluateDanger(families)
         return families
     }
     
     func createSpecies(from species:OBISSpecies) -> Species {
         let new = Species(species.taxonID)
         new.category = species.category
+        
+        new.kingdomId = species.kingdomId
+        new.phylumId = species.phylumId
+        new.subphylumId = species.subphylumId
+        new.superclassId = species.superclassId
+        new.aclassId = species.aclassId
+        new.subclassId = species.subclassId
+        new.orderId = species.orderId
+        new.superfamilyId = species.superfamilyId
+        new.familyId = species.familyId
+        new.genusId = species.genusId
+        
+        new.kingdom = species.kingdom
+        new.phylum = species.phylum
+        new.subphylum = species.subphylum
+        new.superclass = species.superclass
+        new.aclass = species.aclass
+        new.subclass = species.subclass
+        new.order = species.order
+        new.superfamily = species.superfamily
+        new.family = species.family
         new.genus = species.genus
         new.species = species.species
         new.taxonRank = species.taxonRank
@@ -117,18 +136,38 @@ class FamilyListInteractor {
         return new
     }
     
-    func getRisk(_ familyId: Int) -> Risk {
-        switch familyId {
-        case 111:
-            fallthrough
-        case 222:
-            return .edRed
-        case 333:
-            fallthrough
-        case 444:
-            return .edYellow
-        default:
-            return .edGreen
+    func evaluateDanger(_ families:[Family]) {
+        for family in families {
+            for species in family.species {
+                
+                let relevantIds = [species.phylumId,
+                                   species.subphylumId,
+                                   species.superclassId,
+                                   species.aclassId,
+                                   species.subclassId,
+                                   species.orderId,
+                                   species.superfamilyId,
+                                   species.familyId,
+                                   species.genusId,
+                                   species.taxonId]
+                
+                for id in relevantIds {
+                    for red in Danger.red {
+                        if id == red {
+                            species.danger = .edRed
+                            continue
+                        }
+                    }
+                    for yellow in Danger.yellow {
+                        if id == yellow {
+                            species.danger = .edYellow
+                            continue
+                        }
+                    }
+                }
+                
+                
+            }
         }
     }
 }
