@@ -7,7 +7,37 @@
 
 import Foundation
 
-enum Risk {
+enum Danger {
+    static let red = [
+        484724, // Family Containing Box Jellyfish like Irukandji
+        135479, // Species Portuguese man o' war
+        344030, // Species Saltwater Crocodile
+        105838, // Species White Shark
+    ]
+    static let yellow = [
+        266989, //Order of Venomous Box Jellyfish
+        196069, //Order of Stingrays
+        105689, //Family Requiem Sharks
+        105694, //Family Hammerhead Sharks
+        125595, //Family Scorpionfish
+        154251, //Family Stonefish
+        196202, //Family Crown of Thorns
+        135239, //Family Containing Lion's mane jellyfish
+        14107,  //Family Cone Snails
+        125431, //Family Moray Eels
+        125451, //Family Needlefishes
+        413301, //Sub-Family of Sea snakes
+        341430, //Genus Blue Ringed Octopus
+        205902, //Genus Fire Corals
+        123391, //Genus Toxopneustes (Toxic Sea Urchins)
+        135261, //Genus Sea Nettles
+        206646, //Genus Also Sea Nettles?
+        135306, //Species Moon Jellyfish
+        291140, //Species Cannonball Jellyfish
+        219890, //Species Lagoon Triggerfish
+        219875, //Species Titan Triggerfish
+    ]
+    
     case edGreen, edYellow, edRed
 }
 
