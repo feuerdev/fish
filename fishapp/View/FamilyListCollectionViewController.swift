@@ -23,6 +23,10 @@ class FamilyListCollectionViewController: UICollectionViewController {
         self.title = "Families"
         navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:tintColor]
         
+        if #available(iOS 11.0, *) {
+            self.additionalSafeAreaInsets = .init(top: 10, left: 0, bottom: 0, right: 0)
+        }
+        
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         presenter?.viewDidLoad()
         
@@ -133,7 +137,7 @@ extension FamilyListCollectionViewController : UICollectionViewDelegateFlowLayou
             //Tableview is Loading or section is empty
             return CGSize.zero
         }
-        return CGSize(width: collectionView.frame.width, height: CGFloat(50.0))
+        return CGSize(width: collectionView.frame.width, height: CGFloat(40.0))
     }
     
 }
