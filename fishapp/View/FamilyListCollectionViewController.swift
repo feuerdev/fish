@@ -15,6 +15,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
     
     var presenter: FamilyListPresenter?
     var loadingView: FamilyListLoadingView?
+    var groups = Dictionary<Danger, [Family]>()
     
     override func viewDidLoad() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -49,9 +50,21 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
         return IDENTIFIER_CELL
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let danger = Danger(rawValue: indexPath.section),
+            let families = self.groups[danger],
+            let family = families[safe: indexPath.row] else {
+            return
+        }
+        presenter?.didSelectFamily(family)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: IDENTIFIER_CELL, for: indexPath) as! FamilyListCell
-        guard let family = presenter?.interactor?.animals[safe: indexPath.row] else {
+        
+        guard let danger = Danger(rawValue: indexPath.section),
+            let families = self.groups[danger],
+            let family = families[safe: indexPath.row] else {
             return cell
         }
         
@@ -61,14 +74,15 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1 //TODO: Change this to 3 (Red, Yellow, Green)
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = presenter?.interactor?.animals.count else {
+        guard let danger = Danger(rawValue: section),
+              let families = self.groups[danger] else {
             return 0
         }
-        return count
+        return families.count
     }
 }
 
@@ -83,9 +97,12 @@ extension FamilyListCollectionViewController : UICollectionViewDelegateFlowLayou
 
 extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
    
+    func refreshCells() {
     
-    func refreshCell(indexPath: IndexPath) {
-        self.collectionView.reloadItems(at: [indexPath])
+        if let animals = self.presenter?.interactor?.animals {
+            self.groups = Dictionary(grouping: animals) { (animal) -> Danger in
+                return animal.danger
+            }
     }
     
     func refreshCells() {

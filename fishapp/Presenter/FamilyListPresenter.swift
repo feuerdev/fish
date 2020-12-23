@@ -25,11 +25,10 @@ class FamilyListPresenter {
         interactor?.loadAnimals()
     }
     
-    func didSelectRowAt(_ indexPath:IndexPath) {
-        if let animal = interactor?.animals[indexPath.row] {
-            router?.pushToAnimalDetailView(view: viewDelegate!, with: animal)
-        }
+    func didSelectFamily(_ family:Family) {
+        router?.pushToAnimalDetailView(view: viewDelegate!, with: family)
     }
+}
 
 extension FamilyListPresenter: FamilyListInteractorDelegate {
     
