@@ -12,8 +12,10 @@ class FamilyDetailViewController: UIViewController {
     
 
     @IBOutlet var svContent: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stvContent: UIStackView!
     @IBOutlet weak var ivPhoto: UIImageView!
+    @IBOutlet weak var lblNoPhoto: UILabel!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblTaxonHierarchy: UILabel!
@@ -22,6 +24,8 @@ class FamilyDetailViewController: UIViewController {
     var presenter: FamilyDetailPresenter?
     
     override func viewDidLoad() {
+        self.title = "Family"
+        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:tintColor]
         
         guard self.presenter != nil else {
             return
@@ -37,9 +41,18 @@ class FamilyDetailViewController: UIViewController {
         lblScientific.text = presenter!.interactor.family.family
         lblTaxonHierarchy.text = presenter!.presentableHierarchy()
         
+        self.ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(presenter!.interactor.family.danger)))
+        
+        self.lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(presenter!.interactor.family.danger)))
+        
         LoadVernacularService.loadVernacular(id: presenter!.interactor.family.familyId) { result in
             switch result {
             case .failure(_):
+                DispatchQueue.main.async {
+                    self.lblVernacular.text = self.presenter!.interactor.family.family
+                    self.lblScientific.isHidden = true
+                    self.lblVernacular.hideSkeleton()
+                }
                 break
             case .success(let result):
                 DispatchQueue.main.async {
@@ -53,6 +66,7 @@ class FamilyDetailViewController: UIViewController {
             LoadPhotoService.loadPhoto(id: presenter!.interactor.family.familyId, searchParameter: searchTerm) { result in
                 switch result {
                 case .failure(_):
+                    self.showNoPhoto(family: self.presenter!.interactor.family)
                     break
                 case .success(let result):
                     ImageCache.shared.getImage(from: result.url) { [weak self] result in
@@ -71,6 +85,16 @@ class FamilyDetailViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    func showNoPhoto(family:Family) {
+        DispatchQueue.main.async() {
+            self.ivPhoto.image = nil
+            self.ivPhoto.hideSkeleton()
+            self.ivPhoto.backgroundColor = Danger.getColor(family.danger)
+            self.lblNoPhoto.isHidden = false
+            
         }
     }
     
