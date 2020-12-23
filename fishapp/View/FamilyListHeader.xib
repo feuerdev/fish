@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,11 +25,35 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eef-kB-EtT">
+                            <rect key="frame" x="292.5" y="3.5" width="64" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Show(2)">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="showHideSection:" destination="UNN-CO-bfL" eventType="touchUpInside" id="S7h-g6-2h0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-EX-7cH">
+                            <rect key="frame" x="360.5" y="10" width="18.5" height="22"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <imageReference key="image" image="chevron.down" catalog="system" symbolScale="default" renderingMode="original"/>
+                            </state>
+                            <connections>
+                                <action selector="showHideSection:" destination="UNN-CO-bfL" eventType="touchUpInside" id="LPa-Pr-zda"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstItem="Xoy-eJ-XPl" firstAttribute="leading" secondItem="dLo-1b-6e1" secondAttribute="leading" constant="10" id="Gum-uL-R8G"/>
+                        <constraint firstAttribute="trailing" secondItem="g9j-EX-7cH" secondAttribute="trailing" constant="15" id="GwV-qt-Lcl"/>
+                        <constraint firstItem="g9j-EX-7cH" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" constant="1" id="akD-P2-elz"/>
+                        <constraint firstItem="Eef-kB-EtT" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" id="ee1-nf-WHH"/>
                         <constraint firstItem="Xoy-eJ-XPl" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" id="kQz-9b-pH8"/>
+                        <constraint firstItem="g9j-EX-7cH" firstAttribute="leading" secondItem="Eef-kB-EtT" secondAttribute="trailing" constant="4" id="zHE-de-7Pb"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -43,6 +68,8 @@
                 <constraint firstAttribute="bottom" secondItem="dLo-1b-6e1" secondAttribute="bottom" id="tLu-l2-SME"/>
             </constraints>
             <connections>
+                <outlet property="btnShowImage" destination="g9j-EX-7cH" id="wqd-of-gcg"/>
+                <outlet property="btnShowTitle" destination="Eef-kB-EtT" id="pWQ-jv-J2I"/>
                 <outlet property="lblTitle" destination="Xoy-eJ-XPl" id="KHL-K3-eXN"/>
                 <outlet property="view" destination="dLo-1b-6e1" id="BcA-G2-tqD"/>
             </connections>
@@ -50,6 +77,7 @@
         </collectionReusableView>
     </objects>
     <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

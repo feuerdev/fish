@@ -17,6 +17,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
     var presenter: FamilyListPresenter?
     var loadingView: FamilyListLoadingView?
     var groups = Dictionary<Danger, [Family]>()
+    var collapsed = [false, true, false] //Start with Yellow Animals hidden
     
     override func viewDidLoad() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -53,10 +54,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
         }
         
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        
     }
-    
-    
 }
 
 extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
@@ -93,8 +91,10 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = self.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: IDENTIFIER_HEADER, for: indexPath) as! FamilyListHeader
-        if let danger = Danger.init(rawValue: indexPath.section) {
-            header.setDanger(danger)
+        if let danger = Danger.init(rawValue: indexPath.section),
+           let families = self.groups[danger] {
+            header.setup(danger: danger, count: families.count, collapsed: collapsed[indexPath.section])
+            header.delegate = self
         }
         
         return header
@@ -106,7 +106,8 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let danger = Danger(rawValue: section),
-              let families = self.groups[danger] else {
+              let families = self.groups[danger],
+              !self.collapsed[section] else {
             return 0
         }
         return families.count
@@ -169,5 +170,12 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
         self.collectionView.stopSkeletonAnimation()
         self.collectionView.hideSkeleton()
         self.collectionView.isSkeletonable = false
+    }
+}
+
+extension FamilyListCollectionViewController: FamilyListHeaderDelegate {
+    func didCollapse(danger: Danger, collapsed: Bool) {
+        self.collapsed[danger.rawValue] = collapsed
+        self.collectionView.reloadSections(.init(integer: danger.rawValue))
     }
 }
