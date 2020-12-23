@@ -13,12 +13,15 @@ class FamilyListCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var lblLatin: UILabel!
     @IBOutlet weak var lblVernacular: UILabel!
+    @IBOutlet weak var lblNoPhoto: UILabel!
     @IBOutlet weak var ivPhoto: UIDocumentImageView!
     
     var cacheKey: String?
     
     func setFamily(_ family: Family) {
         //Reset
+        self.lblNoPhoto.isHidden = true
+        self.ivPhoto.backgroundColor = .clear
         self.ivPhoto.image = nil
         self.lblVernacular.text = ""
         self.lblLatin.text = ""
@@ -30,7 +33,7 @@ class FamilyListCell: UICollectionViewCell {
         self.lblVernacular.isSkeletonable = true
         self.ivPhoto.isSkeletonable = true
         
-        self.view.showAnimatedSkeleton(usingColor: .wetAsphalt)
+        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(family.danger)))
         
         self.lblLatin.text = family.family
         self.lblLatin.hideSkeleton()
@@ -38,6 +41,11 @@ class FamilyListCell: UICollectionViewCell {
         LoadVernacularService.loadVernacular(id: family.familyId) { result in
             switch result {
             case .failure(_):
+                DispatchQueue.main.async {
+                    self.lblVernacular.text = family.family
+                    self.lblLatin.isHidden = true
+                    self.lblVernacular.hideSkeleton()
+                }
                 break
             case .success(let result):
                 if(family.familyId == result.familyId) { //Prevent loading the result after the cell has already been reused
@@ -53,6 +61,7 @@ class FamilyListCell: UICollectionViewCell {
             LoadPhotoService.loadPhoto(id: family.familyId, searchParameter: searchTerm) { result in
                 switch result {
                 case .failure(_):
+                    self.showNoPhoto(family: family)
                     break
                 case .success(let result):
                     self.cacheKey = result.url
@@ -68,12 +77,24 @@ class FamilyListCell: UICollectionViewCell {
                                     self.ivPhoto.hideSkeleton()
                                 }
                             }
-                        case .failure(_):
+                        case .failure(let error):
+                            print(error)
+                            self.showNoPhoto(family: family)
                             break
                         }
                     }
                 }
             }
+        }
+    }
+    
+    func showNoPhoto(family:Family) {
+        DispatchQueue.main.async() {
+            self.ivPhoto.image = nil
+            self.ivPhoto.hideSkeleton()
+            self.ivPhoto.backgroundColor = Danger.getColor(family.danger)
+            self.lblNoPhoto.isHidden = false
+            
         }
     }
     
