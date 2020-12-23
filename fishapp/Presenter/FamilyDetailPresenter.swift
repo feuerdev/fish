@@ -26,24 +26,24 @@ class FamilyDetailPresenter {
     }
     
     func presentableHierarchy() -> String {
-        var result = ""
+        var result = "Taxon Hierarchy:"
         if interactor.family.kingdom != nil {
-            result.append("> Kingdom: \(interactor.family.kingdom!)")
+            result.append("\n▼Kingdom: \(interactor.family.kingdom!)▼")
         }
         if interactor.family.phylum != nil {
-            result.append("\n> Phylum: \(interactor.family.phylum!)")
+            result.append("\n▼Phylum: \(interactor.family.phylum!)▼")
         }
         if interactor.family.subphylum != nil {
-            result.append("\n> Subphylum: \(interactor.family.subphylum!)")
+            result.append("\n▼Subphylum: \(interactor.family.subphylum!)▼")
         }
         if interactor.family.superclass != nil {
-            result.append("\n> Superclass: \(interactor.family.superclass!)")
+            result.append("\n▼Superclass: \(interactor.family.superclass!)▼")
         }
         if interactor.family.aclass != nil {
-            result.append("\n> Class: \(interactor.family.aclass!)")
+            result.append("\n▼Class: \(interactor.family.aclass!)▼")
         }
         if interactor.family.subclass != nil {
-            result.append("\n> Subclass: \(interactor.family.subclass!)")
+            result.append("\n▼Subclass: \(interactor.family.subclass!)▼")
         }
         //        if animal.infraclass != nil {
         //            result.append("\n> Subclass:\(animal.infraclass!)")
@@ -52,16 +52,12 @@ class FamilyDetailPresenter {
         //            result.append("\n> Order\(animal.superorder!)")
         //        }
         if interactor.family.order != nil {
-            result.append("\n> Order: \(interactor.family.order!)")
+            result.append("\n▼Order: \(interactor.family.order!)▼")
         }
         if interactor.family.family != nil {
-            result.append("\n> Family: \(interactor.family.family!)")
+            result.append("\n▼Family: \(interactor.family.family!)▼")
         }
         return result
-    }
-    
-    func presentableSightings() -> String {
-        return "\(interactor.family.sumRecords) Sightings"
     }
     
     func getPresentableSpeciesName(at indexPath:IndexPath) -> String {
