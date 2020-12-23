@@ -16,6 +16,7 @@ class SpeciesListCell: UITableViewCell {
     @IBOutlet weak var lblRisk: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblScientificName: UILabel!
+    @IBOutlet weak var lblNoPhoto: UILabel!
     
     var cacheKey: String?
     
@@ -26,17 +27,22 @@ class SpeciesListCell: UITableViewCell {
                 lblAuthorship.text = species.getPresentableAuthorship()
                 lblRank.text = species.taxonRank
                 lblRisk.text = species.getPresentableCategory()
-                lblRisk.textColor = UIColor(hexString: species.getPresentableCategoryColor())
+                lblRisk.textColor = species.getPresentableCategoryColor()
 
                 self.lblName.isSkeletonable = true
-                self.lblName.showAnimatedSkeleton(usingColor: .wetAsphalt)
+                self.lblName.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(species.danger)))
 
                 self.ivImage.isSkeletonable = true
-                self.ivImage.showAnimatedSkeleton(usingColor: .wetAsphalt)
+                self.ivImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(species.danger)))
                 
                 LoadVernacularService.loadVernacular(id: species.taxonId) { result in
                     switch result {
                     case .failure(_):
+                        DispatchQueue.main.async {
+                            self.lblName.text = species.getPresentableName()
+                            self.lblScientificName.isHidden = true
+                            self.lblName.hideSkeleton()
+                        }
                         break
                     case .success(let result):
                         if(species.taxonId == result.familyId) { //Prevent loading the result after the cell has already been reused
@@ -52,6 +58,7 @@ class SpeciesListCell: UITableViewCell {
                     LoadPhotoService.loadPhoto(id: species.taxonId, searchParameter: searchTerm) { result in
                         switch result {
                         case .failure(_):
+                            self.showNoPhoto(species: species)
                             break
                         case .success(let result):
                             self.cacheKey = result.url
@@ -75,6 +82,15 @@ class SpeciesListCell: UITableViewCell {
                     }
                 }
             }
+        }
+    }
+    
+    func showNoPhoto(species:Species) {
+        DispatchQueue.main.async() {
+            self.ivImage.image = nil
+            self.ivImage.hideSkeleton()
+            self.ivImage.backgroundColor = Danger.getColor(species.danger)
+            self.lblNoPhoto.isHidden = false
         }
     }
 }

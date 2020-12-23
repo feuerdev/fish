@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +20,40 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b51-Nw-Nhe">
                         <rect key="frame" x="0.0" y="0.0" width="354" height="345"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-ow-xNg">
-                                <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tre-ci-BiI">
+                                <rect key="frame" x="0.0" y="0.0" width="354" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-ow-xNg">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="gmb-Ap-51s"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐡 Sorry, no photo :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-fT-4Ce">
+                                        <rect key="frame" x="98" y="90.5" width="158.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="gmb-Ap-51s"/>
+                                    <constraint firstAttribute="trailing" secondItem="NLn-ow-xNg" secondAttribute="trailing" id="O9x-lC-Q8H"/>
+                                    <constraint firstItem="NLn-ow-xNg" firstAttribute="leading" secondItem="Tre-ci-BiI" secondAttribute="leading" id="OXz-jh-vl8"/>
+                                    <constraint firstItem="NLn-ow-xNg" firstAttribute="top" secondItem="Tre-ci-BiI" secondAttribute="top" id="dUk-Yj-Hvy"/>
+                                    <constraint firstAttribute="bottom" secondItem="NLn-ow-xNg" secondAttribute="bottom" id="i07-X7-2H2"/>
+                                    <constraint firstItem="0hK-fT-4Ce" firstAttribute="centerY" secondItem="NLn-ow-xNg" secondAttribute="centerY" id="m5G-JM-nD2"/>
+                                    <constraint firstItem="0hK-fT-4Ce" firstAttribute="centerX" secondItem="NLn-ow-xNg" secondAttribute="centerX" id="tJu-Wm-dER"/>
                                 </constraints>
-                            </imageView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My2-Wu-mPO">
-                                <rect key="frame" x="0.0" y="185" width="354" height="62.5"/>
+                                <rect key="frame" x="0.0" y="205" width="354" height="42.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,10 +98,12 @@
                     <constraint firstAttribute="trailing" secondItem="b51-Nw-Nhe" secondAttribute="trailing" id="iQg-Kd-7IA"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="ivImage" destination="NLn-ow-xNg" id="Ug6-cr-E3v"/>
                 <outlet property="lblAuthorship" destination="Zxd-3C-XPt" id="KUG-i4-yCA"/>
                 <outlet property="lblName" destination="My2-Wu-mPO" id="SVV-BF-Bet"/>
+                <outlet property="lblNoPhoto" destination="0hK-fT-4Ce" id="XO8-bC-5Xc"/>
                 <outlet property="lblRank" destination="SZP-4N-V4J" id="9Fk-5H-vcH"/>
                 <outlet property="lblRisk" destination="cn7-ZJ-2Ag" id="xE0-GE-rlP"/>
                 <outlet property="lblScientificName" destination="pZ8-p5-nC7" id="9Xg-nM-1bW"/>
@@ -84,7 +112,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="logo_shadow" width="600" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
