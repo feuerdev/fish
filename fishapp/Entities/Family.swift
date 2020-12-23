@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Danger {
+enum Danger: Int {
     static let red = [
         484724, // Family Containing Box Jellyfish like Irukandji
         135479, // Species Portuguese man o' war
@@ -38,7 +38,7 @@ enum Danger {
         219875, //Species Titan Triggerfish
     ]
     
-    case edGreen, edYellow, edRed
+    case edGreen = 2, edYellow = 1, edRed = 0
 }
 
 class Species {
