@@ -29,14 +29,12 @@ class FamilyListHeader: UICollectionReusableView {
     }
     @IBAction func showHideSection(_ sender: Any) {
         self.collapsed = !self.collapsed
-        
-//        updateButton()
         delegate?.didCollapse(danger: self.danger, collapsed: self.collapsed)
     }
     
     func updateButton() {
-        btnShowTitle.setTitle("(\(self.count))", for: .normal)
-        btnShowImage.transform = !collapsed ? .identity : .init(rotationAngle: 180 * CGFloat.pi/180)
+        self.btnShowTitle.setTitle("(\(self.count))", for: .normal)
+        self.btnShowImage.transform = !self.collapsed ? .identity : .init(rotationAngle: 180 * CGFloat.pi/180)
     }
     
     func setup(danger:Danger, count:Int, collapsed:Bool) {
