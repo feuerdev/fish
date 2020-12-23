@@ -20,9 +20,7 @@ class PickLocationViewController : UIViewController {
         let grTap = UITapGestureRecognizer(target: self, action: #selector(onMapTap(gestureRecognizer:)))
         mvMap.addGestureRecognizer(grTap)
         mvMap.delegate = self
-//        if #available(iOS 11.0, *) {
-//            mvMap.mapType = .mutedStandard
-//        }
+        mvMap.mapType = .hybrid
     }
     
     @objc func onMapTap(gestureRecognizer:UITapGestureRecognizer) {
@@ -35,6 +33,7 @@ class PickLocationViewController : UIViewController {
         let touchPoint = gestureRecognizer.location(in: self.mvMap)
         let touchCoordinate = mvMap.convert(touchPoint, toCoordinateFrom: self.mvMap)
         let annotation = MKPointAnnotation()
+        
         annotation.coordinate = touchCoordinate
 
         self.location = Location(longitude: touchCoordinate.longitude, latitude: touchCoordinate.latitude)
@@ -52,6 +51,13 @@ class PickLocationViewController : UIViewController {
     @IBAction func searchTapped(_ sender: Any) {
         if let location = self.location {
             presenter?.search(view: self, location: location)
+        } else {
+            let toast = "Tap the map to select a location 🦈"
+            let alert = UIAlertController(title: nil, message: toast, preferredStyle: .alert)
+            self.present(alert, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                alert.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }
@@ -65,11 +71,22 @@ extension PickLocationViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView,
                  rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.fillColor = .black
-        circleRenderer.strokeColor = .red
+        circleRenderer.fillColor = circleFillColor
+        circleRenderer.strokeColor = circleStrokeColor
         circleRenderer.alpha = 0.1
 
         return circleRenderer
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if #available(iOS 11.0, *) {
+            let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+            annotationView.markerTintColor = pinColor
+                return annotationView
+        } else {
+            return mapView.view(for: annotation)
+        }
+        
     }
 }
 
