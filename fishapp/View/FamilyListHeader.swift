@@ -43,13 +43,13 @@ class FamilyListHeader: UICollectionReusableView {
         self.collapsed = collapsed
         switch danger {
         case .edGreen:
-            view.backgroundColor = .green //TODO: Use better Colors
+            view.backgroundColor = greenColor
             lblTitle.text = "Harmless and Wholesome 🐠"
         case .edYellow:
-            view.backgroundColor = .yellow
+            view.backgroundColor = yellowColor
             lblTitle.text = "Safe, but don't touch or feed 🦈"
         case .edRed:
-            view.backgroundColor = .red
+            view.backgroundColor = redColor
             lblTitle.text = "Dangerous, consult with local experts ⚠️"
         }
         updateButton()
