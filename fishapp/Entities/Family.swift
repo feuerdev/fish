@@ -13,6 +13,7 @@ enum Danger: Int {
         135479, // Species Portuguese man o' war
         344030, // Species Saltwater Crocodile
         105838, // Species White Shark
+        105799, // Species Tiger Shark
     ]
     static let yellow = [
         266989, //Order of Venomous Box Jellyfish
