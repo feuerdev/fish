@@ -21,7 +21,7 @@ class LoadVernacularService {
                     completionHandler(.success((id, name)))
                 }
             } else {
-                //Step 4: Never looked for Photo. Ask Wiki for it.
+                //Step 4: Never looked for Vernacular. Ask Worms for it.
                 WORMSService.getVernacular(id: id, completionHandler: { result in
                     switch result {
                     case .failure(let error):
