@@ -59,6 +59,8 @@ class FamilyListInteractor {
             guard species.familyId != nil else {
                 continue
             }
+            
+            if(!self.filter(species)) {
             var alreadyAdded = false
             for fam in families {
                 if species.familyId == fam.familyId {
@@ -93,8 +95,31 @@ class FamilyListInteractor {
                 }
             }
         }
+        }
         evaluateDanger(families)
         return families
+    }
+    
+    func filter(_ species:OBISSpecies) -> Bool {
+        let relevantIds = [species.phylumId,
+                           species.subphylumId,
+                           species.superclassId,
+                           species.aclassId,
+                           species.subclassId,
+                           species.orderId,
+                           species.superfamilyId,
+                           species.familyId,
+                           species.genusId,
+                           species.taxonID]
+        
+        for speciesId in relevantIds {
+            for filterId in filteredSpecies {
+                if speciesId == filterId {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func createSpecies(from species:OBISSpecies) -> Species {
@@ -164,8 +189,6 @@ class FamilyListInteractor {
                         }
                     }
                 }
-                
-                
             }
         }
     }

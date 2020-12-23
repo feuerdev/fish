@@ -54,6 +54,10 @@ enum Danger: Int {
     case edGreen = 2, edYellow = 1, edRed = 0
 }
 
+let filteredSpecies = [
+    889925, //Hexanauplia - Small crustaceans
+]
+
 class Species {
     var taxonId: Int
     var kingdomId: Int?
