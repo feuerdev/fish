@@ -38,6 +38,9 @@ enum Danger: Int {
         291140, //Species Cannonball Jellyfish
         219890, //Species Lagoon Triggerfish
         219875, //Species Titan Triggerfish
+        135305, //Species Feuerqualle
+        135301, //Species Feuerqualle
+        135304, //Species Feuerqualle
     ]
     
     static func getColor(_ danger:Danger) -> UIColor {
