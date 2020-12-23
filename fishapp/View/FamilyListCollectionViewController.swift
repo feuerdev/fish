@@ -12,6 +12,7 @@ import Feuerlib
 class FamilyListCollectionViewController: UICollectionViewController {
     
     let IDENTIFIER_CELL = "FamilyListCell"
+    let IDENTIFIER_HEADER = "FamilyListHeader"
     
     var presenter: FamilyListPresenter?
     var loadingView: FamilyListLoadingView?
@@ -24,8 +25,11 @@ class FamilyListCollectionViewController: UICollectionViewController {
         self.collectionView.isSkeletonable = true
         self.collectionView.showAnimatedSkeleton(usingColor: .wetAsphalt)
         
-        let nib = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
-        self.collectionView.register(nib, forCellWithReuseIdentifier: IDENTIFIER_CELL)
+        let cell = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
+        let header = UINib(nibName: IDENTIFIER_HEADER, bundle: nil)
+        self.collectionView.register(cell, forCellWithReuseIdentifier: IDENTIFIER_CELL)
+        self.collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: IDENTIFIER_HEADER)
+        
         self.collectionView.backgroundColor = .white
 
         self.loadingView = FamilyListLoadingView(centerIn: UIApplication.shared.keyWindow!)
@@ -34,20 +38,34 @@ class FamilyListCollectionViewController: UICollectionViewController {
     override func viewWillDisappear(_ animated: Bool) {
         hideLoadingView()
     }
-    
-    //MARK: - Datasource
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.didSelectRowAt(indexPath)
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        if collectionView.isSkeletonable {
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        }
+        
+        guard let danger = Danger(rawValue: section),
+              let families = self.groups[danger],
+              families.count > 0 else {
+            //Tableview is Loading or section is empty
+            return UIEdgeInsets.zero
+        }
+        
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
     }
+    
+    
 }
 
 extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return IDENTIFIER_CELL
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier? {
+        return IDENTIFIER_HEADER
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -73,6 +91,15 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = self.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: IDENTIFIER_HEADER, for: indexPath) as! FamilyListHeader
+        if let danger = Danger.init(rawValue: indexPath.section) {
+            header.setDanger(danger)
+        }
+        
+        return header
+    }
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -93,19 +120,30 @@ extension FamilyListCollectionViewController : UICollectionViewDelegateFlowLayou
         let fullWidth = self.collectionView.frame.width - padding
         return CGSize(width: fullWidth/2, height: fullWidth/2)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        guard let danger = Danger(rawValue: section),
+              let families = self.groups[danger],
+              families.count > 0,
+              !collectionView.isSkeletonable else {
+            //Tableview is Loading or section is empty
+            return CGSize.zero
+        }
+        return CGSize(width: collectionView.frame.width, height: CGFloat(50.0))
+    }
+    
 }
 
 extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
-   
-    func refreshCells() {
     
+    func refreshCells() {
+        
         if let animals = self.presenter?.interactor?.animals {
             self.groups = Dictionary(grouping: animals) { (animal) -> Danger in
                 return animal.danger
             }
-    }
-    
-    func refreshCells() {
+        }
+        
         self.collectionView.reloadData()
     }
     
