@@ -47,7 +47,7 @@ class FamilyListInteractor {
                 self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Found \(self.animals.count) Animals")
                 self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 1)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.presenterDelegate?.loadAnimalsSuccess()
+                    self.presenterDelegate?.loadAnimalsSuccess()
                 }
             case .failure(let error):
                 self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
@@ -63,40 +63,40 @@ class FamilyListInteractor {
             }
             
             if(!self.filter(species)) {
-            var alreadyAdded = false
-            for fam in families {
-                if species.familyId == fam.familyId {
-                    let new = createSpecies(from: species)
-                    fam.species.append(new)
-                    if let records = new.records {
-                        fam.sumRecords += records
+                var alreadyAdded = false
+                for fam in families {
+                    if species.familyId == fam.familyId {
+                        let new = createSpecies(from: species)
+                        fam.species.append(new)
+                        if let records = new.records {
+                            fam.sumRecords += records
+                        }
+                        alreadyAdded = true
+                        break
                     }
-                    alreadyAdded = true
-                    break
+                }
+                if !alreadyAdded {
+                    if let familyId = species.familyId {
+                        let new = Family(familyId)
+                        new.family = species.family
+                        new.kingdom = species.genus
+                        new.phylum = species.phylum
+                        new.subphylum = species.subphylum
+                        new.superclass = species.superclass
+                        new.aclass = species.aclass
+                        new.subclass = species.subclass
+                        new.order = species.order
+                        new.superfamily = species.superfamily
+                        
+                        let newSpecies = createSpecies(from: species)
+                        if let records = newSpecies.records {
+                            new.sumRecords += records
+                        }
+                        new.species.append(newSpecies)
+                        families.append(new)
+                    }
                 }
             }
-            if !alreadyAdded {
-                if let familyId = species.familyId {
-                    let new = Family(familyId)
-                    new.family = species.family
-                    new.kingdom = species.genus
-                    new.phylum = species.phylum
-                    new.subphylum = species.subphylum
-                    new.superclass = species.superclass
-                    new.aclass = species.aclass
-                    new.subclass = species.subclass
-                    new.order = species.order
-                    new.superfamily = species.superfamily
-                    
-                    let newSpecies = createSpecies(from: species)
-                    if let records = newSpecies.records {
-                        new.sumRecords += records
-                    }
-                    new.species.append(newSpecies)
-                    families.append(new)
-                }
-            }
-        }
         }
         evaluateDanger(families)
         return families
