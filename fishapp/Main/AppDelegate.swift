@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
+        window.tintColor = tintColor
+        
         window.rootViewController = PickLocationRouter.createModule()
         window.backgroundColor = .white
         window.makeKeyAndVisible()

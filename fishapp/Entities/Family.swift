@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Danger: Int {
     static let red = [
@@ -38,6 +39,17 @@ enum Danger: Int {
         219890, //Species Lagoon Triggerfish
         219875, //Species Titan Triggerfish
     ]
+    
+    static func getColor(_ danger:Danger) -> UIColor {
+        switch danger {
+        case .edGreen:
+            return greenColor
+        case .edYellow:
+            return yellowColor
+        case .edRed:
+            return redColor
+        }
+    }
     
     case edGreen = 2, edYellow = 1, edRed = 0
 }
@@ -119,26 +131,26 @@ class Species {
         }
     }
     
-    func getPresentableCategoryColor() -> String {
+    func getPresentableCategoryColor() -> UIColor {
         switch category {
         case "EX":
-            return "FF0000"
+            return redColor
         case "EW":
-            return "FF0000"
+            return redColor
         case "CR":
-            return "FF0000"
+            return redColor
         case "EN":
-            return "FF0000"
+            return redColor
         case "VU":
-            return "FFA500"
+            return yellowColor
         case "NT":
-            return "FFA500"
+            return yellowColor
         case "CD":
-            return "FFA500"
+            return yellowColor
         case "LC":
-            return "999900"
+            return greenColor
         default:
-            return "000000"
+            return greenColor
         }
     }
     
