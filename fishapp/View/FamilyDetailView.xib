@@ -44,8 +44,8 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐡 Sorry, no photo :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-CZ-kic">
-                                    <rect key="frame" x="113.5" y="138" width="187.5" height="24"/>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐡 Sorry, no photo :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-CZ-kic">
+                                    <rect key="frame" x="8" y="138" width="398" height="24"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -56,6 +56,8 @@
                                 <constraint firstItem="tTn-5M-iBu" firstAttribute="top" secondItem="iW1-zJ-ZC3" secondAttribute="top" id="DPi-km-tqN"/>
                                 <constraint firstAttribute="bottom" secondItem="tTn-5M-iBu" secondAttribute="bottom" id="Jzv-TX-IZo"/>
                                 <constraint firstAttribute="trailing" secondItem="tTn-5M-iBu" secondAttribute="trailing" id="a9J-Xy-oSO"/>
+                                <constraint firstItem="Rh0-CZ-kic" firstAttribute="leading" secondItem="iW1-zJ-ZC3" secondAttribute="leading" constant="8" id="dpG-A6-K3i"/>
+                                <constraint firstAttribute="trailing" secondItem="Rh0-CZ-kic" secondAttribute="trailing" constant="8" id="owS-rA-uJU"/>
                                 <constraint firstItem="tTn-5M-iBu" firstAttribute="leading" secondItem="iW1-zJ-ZC3" secondAttribute="leading" id="qj5-Iv-N2C"/>
                                 <constraint firstItem="Rh0-CZ-kic" firstAttribute="centerY" secondItem="tTn-5M-iBu" secondAttribute="centerY" id="rbs-6j-u7m"/>
                                 <constraint firstItem="Rh0-CZ-kic" firstAttribute="centerX" secondItem="tTn-5M-iBu" secondAttribute="centerX" id="y15-0F-Cb8"/>

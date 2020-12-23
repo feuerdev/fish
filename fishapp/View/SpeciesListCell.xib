@@ -32,8 +32,8 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐡 Sorry, no photo :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-fT-4Ce">
-                                        <rect key="frame" x="98" y="90.5" width="158.5" height="19.5"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐡 Sorry, no photo :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-fT-4Ce">
+                                        <rect key="frame" x="8" y="90.5" width="338" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,9 +44,11 @@
                                     <constraint firstAttribute="trailing" secondItem="NLn-ow-xNg" secondAttribute="trailing" id="O9x-lC-Q8H"/>
                                     <constraint firstItem="NLn-ow-xNg" firstAttribute="leading" secondItem="Tre-ci-BiI" secondAttribute="leading" id="OXz-jh-vl8"/>
                                     <constraint firstItem="NLn-ow-xNg" firstAttribute="top" secondItem="Tre-ci-BiI" secondAttribute="top" id="dUk-Yj-Hvy"/>
+                                    <constraint firstAttribute="trailing" secondItem="0hK-fT-4Ce" secondAttribute="trailing" constant="8" id="g49-Mu-1Fe"/>
                                     <constraint firstAttribute="bottom" secondItem="NLn-ow-xNg" secondAttribute="bottom" id="i07-X7-2H2"/>
                                     <constraint firstItem="0hK-fT-4Ce" firstAttribute="centerY" secondItem="NLn-ow-xNg" secondAttribute="centerY" id="m5G-JM-nD2"/>
                                     <constraint firstItem="0hK-fT-4Ce" firstAttribute="centerX" secondItem="NLn-ow-xNg" secondAttribute="centerX" id="tJu-Wm-dER"/>
+                                    <constraint firstItem="0hK-fT-4Ce" firstAttribute="leading" secondItem="Tre-ci-BiI" secondAttribute="leading" constant="8" id="zww-fT-YZz"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>

@@ -33,8 +33,8 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-6z-4nC">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="90"/>
                     </imageView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="🐡 Sorry, no photo :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="yq5-Uz-y2e">
-                        <rect key="frame" x="-1.5" y="35.5" width="153" height="19.5"/>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="🐡 Sorry, no photo :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yq5-Uz-y2e">
+                        <rect key="frame" x="8" y="35.5" width="134" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -50,8 +50,10 @@
                     <constraint firstItem="wmF-6z-4nC" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" id="Oqa-MR-RMr"/>
                     <constraint firstAttribute="bottom" secondItem="59N-pV-qQg" secondAttribute="bottom" constant="4" id="Tcc-lD-MyM"/>
                     <constraint firstItem="yq5-Uz-y2e" firstAttribute="centerY" secondItem="wmF-6z-4nC" secondAttribute="centerY" id="WUq-sY-xZP"/>
+                    <constraint firstItem="yq5-Uz-y2e" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="8" id="cBG-No-BBz"/>
                     <constraint firstAttribute="trailing" secondItem="PgE-LZ-y0u" secondAttribute="trailing" id="hia-QN-W4a"/>
                     <constraint firstAttribute="trailing" secondItem="wmF-6z-4nC" secondAttribute="trailing" id="lUD-DL-rrJ"/>
+                    <constraint firstAttribute="trailing" secondItem="yq5-Uz-y2e" secondAttribute="trailing" constant="8" id="oXu-kW-83e"/>
                     <constraint firstItem="PgE-LZ-y0u" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" id="t7J-Tf-u6p"/>
                     <constraint firstItem="yq5-Uz-y2e" firstAttribute="centerX" secondItem="wmF-6z-4nC" secondAttribute="centerX" id="wjO-jJ-jE2"/>
                 </constraints>
