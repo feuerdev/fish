@@ -30,6 +30,11 @@ let greenColor = UIColor(hexString: "2ecc71")
 let yellowColor = UIColor(hexString: "f1c40f")
 let redColor = UIColor(hexString: "c0392b")
 
+//Dark Colors for white background
+let darkGreenColor = UIColor(hexString: "006513")
+let darkYellowColor = UIColor(hexString: "ab8d00")
+let darkRedColor = UIColor(hexString: "a9221b")
+
 let pinColor = UIColor(hexString: "d9f1ff")
 let circleFillColor = UIColor(hexString: "d9f1ff")
 let circleStrokeColor = UIColor.gray
