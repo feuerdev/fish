@@ -34,6 +34,13 @@ extension FamilyListPresenter: FamilyListInteractorDelegate {
     
     func loadAnimalsSuccess() {
         DispatchQueue.main.async {
+            guard let count = self.interactor?.animals.count,
+                  count > 0 else {
+                self.viewDelegate?.hideLoadingView()
+                self.viewDelegate?.showError("Didn't find any animals here :(")
+                return
+            }
+            
             self.viewDelegate?.refreshCells()
             self.viewDelegate?.hideLoadingView()
         }
