@@ -118,11 +118,10 @@ extension FamilyDetailViewController: FamilyDetailPresenterDelegate {
 extension FamilyDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = presenter?.interactor.family.species.count {
-            return count
-        } else {
+        guard let count = presenter?.interactor.family.species.count else {
             return 0
         }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
