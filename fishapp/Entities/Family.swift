@@ -115,60 +115,44 @@ class Species {
         return name
     }
     
-    func getPresentableCategory() -> String {
+    func getPresentableCategory() -> NSMutableAttributedString {
+        let green = [NSAttributedString.Key.foregroundColor: darkGreenColor]
+        let yellow = [NSAttributedString.Key.foregroundColor: darkYellowColor]
+        let red = [NSAttributedString.Key.foregroundColor: darkRedColor]
+        let result = NSMutableAttributedString(string: "Conservation status: ")
         switch category {
         case "EX":
-            return "Extinct"
+            result.append(NSMutableAttributedString(string: "Extinct", attributes: red))
         case "EW":
-            return "Extinct in the Wild"
+            result.append(NSMutableAttributedString(string: "Extinct in the Wild", attributes: red))
         case "CR":
-            return "Critically Endangered"
+            result.append(NSMutableAttributedString(string: "Critically Endangered", attributes: red))
         case "EN":
-            return "Endangered"
+            result.append(NSMutableAttributedString(string: "Endangered", attributes: red))
         case "VU":
-            return "Vulnerable"
+            result.append(NSMutableAttributedString(string: "Vulnerable", attributes: yellow))
         case "NT":
-            return "Near Threatened"
+            result.append(NSMutableAttributedString(string: "Near Threatened", attributes: yellow))
         case "CD":
-            return "Conservation Dependent"
+            result.append(NSMutableAttributedString(string: "Conservation Dependent", attributes: yellow))
         case "LC":
-            return "Least Concern"
+            result.append(NSMutableAttributedString(string: "Least Concern", attributes: green))
         default:
-            return "Not Threatened"
+            result.append(NSMutableAttributedString(string: "Not Threatened", attributes: green))
         }
-    }
-    
-    func getPresentableCategoryColor() -> UIColor {
-        switch category {
-        case "EX":
-            return redColor
-        case "EW":
-            return redColor
-        case "CR":
-            return redColor
-        case "EN":
-            return redColor
-        case "VU":
-            return yellowColor
-        case "NT":
-            return yellowColor
-        case "CD":
-            return yellowColor
-        case "LC":
-            return greenColor
-        default:
-            return greenColor
-        }
+        return result
     }
     
     func getPresentableAuthorship() -> String {
+        var result = "Discovered by: "
         if let authorship = self.authorship {
-            return authorship
+            result.append(authorship
                 .replacingOccurrences(of: "(", with: "")
-                .replacingOccurrences(of: ")", with: "")
+                .replacingOccurrences(of: ")", with: ""))
         } else {
-            return "Unkown"
+            result.append("Unkown")
         }
+        return result
     }
 }
 

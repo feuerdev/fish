@@ -26,8 +26,7 @@ class SpeciesListCell: UITableViewCell {
                 lblScientificName.text = species.getPresentableName()
                 lblAuthorship.text = species.getPresentableAuthorship()
                 lblRank.text = species.taxonRank
-                lblRisk.text = species.getPresentableCategory()
-                lblRisk.textColor = species.getPresentableCategoryColor()
+                lblRisk.attributedText = species.getPresentableCategory()
 
                 self.lblName.isSkeletonable = true
                 self.lblName.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(species.danger)))
