@@ -11,7 +11,6 @@ protocol AnimalListPresenterDelegate {
     func updateLoadingStatus(status: String) -> Void
     func updateLoadingStatus(percent: Float) -> Void
     func refreshCells()
-    func refreshCell(indexPath: IndexPath)
     func hideLoadingView()
     func showError(_ error:String)
 }
@@ -31,16 +30,8 @@ class FamilyListPresenter {
             router?.pushToAnimalDetailView(view: viewDelegate!, with: animal)
         }
     }
-}
 
 extension FamilyListPresenter: FamilyListInteractorDelegate {
-    func refreshAnimal(animal: Family) {
-        DispatchQueue.main.async {
-            if let index = self.interactor?.animals.firstIndex(where: {$0 === animal}) {
-                self.viewDelegate?.refreshCell(indexPath: IndexPath(row: index, section: 0))
-            }
-        }
-    }
     
     func loadAnimalsSuccess() {
         DispatchQueue.main.async {

@@ -12,7 +12,6 @@ protocol FamilyListInteractorDelegate {
     func loadAnimalsFailure(error: String)
     func loadAnimalsStatusUpdate(status: String)
     func loadAnimalsStatusUpdate(percent: Float)
-    func refreshAnimal(animal:Family)
 }
 
 class FamilyListInteractor {
