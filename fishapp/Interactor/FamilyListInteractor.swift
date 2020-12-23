@@ -46,7 +46,9 @@ class FamilyListInteractor {
                 self.animals = self.createFamilies(result)
                 self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Found \(self.animals.count) Animals")
                 self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 1)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.presenterDelegate?.loadAnimalsSuccess()
+                }
             case .failure(let error):
                 self.presenterDelegate?.loadAnimalsFailure(error: error.localizedDescription)
             }
