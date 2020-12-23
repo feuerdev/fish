@@ -20,11 +20,14 @@ class FamilyListCollectionViewController: UICollectionViewController {
     var collapsed = [false, true, false] //Start with Yellow Animals hidden
     
     override func viewDidLoad() {
+        self.title = "Families"
+        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:tintColor]
+        
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         presenter?.viewDidLoad()
         
         self.collectionView.isSkeletonable = true
-        self.collectionView.showAnimatedSkeleton(usingColor: .wetAsphalt)
+        self.collectionView.showAnimatedSkeleton(usingColor: skeletonColor)
         
         let cell = UINib(nibName: IDENTIFIER_CELL, bundle: nil)
         let header = UINib(nibName: IDENTIFIER_HEADER, bundle: nil)
