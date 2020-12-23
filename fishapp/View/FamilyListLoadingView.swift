@@ -27,7 +27,7 @@ class FamilyListLoadingView: UIView {
     }
     
     convenience init(centerIn parent:UIView) {
-        self.init(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        self.init(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
         
         self.center = parent.center
         parent.addSubview(self)
