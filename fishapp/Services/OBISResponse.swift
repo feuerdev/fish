@@ -86,7 +86,7 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
         case phylumId = "phylumid"
         case subphylumId = "subphylumid"
         case superclassId = "superclassid"
-        case aclassId = "classId"
+        case aclassId = "classid"
         case subclassId = "subclassid"
         case orderId = "orderid"
         case superfamilyId = "superfamilyid"
