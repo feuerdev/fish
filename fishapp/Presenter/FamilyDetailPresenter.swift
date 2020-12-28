@@ -26,9 +26,9 @@ class FamilyDetailPresenter {
     }
     
     func presentableHierarchy() -> String {
-        var result = "Taxon Hierarchy:"
+        var result = ""
         if interactor.family.kingdom != nil {
-            result.append("\n▼Kingdom: \(interactor.family.kingdom!)▼")
+            result.append("▼Kingdom: \(interactor.family.kingdom!)▼")
         }
         if interactor.family.phylum != nil {
             result.append("\n▼Phylum: \(interactor.family.phylum!)▼")
