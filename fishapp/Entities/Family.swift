@@ -28,6 +28,7 @@ enum Danger: Int {
         14107,  //Family Cone Snails
         125431, //Family Moray Eels
         125451, //Family Needlefishes
+        342638, //Family of Venomous Snakes
         413301, //Sub-Family of Sea snakes
         341430, //Genus Blue Ringed Octopus
         205902, //Genus Fire Corals
@@ -116,9 +117,9 @@ class Species {
     }
     
     func getPresentableCategory() -> NSMutableAttributedString {
-        let green = [NSAttributedString.Key.foregroundColor: darkGreenColor]
-        let yellow = [NSAttributedString.Key.foregroundColor: darkYellowColor]
-        let red = [NSAttributedString.Key.foregroundColor: darkRedColor]
+        let green = [NSAttributedString.Key.foregroundColor: greenColor]
+        let yellow = [NSAttributedString.Key.foregroundColor: yellowColor]
+        let red = [NSAttributedString.Key.foregroundColor: redColor]
         let result = NSMutableAttributedString(string: "Conservation status: ")
         switch category {
         case "EX":
