@@ -49,7 +49,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MXP-d7-yXo">
-                    <rect key="frame" x="4" y="100" width="363" height="0.0"/>
+                    <rect key="frame" x="8" y="100" width="359" height="0.0"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" id="Nwh-UW-NJP"/>
@@ -64,7 +64,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="QRb-sX-Ti9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.25" id="4EN-tg-2Lx"/>
-                <constraint firstItem="MXP-d7-yXo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="DKi-IS-OnD"/>
+                <constraint firstItem="MXP-d7-yXo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="DKi-IS-OnD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRb-sX-Ti9" secondAttribute="bottom" constant="10" id="Kof-YR-yxY"/>
                 <constraint firstItem="WLF-AZ-ltJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q8i-I7-eM8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MXP-d7-yXo" secondAttribute="trailing" constant="8" id="U2Y-Wj-5lj"/>
