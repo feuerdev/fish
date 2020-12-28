@@ -53,7 +53,12 @@ class PickLocationViewController : UIViewController {
         let grTap = UITapGestureRecognizer(target: self, action: #selector(onMapTap(gestureRecognizer:)))
         mvMap.addGestureRecognizer(grTap)
         mvMap.delegate = self
-        mvMap.mapType = .hybrid
+        mvMap.mapType = .satellite
+        
+        let template = "https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
+        let overlay = MKTileOverlay(urlTemplate: template)
+        overlay.canReplaceMapContent = true
+        mvMap.addOverlay(overlay, level: .aboveLabels)
         
         btnSearch.backgroundColor = tintColor
         btnSearch.setTitleColor(textTintColor, for: .normal)
@@ -71,7 +76,10 @@ class PickLocationViewController : UIViewController {
             self.mvMap.deselectAnnotation(annotation, animated: false)
         }
         mvMap.removeAnnotations(mvMap.annotations)
-        mvMap.removeOverlays(mvMap.overlays)
+        
+        mvMap.removeOverlays(mvMap.overlays.filter({ (overlay) -> Bool in
+            return overlay is MKCircle
+        }))
         
         let touchPoint = gestureRecognizer.location(in: self.mvMap)
         let touchCoordinate = mvMap.convert(touchPoint, toCoordinateFrom: self.mvMap)
@@ -163,14 +171,19 @@ extension PickLocationViewController: PickLocationPresenterDelegate {
 }
 
 extension PickLocationViewController: MKMapViewDelegate {
+    
     func mapView(_ mapView: MKMapView,
                  rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.fillColor = circleFillColor
-        circleRenderer.strokeColor = circleStrokeColor
-        circleRenderer.alpha = 0.1
-
-        return circleRenderer
+        
+        if overlay is MKTileOverlay {
+            return MKTileOverlayRenderer(tileOverlay: overlay as! MKTileOverlay)
+        } else {
+            let circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.fillColor = circleFillColor
+            circleRenderer.strokeColor = circleStrokeColor
+            circleRenderer.alpha = 0.1
+            return circleRenderer
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
