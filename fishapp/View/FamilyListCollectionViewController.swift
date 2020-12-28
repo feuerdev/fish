@@ -21,7 +21,6 @@ class FamilyListCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         self.title = "Families"
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:tintColor]
         
         if #available(iOS 11.0, *) {
             self.additionalSafeAreaInsets = .init(top: 10, left: 0, bottom: 0, right: 0)

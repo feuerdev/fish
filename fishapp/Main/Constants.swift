@@ -24,7 +24,7 @@ let FAMILY_NO_VERNACULAR = "NONE"
 //Orange/Blue blended UIColor(hexString: "b66b50")
 //Lightest Blue Clothing UIColor(hexString: "d9f1ff")
 
-let tintColor = UIColor(hexString: "4c519c")
+let tintColor = UIColor(hexString: "3498db")
 
 let greenColor = UIColor(hexString: "2ecc71")
 let yellowColor = UIColor(hexString: "f1c40f")

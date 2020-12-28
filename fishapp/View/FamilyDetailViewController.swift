@@ -25,8 +25,7 @@ class FamilyDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         self.title = "Family"
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:tintColor]
-        
+
         guard self.presenter != nil else {
             return
         }

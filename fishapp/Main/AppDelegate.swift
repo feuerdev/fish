@@ -20,12 +20,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
-        window.tintColor = tintColor
-        
         window.rootViewController = PickLocationRouter.createModule()
-        window.backgroundColor = .white
+        
+        setStyle()
+        
         window.makeKeyAndVisible()
         
         return true
+    }
+    
+    func setStyle() {
+        guard let window = self.window,
+              let navigationController = window.rootViewController as? UINavigationController else {
+            return
+        }
+        
+        window.backgroundColor = .white
+        window.tintColor = tintColor
+        
+        
+        navigationController.navigationBar.barTintColor = tintColor
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }
