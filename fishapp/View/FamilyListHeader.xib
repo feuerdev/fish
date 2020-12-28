@@ -31,9 +31,6 @@
                             <state key="normal" title="Show(2)">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
-                            <connections>
-                                <action selector="showHideSection:" destination="UNN-CO-bfL" eventType="touchUpInside" id="S7h-g6-2h0"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-EX-7cH">
                             <rect key="frame" x="366.5" y="17.5" width="17.5" height="17.5"/>
@@ -44,9 +41,6 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <imageReference key="image" image="icon_arrow_down" symbolScale="default" renderingMode="original"/>
                             </state>
-                            <connections>
-                                <action selector="showHideSection:" destination="UNN-CO-bfL" eventType="touchUpInside" id="LPa-Pr-zda"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>

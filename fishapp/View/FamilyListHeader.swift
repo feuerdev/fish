@@ -26,7 +26,12 @@ class FamilyListHeader: UICollectionReusableView {
     
     override func awakeFromNib() {
         self.view.layer.cornerRadius = 15
+        
+        let grTap = UITapGestureRecognizer(target: self, action: #selector(showHideSection(_:)))
+        
+        self.view.addGestureRecognizer(grTap)
     }
+    
     @IBAction func showHideSection(_ sender: Any) {
         self.collapsed = !self.collapsed
         delegate?.didCollapse(danger: self.danger, collapsed: self.collapsed)
@@ -54,5 +59,4 @@ class FamilyListHeader: UICollectionReusableView {
         }
         updateButton()
     }
-    
 }
