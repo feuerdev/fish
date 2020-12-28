@@ -41,7 +41,7 @@ class FamilyListLoadingView: UIView {
         self.addSubview(view)
         contentView = view
         
-        contentView?.layer.cornerRadius = 10
+        contentView?.layer.cornerRadius = defaultCornerRadius
         self.backgroundColor = .init(white: 0, alpha: 0)
     }
     

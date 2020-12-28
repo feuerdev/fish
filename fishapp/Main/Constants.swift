@@ -24,20 +24,27 @@ let FAMILY_NO_VERNACULAR = "NONE"
 //Orange/Blue blended UIColor(hexString: "b66b50")
 //Lightest Blue Clothing UIColor(hexString: "d9f1ff")
 
-let tintColor = UIColor(hexString: "3498db")
+let tintColor = UIColor(hexString: "2c3e50")
 
 let greenColor = UIColor(hexString: "2ecc71")
 let yellowColor = UIColor(hexString: "f1c40f")
 let redColor = UIColor(hexString: "c0392b")
+
+let textTintColor = UIColor.white
+let placeHolderColor = UIColor(white: 1, alpha: 0.5)
+let backGroundColor = tintColor
+let backGroundColor2 = UIColor(hexString: "2c3e50")
 
 //Dark Colors for white background
 let darkGreenColor = UIColor(hexString: "006513")
 let darkYellowColor = UIColor(hexString: "ab8d00")
 let darkRedColor = UIColor(hexString: "a9221b")
 
-let pinColor = UIColor(hexString: "d9f1ff")
-let circleFillColor = UIColor(hexString: "d9f1ff")
-let circleStrokeColor = UIColor.gray
+let pinColor = tintColor
+let circleFillColor = tintColor
+let circleStrokeColor = UIColor.white
 
 let skeletonColor = UIColor.gray
+
+let defaultCornerRadius = CGFloat(15.0)
 

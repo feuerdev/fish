@@ -35,12 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        window.backgroundColor = .white
+        window.backgroundColor = backGroundColor
         window.tintColor = tintColor
         
-        
+        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.barTintColor = tintColor
-        navigationController.navigationBar.tintColor = .white
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController.navigationBar.tintColor = textTintColor
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: textTintColor]
     }
 }

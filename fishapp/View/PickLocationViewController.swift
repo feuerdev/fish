@@ -24,7 +24,6 @@ class PickLocationViewController : UIViewController {
     var location: Location?
     
     override func viewDidLoad() {
-        
         self.title = getAppName()
 
         if #available(iOS 11.0, *) {
@@ -33,16 +32,20 @@ class PickLocationViewController : UIViewController {
             conSearchbarTop.constant = 44
         }
         
-        let textFieldInsideSearchBar = sbLocation.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = .white
+        sbLocation.setTextColor(textTintColor)
+        sbLocation.setSearchIconColor(textTintColor)
         sbLocation.backgroundColor = .clear
-        sbLocation.tintColor = .white
+        sbLocation.tintColor = textTintColor
         sbLocation.placeholder = "Search Location"
         sbLocation.delegate = self
-        sbLocation.setTextField(color: .init(white: 1, alpha: 0.6))
+        sbLocation.setTextField(color: backGroundColor)
+        sbLocation.getTextField()?.layer.cornerRadius = defaultCornerRadius
+        sbLocation.layer.cornerRadius = defaultCornerRadius
         
-        tvLocationResults.backgroundColor = .init(white: 1, alpha: 0.6)
-        tvLocationResults.layer.cornerRadius = 8
+        sbLocation.setPlaceholderTextColor(placeHolderColor)
+        
+        tvLocationResults.backgroundColor = backGroundColor
+        tvLocationResults.layer.cornerRadius = defaultCornerRadius
         tvLocationResults.dataSource = self
         tvLocationResults.delegate = self
 
@@ -50,6 +53,10 @@ class PickLocationViewController : UIViewController {
         mvMap.addGestureRecognizer(grTap)
         mvMap.delegate = self
         mvMap.mapType = .hybrid
+        
+        btnSearch.backgroundColor = tintColor
+        btnSearch.setTitleColor(textTintColor, for: .normal)
+        btnSearch.layer.cornerRadius = defaultCornerRadius
         
         searchCompleter.delegate = self
         searchCompleter.filterType = .locationsOnly
@@ -124,6 +131,10 @@ class PickLocationViewController : UIViewController {
             self.mvMap.centerCoordinate = item.placemark.coordinate
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 extension PickLocationViewController: PickLocationPresenterDelegate {
@@ -150,12 +161,15 @@ extension PickLocationViewController: MKMapViewDelegate {
         } else {
             return mapView.view(for: annotation)
         }
-        
     }
 }
 
 extension PickLocationViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard searchText.count > 0 else {
+            return
+        }
+        
         self.searchCompleter.queryFragment = searchText
         
         self.sbLocation.setShowsCancelButton(searchText.count > 0, animated: true)
@@ -191,7 +205,7 @@ extension PickLocationViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         
         cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = textTintColor
         cell.textLabel?.text = self.searchResults[indexPath.row]
         return cell
     }
