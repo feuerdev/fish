@@ -40,6 +40,12 @@ class FamilyListCollectionViewController: UICollectionViewController {
         self.collectionView.backgroundColor = .white
 
         self.loadingView = FamilyListLoadingView(centerIn: UIApplication.shared.keyWindow!)
+        
+        self.navigationItem.rightBarButtonItem = .init(image: UIImage(named: "icon_info"), style: .plain, target: self, action: #selector(infoTapped))
+    }
+    
+    @objc func infoTapped() {
+        self.navigationController?.pushViewController(InfoViewController(), animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
