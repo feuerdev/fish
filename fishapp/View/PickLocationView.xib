@@ -12,7 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickLocationViewController" customModule="fishapp" customModuleProvider="target">
             <connections>
                 <outlet property="btnSearch" destination="QRb-sX-Ti9" id="xXd-W2-H4a"/>
+                <outlet property="conResultHeight" destination="Nwh-UW-NJP" id="SDQ-gW-8Y6"/>
+                <outlet property="conSearchbarTop" destination="Q8i-I7-eM8" id="Bel-Ab-1V5"/>
                 <outlet property="mvMap" destination="M6a-Zi-MA8" id="43h-i3-c4f"/>
+                <outlet property="sbLocation" destination="WLF-AZ-ltJ" id="OGj-LF-QMu"/>
+                <outlet property="tvLocationResults" destination="MXP-d7-yXo" id="faz-IK-hvS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="QH1-8l-AwW"/>
             </connections>
         </placeholder>
@@ -44,21 +48,38 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MXP-d7-yXo">
+                    <rect key="frame" x="4" y="100" width="363" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="Nwh-UW-NJP"/>
+                    </constraints>
+                </tableView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="WLF-AZ-ltJ">
+                    <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="QRb-sX-Ti9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.25" id="4EN-tg-2Lx"/>
+                <constraint firstItem="MXP-d7-yXo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="DKi-IS-OnD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRb-sX-Ti9" secondAttribute="bottom" constant="10" id="Kof-YR-yxY"/>
+                <constraint firstItem="WLF-AZ-ltJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q8i-I7-eM8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MXP-d7-yXo" secondAttribute="trailing" constant="8" id="U2Y-Wj-5lj"/>
                 <constraint firstItem="M6a-Zi-MA8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="USR-Mc-fWR"/>
                 <constraint firstItem="4F3-Lg-h6d" firstAttribute="centerY" secondItem="QRb-sX-Ti9" secondAttribute="centerY" constant="-35" id="UnL-fr-tBj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WLF-AZ-ltJ" secondAttribute="trailing" id="WC6-vV-5Ow"/>
                 <constraint firstItem="M6a-Zi-MA8" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="blO-48-0Pi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M6a-Zi-MA8" secondAttribute="trailing" id="gcV-Ul-lgn"/>
                 <constraint firstItem="QRb-sX-Ti9" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="knk-d3-CW4"/>
+                <constraint firstItem="WLF-AZ-ltJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uVQ-iJ-5Gk"/>
                 <constraint firstItem="4F3-Lg-h6d" firstAttribute="centerX" secondItem="QRb-sX-Ti9" secondAttribute="centerX" id="vkM-U6-g6h"/>
                 <constraint firstItem="M6a-Zi-MA8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ybC-od-o49"/>
+                <constraint firstItem="MXP-d7-yXo" firstAttribute="top" secondItem="WLF-AZ-ltJ" secondAttribute="bottom" id="zEh-jN-jEB"/>
             </constraints>
-            <point key="canvasLocation" x="234.05797101449278" y="209.5108695652174"/>
+            <point key="canvasLocation" x="232.80000000000001" y="209.11330049261085"/>
         </view>
     </objects>
     <resources>
