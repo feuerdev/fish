@@ -52,16 +52,15 @@ class PickLocationViewController : UIViewController {
         if let location = self.location {
             presenter?.search(view: self, location: location)
         } else {
-            let toast = "Tap the map to select a location 🦈"
-            let alert = UIAlertController(title: nil, message: toast, preferredStyle: .alert)
-            self.present(alert, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                alert.dismiss(animated: true, completion: nil)
+            showToast(message: "Tap the map to select a location 🦈")
+        }
+    }
             }
         }
     }
-}
-
+                self.showSimpleError(title: "Oops 🐙", message: error?.localizedDescription, popViewController: false)
+                return
+            }
 extension PickLocationViewController: PickLocationPresenterDelegate {
     //Here would be messages from the Presenter to the View
     //Right now we don't have any
@@ -90,6 +89,10 @@ extension PickLocationViewController: MKMapViewDelegate {
     }
 }
 
+    
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        self.showSimpleError(title: "Oops 🐙", message: error.localizedDescription, popViewController: false)
+    }
 // MARK: - Hide Navigation Bar
 extension PickLocationViewController {
     override func viewWillAppear(_ animated: Bool) {

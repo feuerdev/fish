@@ -155,11 +155,7 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
     }
     
     func showError(_ error: String) {
-        let alert = UIAlertController(title: "Oops", message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Go Back", style: .default, handler: {_ in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true)
+        self.showSimpleError(title: "Oops 🐙", message: error, popViewController: true)
     }
     
     func updateLoadingStatus(percent: Float) {
