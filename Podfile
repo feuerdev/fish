@@ -7,7 +7,7 @@ target 'fishapp' do
 
   # Pods for fishapp
   pod 'SkeletonView'
-
+  pod 'ReachabilitySwift'
 
   target 'fishappTests' do
     inherit! :search_paths

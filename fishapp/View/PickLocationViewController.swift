@@ -7,6 +7,7 @@
 import UIKit
 import MapKit
 import Feuerlib
+import Reachability
 
 class PickLocationViewController : UIViewController {
     
@@ -89,10 +90,29 @@ class PickLocationViewController : UIViewController {
     }
     
     @IBAction func searchTapped(_ sender: Any) {
-        if let location = self.location {
-            presenter?.search(view: self, location: location)
-        } else {
+        
+        guard let location = self.location else {
             showToast(message: "Tap the map to select a location 🦈")
+            return
+        }
+        
+        guard let reachability = try? Reachability() else {
+            return
+        }
+        
+        if reachability.connection == .cellular && !UserDefaults.standard.bool(forKey: WARNING_CELLULAR_NEVER_SHOW_AGAIN) {
+            let alert = UIAlertController(title: "Warning", message: "You are currently using cellular data. This App will download pictures of the fish you find. Are you okay with using your data for that?", preferredStyle: .alert)
+            alert.addAction(.init(title: "Yes", style: .default, handler: { action in
+                self.presenter?.search(view: self, location: location)
+            }))
+            alert.addAction(.init(title: "Yes, always allow", style: .default, handler: { action in
+                self.presenter?.search(view: self, location: location)
+                UserDefaults.standard.setValue(true, forKey: WARNING_CELLULAR_NEVER_SHOW_AGAIN)
+            }))
+            alert.addAction(.init(title: "No", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            presenter?.search(view: self, location: location)
         }
     }
     
