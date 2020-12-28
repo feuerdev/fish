@@ -38,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.backgroundColor = backGroundColor
         window.tintColor = tintColor
         
+        if #available(iOS 13.0, *) {
+            window.overrideUserInterfaceStyle = .light
+        }
+        
         navigationController.navigationBar.barStyle = .black
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.barTintColor = tintColor
