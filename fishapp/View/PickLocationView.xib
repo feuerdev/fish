@@ -29,9 +29,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-sX-Ti9">
-                    <rect key="frame" x="8" y="698" width="359" height="36"/>
+                    <rect key="frame" x="8" y="712" width="359" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="🐠 Explore 🐡">
+                    <state key="normal" title="Explore 🐠">
                         <color key="titleColor" red="0.99370659722222221" green="1" blue="0.98741319444444442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -55,7 +55,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="MXP-d7-yXo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="DKi-IS-OnD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRb-sX-Ti9" secondAttribute="bottom" constant="44" id="Kof-YR-yxY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRb-sX-Ti9" secondAttribute="bottom" constant="30" id="Kof-YR-yxY"/>
                 <constraint firstItem="WLF-AZ-ltJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q8i-I7-eM8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MXP-d7-yXo" secondAttribute="trailing" constant="8" id="U2Y-Wj-5lj"/>
                 <constraint firstItem="M6a-Zi-MA8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="USR-Mc-fWR"/>
