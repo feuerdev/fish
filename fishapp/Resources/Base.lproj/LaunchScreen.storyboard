@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -13,15 +13,18 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eA-izY">
-                                <rect key="frame" x="41.5" y="153" width="331" height="600"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐡 Big Pond 🐠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNX-R0-flR">
-                                <rect key="frame" x="105" y="661.5" width="204.5" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-ka-GoY">
+                                <rect key="frame" x="106" y="224.5" width="108" height="119.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Pond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNX-R0-flR">
+                                <rect key="frame" x="54.5" y="478" width="211.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -29,11 +32,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="xju-eA-izY" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.8" id="L5h-EG-pi6"/>
-                            <constraint firstItem="xju-eA-izY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dca-fQ-7Ze"/>
+                            <constraint firstItem="aOO-ka-GoY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Dmf-Ea-DuH"/>
+                            <constraint firstItem="aOO-ka-GoY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eUp-qo-l54"/>
                             <constraint firstItem="yNX-R0-flR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gwD-oR-gZI"/>
-                            <constraint firstItem="yNX-R0-flR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.5" id="q91-YV-7wA"/>
-                            <constraint firstItem="xju-eA-izY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tBg-Ev-piW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yNX-R0-flR" secondAttribute="bottom" constant="30" id="hsP-w0-Rgb"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,7 +44,4 @@
             <point key="canvasLocation" x="-496" y="83"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="logo_shadow" width="600" height="600"/>
-    </resources>
 </document>
