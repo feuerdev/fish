@@ -29,10 +29,10 @@ class SpeciesListCell: UITableViewCell {
                 lblRisk.attributedText = species.getPresentableCategory()
 
                 self.lblName.isSkeletonable = true
-                self.lblName.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(species.danger)))
+                self.lblName.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
 
                 self.ivImage.isSkeletonable = true
-                self.ivImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(species.danger)))
+                self.ivImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
                 
                 LoadVernacularService.loadVernacular(id: species.taxonId) { result in
                     switch result {
@@ -84,11 +84,20 @@ class SpeciesListCell: UITableViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        self.lblRank.textColor = textTintColor
+        self.lblRisk.textColor = textTintColor
+        self.lblName.textColor = textTintColor
+        self.lblAuthorship.textColor = textTintColor
+        self.lblScientificName.textColor = textTintColor
+        self.lblNoPhoto.textColor = textTintColor
+    }
+    
     func showNoPhoto(species:Species) {
         DispatchQueue.main.async() {
             self.ivImage.image = nil
             self.ivImage.hideSkeleton()
-            self.ivImage.backgroundColor = Danger.getColor(species.danger)
+            self.ivImage.backgroundColor = self.tintColor
             self.lblNoPhoto.isHidden = false
         }
     }

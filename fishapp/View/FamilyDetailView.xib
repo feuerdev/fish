@@ -15,6 +15,7 @@
                 <outlet property="ivPhoto" destination="tTn-5M-iBu" id="sPs-YM-CDH"/>
                 <outlet property="lblNoPhoto" destination="Rh0-CZ-kic" id="OLU-fA-UIb"/>
                 <outlet property="lblScientific" destination="m1r-yN-fWw" id="NpG-YS-Na0"/>
+                <outlet property="lblSpecies" destination="Woh-jk-EN2" id="uEq-eP-h12"/>
                 <outlet property="lblTaxonHierarchy" destination="FrR-Zd-AN6" id="Bxs-vv-pUW"/>
                 <outlet property="lblVernacular" destination="Lh7-WJ-xr3" id="Llx-Zb-2fu"/>
                 <outlet property="stackView" destination="vxC-cT-lwJ" id="xcd-ee-6Ct"/>

@@ -33,7 +33,7 @@ class FamilyListCell: UICollectionViewCell {
         self.lblVernacular.isSkeletonable = false
         self.ivPhoto.isSkeletonable = true
         
-        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(family.danger)))
+        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
         self.lblLatin.text = family.family
         self.lblLatin.hideSkeleton()
@@ -92,7 +92,7 @@ class FamilyListCell: UICollectionViewCell {
         DispatchQueue.main.async() {
             self.ivPhoto.image = nil
             self.ivPhoto.hideSkeleton()
-            self.ivPhoto.backgroundColor = Danger.getColor(family.danger)
+            self.ivPhoto.backgroundColor = self.tintColor
             self.lblNoPhoto.isHidden = false
             
         }
@@ -107,6 +107,7 @@ class FamilyListCell: UICollectionViewCell {
         //Style
         self.view.layer.cornerRadius = defaultCornerRadius
         self.view.backgroundColor = backGroundColor2
+        self.lblNoPhoto.textColor = textTintColor
         self.lblLatin.textColor = textTintColor
         self.lblVernacular.textColor = textTintColor
     }

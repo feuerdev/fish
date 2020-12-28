@@ -19,12 +19,20 @@ class FamilyDetailViewController: UIViewController {
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblTaxonHierarchy: UILabel!
+    @IBOutlet weak var lblSpecies: UILabel!
     @IBOutlet weak var tvSpecies: UITableView!
     @IBOutlet weak var conTableHeight: NSLayoutConstraint!
     var presenter: FamilyDetailPresenter?
     
     override func viewDidLoad() {
         self.title = "Family"
+        
+        self.view.backgroundColor = tintColor
+        self.lblVernacular.textColor = textTintColor
+        self.lblScientific.textColor = textTintColor
+        self.lblTaxonHierarchy.textColor = textTintColor
+        self.lblSpecies.textColor = textTintColor
+        self.lblNoPhoto.textColor = textTintColor
 
         guard self.presenter != nil else {
             return
@@ -40,9 +48,9 @@ class FamilyDetailViewController: UIViewController {
         lblScientific.text = presenter!.interactor.family.family
         lblTaxonHierarchy.text = presenter!.presentableHierarchy()
         
-        self.ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(presenter!.interactor.family.danger)))
+        self.ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
-        self.lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Danger.getColor(presenter!.interactor.family.danger)))
+        self.lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
         LoadVernacularService.loadVernacular(id: presenter!.interactor.family.familyId) { result in
             switch result {
@@ -91,9 +99,8 @@ class FamilyDetailViewController: UIViewController {
         DispatchQueue.main.async() {
             self.ivPhoto.image = nil
             self.ivPhoto.hideSkeleton()
-            self.ivPhoto.backgroundColor = Danger.getColor(family.danger)
+            self.ivPhoto.backgroundColor = tintColor
             self.lblNoPhoto.isHidden = false
-            
         }
     }
     

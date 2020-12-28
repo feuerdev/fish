@@ -34,18 +34,13 @@ let redColor = UIColor(hexString: "c0392b")
 let textTintColor = UIColor.white
 let placeHolderColor = UIColor(white: 1, alpha: 0.5)
 let backGroundColor = tintColor
-let backGroundColor2 = UIColor(hexString: "2c3e50")
-
-//Dark Colors for white background
-let darkGreenColor = UIColor(hexString: "006513")
-let darkYellowColor = UIColor(hexString: "ab8d00")
-let darkRedColor = UIColor(hexString: "a9221b")
+let backGroundColor2 = tintColor
 
 let pinColor = tintColor
 let circleFillColor = tintColor
 let circleStrokeColor = UIColor.white
 
-let skeletonColor = UIColor.gray
+let skeletonColor = tintColor
 
 let defaultCornerRadius = CGFloat(15.0)
 
