@@ -59,6 +59,12 @@ enum Danger: Int {
 }
 
 let filteredSpecies = [
+    5, 6, //Bacteria
+    7, 8, //Single Cells
+    801, 852, //Algae
+    882, //Worms
+    155670, //Water fleas
+    146420, //Sea squirts
     889925, //Hexanauplia - Small crustaceans
 ]
 
