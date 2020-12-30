@@ -15,7 +15,6 @@ class PickLocationViewController : UIViewController {
     @IBOutlet weak var mvMap: MKMapView!
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var tvLocationResults: UITableView!
-    @IBOutlet weak var conSearchbarTop: NSLayoutConstraint!
     @IBOutlet weak var conResultHeight: NSLayoutConstraint!
     var presenter: PickLocationPresenter?
     
@@ -29,12 +28,6 @@ class PickLocationViewController : UIViewController {
         
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
-        }
-
-        if #available(iOS 11.0, *) {
-            //nothing
-        } else {
-            conSearchbarTop.constant = 44
         }
         
         mvMap.layer.cornerRadius = defaultCornerRadius

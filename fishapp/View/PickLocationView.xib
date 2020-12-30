@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="btnSearch" destination="QRb-sX-Ti9" id="xXd-W2-H4a"/>
                 <outlet property="conResultHeight" destination="Nwh-UW-NJP" id="SDQ-gW-8Y6"/>
-                <outlet property="conSearchbarTop" destination="Q8i-I7-eM8" id="Bel-Ab-1V5"/>
                 <outlet property="mvMap" destination="M6a-Zi-MA8" id="43h-i3-c4f"/>
                 <outlet property="sbLocation" destination="WLF-AZ-ltJ" id="OGj-LF-QMu"/>
                 <outlet property="tvLocationResults" destination="MXP-d7-yXo" id="faz-IK-hvS"/>
