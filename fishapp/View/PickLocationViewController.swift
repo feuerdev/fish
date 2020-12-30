@@ -159,14 +159,6 @@ class PickLocationViewController : UIViewController {
             self.mvMap.centerCoordinate = item.placemark.coordinate
         }
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        if #available(iOS 13.0, *) {
-            return .darkContent
-        } else {
-            return .default
-        }
-    }
 }
 
 extension PickLocationViewController: PickLocationPresenterDelegate {
