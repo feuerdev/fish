@@ -37,6 +37,8 @@ class PickLocationViewController : UIViewController {
             conSearchbarTop.constant = 44
         }
         
+        mvMap.layer.cornerRadius = defaultCornerRadius
+        mvMap.layer.borderWidth = 1
         mvMap.layer.borderColor = pondColor.cgColor
         view.backgroundColor = backGroundColor2
         
@@ -49,7 +51,6 @@ class PickLocationViewController : UIViewController {
         sbLocation.setTextField(color: backGroundColor)
         sbLocation.getTextField()?.layer.cornerRadius = defaultCornerRadius
         sbLocation.layer.cornerRadius = defaultCornerRadius
-        
         sbLocation.setPlaceholderTextColor(placeHolderColor)
         
         tvLocationResults.backgroundColor = backGroundColor
@@ -60,7 +61,11 @@ class PickLocationViewController : UIViewController {
         let grTap = UITapGestureRecognizer(target: self, action: #selector(onMapTap(gestureRecognizer:)))
         mvMap.addGestureRecognizer(grTap)
         mvMap.delegate = self
-        mvMap.mapType = .satellite
+        if #available(iOS 11.0, *) {
+            mvMap.mapType = .mutedStandard
+        } else {
+            mvMap.mapType = .standard
+        }
         
         btnSearch.backgroundColor = pondColor
         btnSearch.setTitleColor(textTintColor, for: .normal)
@@ -180,16 +185,11 @@ extension PickLocationViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView,
                  rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        
-        if overlay is MKTileOverlay {
-            return MKTileOverlayRenderer(tileOverlay: overlay as! MKTileOverlay)
-        } else {
-            let circleRenderer = MKCircleRenderer(overlay: overlay)
-            circleRenderer.fillColor = circleFillColor
-            circleRenderer.strokeColor = circleStrokeColor
-            circleRenderer.alpha = 0.1
-            return circleRenderer
-        }
+        let circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.fillColor = circleFillColor
+        circleRenderer.strokeColor = circleStrokeColor
+        circleRenderer.alpha = 0.1
+        return circleRenderer
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -257,22 +257,5 @@ extension PickLocationViewController: UITableViewDataSource {
 extension PickLocationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectLocation(indexPath.row)
-    }
-}
-
-// MARK: - Hide Navigation Bar
-extension PickLocationViewController {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
