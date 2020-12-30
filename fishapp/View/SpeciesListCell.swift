@@ -23,6 +23,8 @@ class SpeciesListCell: UITableViewCell {
     var species: Species? {
         didSet {
             if let species = species {
+                
+                lblNoPhoto.isHidden = true
                 lblScientificName.text = species.getPresentableName()
                 lblAuthorship.text = species.getPresentableAuthorship()
                 lblRank.text = species.taxonRank
