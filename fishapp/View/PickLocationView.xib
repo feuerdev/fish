@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6a-Zi-MA8">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <rect key="frame" x="8" y="100" width="359" height="624"/>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-sX-Ti9">
-                    <rect key="frame" x="8" y="712" width="359" height="36"/>
+                    <rect key="frame" x="8" y="732" width="359" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <state key="normal" title="Explore 🐠">
                         <color key="titleColor" red="0.99370659722222221" green="1" blue="0.98741319444444442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,30 +51,25 @@
                 </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.74117647058823533" green="0.76470588235294112" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M6a-Zi-MA8" secondAttribute="trailing" constant="8" id="132-fo-r5p"/>
+                <constraint firstItem="M6a-Zi-MA8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="5pD-Ze-yyQ"/>
                 <constraint firstItem="MXP-d7-yXo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="DKi-IS-OnD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRb-sX-Ti9" secondAttribute="bottom" constant="30" id="Kof-YR-yxY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRb-sX-Ti9" secondAttribute="bottom" constant="10" id="Kof-YR-yxY"/>
                 <constraint firstItem="WLF-AZ-ltJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q8i-I7-eM8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MXP-d7-yXo" secondAttribute="trailing" constant="8" id="U2Y-Wj-5lj"/>
-                <constraint firstItem="M6a-Zi-MA8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="USR-Mc-fWR"/>
+                <constraint firstItem="M6a-Zi-MA8" firstAttribute="top" secondItem="WLF-AZ-ltJ" secondAttribute="bottom" id="UXV-C1-NA4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WLF-AZ-ltJ" secondAttribute="trailing" id="WC6-vV-5Ow"/>
                 <constraint firstItem="QRb-sX-Ti9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="aZa-nc-Whd"/>
-                <constraint firstItem="M6a-Zi-MA8" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="blO-48-0Pi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QRb-sX-Ti9" secondAttribute="trailing" constant="8" id="gMH-EB-lBm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M6a-Zi-MA8" secondAttribute="trailing" id="gcV-Ul-lgn"/>
+                <constraint firstItem="QRb-sX-Ti9" firstAttribute="top" secondItem="M6a-Zi-MA8" secondAttribute="bottom" constant="8" symbolic="YES" id="gxh-7z-0LV"/>
                 <constraint firstItem="QRb-sX-Ti9" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="knk-d3-CW4"/>
                 <constraint firstItem="QRb-sX-Ti9" firstAttribute="height" secondItem="WLF-AZ-ltJ" secondAttribute="height" multiplier="0.642857" id="otl-ll-fxV"/>
                 <constraint firstItem="WLF-AZ-ltJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uVQ-iJ-5Gk"/>
-                <constraint firstItem="M6a-Zi-MA8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ybC-od-o49"/>
                 <constraint firstItem="MXP-d7-yXo" firstAttribute="top" secondItem="WLF-AZ-ltJ" secondAttribute="bottom" id="zEh-jN-jEB"/>
             </constraints>
             <point key="canvasLocation" x="232.80000000000001" y="209.11330049261085"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
