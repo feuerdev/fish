@@ -23,18 +23,24 @@ class SpeciesListCell: UITableViewCell {
     var species: Species? {
         didSet {
             if let species = species {
+                //reset
                 self.cacheKey = species.taxonId
                 lblNoPhoto.isHidden = true
+                lblScientificName.isHidden = false
+                
+                //set
                 lblScientificName.text = species.getPresentableName()
                 lblAuthorship.text = species.getPresentableAuthorship()
                 lblRank.text = species.taxonRank
                 lblRisk.attributedText = species.getPresentableCategory()
 
+                self.ivImage.layer.borderColor = species.getPresentableColor().cgColor
+                
                 self.lblName.isSkeletonable = true
-                self.lblName.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
+                self.lblName.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: species.getPresentableColor()))
 
                 self.ivImage.isSkeletonable = true
-                self.ivImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
+                self.ivImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: species.getPresentableColor()))
                 
                 LoadVernacularService.loadVernacular(id: species.taxonId) { result in
                     guard self.cacheKey == result.cacheKey else {
@@ -79,19 +85,22 @@ class SpeciesListCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        self.lblRank.textColor = textTintColor
-        self.lblRisk.textColor = textTintColor
-        self.lblName.textColor = textTintColor
-        self.lblAuthorship.textColor = textTintColor
-        self.lblScientificName.textColor = textTintColor
-        self.lblNoPhoto.textColor = textTintColor
+        self.lblRank.textColor = .black
+        self.lblRisk.textColor = .black
+        self.lblName.textColor = .black
+        self.lblAuthorship.textColor = .black
+        self.lblScientificName.textColor = .black
+        self.lblNoPhoto.textColor = .black
+        
+        self.ivImage.layer.cornerRadius = defaultCornerRadius
+        self.ivImage.layer.borderWidth = 1
     }
     
     func showNoPhoto(species:Species) {
         DispatchQueue.main.async() {
             self.ivImage.image = nil
             self.ivImage.hideSkeleton()
-            self.ivImage.backgroundColor = pondColor
+            self.ivImage.backgroundColor = species.getPresentableColor()
             self.lblNoPhoto.isHidden = false
         }
     }
