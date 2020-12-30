@@ -94,16 +94,10 @@ class FamilyListCell: UICollectionViewCell {
             self.ivPhoto.hideSkeleton()
             self.ivPhoto.backgroundColor = self.tintColor
             self.lblNoPhoto.isHidden = false
-            
         }
     }
     
     override func awakeFromNib() {
-        //Reset
-        self.ivPhoto.image = nil
-        self.lblLatin.text = ""
-        self.lblVernacular.text = ""
-        
         //Style
         self.view.layer.cornerRadius = defaultCornerRadius
         self.view.backgroundColor = backGroundColor2
