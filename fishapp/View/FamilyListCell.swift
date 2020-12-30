@@ -22,6 +22,7 @@ class FamilyListCell: UICollectionViewCell {
         //Reset
         self.cacheKey = family.familyId
         self.lblNoPhoto.isHidden = true
+        self.lblLatin.alpha = 1
         self.ivPhoto.backgroundColor = .clear
         self.ivPhoto.image = nil
         self.lblVernacular.text = ""
@@ -45,7 +46,7 @@ class FamilyListCell: UICollectionViewCell {
             case .failure(_):
                 DispatchQueue.main.async {
                     self.lblVernacular.text = family.family
-                    self.lblLatin.isHidden = true
+                    self.lblLatin.alpha = 0
                     self.lblVernacular.hideSkeleton()
                 }
                 break
