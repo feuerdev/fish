@@ -59,5 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: textTintColor]
         
+        //Color of "cancel" button in search bar
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): pondColor], for: .normal)
+        
     }
 }
