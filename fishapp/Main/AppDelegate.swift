@@ -35,14 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        window.backgroundColor = backGroundColor
+        window.backgroundColor = backGroundColor2
         window.tintColor = pondColor
         
         if #available(iOS 13.0, *) {
             window.overrideUserInterfaceStyle = .light
+            
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.backgroundColor = pondColor
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navigationController.navigationBar.standardAppearance = navBarAppearance
+            navigationController.navigationBar.scrollEdgeAppearance = navBarAppearance
         }
-        
-        navigationController.navigationBar.barStyle = .black
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.barTintColor = pondColor
         navigationController.navigationBar.tintColor = textTintColor
