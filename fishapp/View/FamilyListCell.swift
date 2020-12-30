@@ -35,24 +35,13 @@ class FamilyListCell: UICollectionViewCell {
         self.ivPhoto.isSkeletonable = true
         
         //Set
-        var color: UIColor
-        var textColor: UIColor
-        switch family.danger {
-        case .edGreen:
-            color = pondColor
-            textColor = textTintColor
-        default:
-            color = Danger.getColor(family.danger)
-            textColor = .black
-        }
-        
         self.view.hideSkeleton()
-        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: color))
-        self.view.backgroundColor = color
-        self.ivPhoto.backgroundColor = color
-        self.lblVernacular.textColor = textColor
-        self.lblLatin.textColor = textColor
-        self.lblNoPhoto.textColor = textColor
+        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
+        self.view.backgroundColor = family.getPresentableColor()
+        self.ivPhoto.backgroundColor = family.getPresentableColor()
+        self.lblVernacular.textColor = family.getPresentableTextColor()
+        self.lblLatin.textColor = family.getPresentableTextColor()
+        self.lblNoPhoto.textColor = family.getPresentableTextColor()
         
         self.lblLatin.text = family.family
         
