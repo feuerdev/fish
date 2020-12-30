@@ -38,6 +38,10 @@ class FamilyDetailViewController: UIViewController {
             return
         }
         
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
+        
         presenter?.viewDidLoad()
         
         tvSpecies.dataSource = self

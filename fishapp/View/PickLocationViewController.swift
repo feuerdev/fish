@@ -26,6 +26,10 @@ class PickLocationViewController : UIViewController {
     
     override func viewDidLoad() {
         self.title = getAppName()
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
 
         if #available(iOS 11.0, *) {
             //nothing

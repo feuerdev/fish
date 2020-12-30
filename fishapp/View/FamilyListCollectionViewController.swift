@@ -24,6 +24,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
         
         if #available(iOS 11.0, *) {
             self.additionalSafeAreaInsets = .init(top: 10, left: 0, bottom: 0, right: 0)
+            navigationItem.largeTitleDisplayMode = .never
         }
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
