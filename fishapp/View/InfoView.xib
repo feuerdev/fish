@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoViewController" customModule="fishapp" customModuleProvider="target">
+            <connections>
+                <outlet property="lblContent" destination="X2K-P0-dTe" id="ZEs-aE-W8B"/>
+                <outlet property="stvContent" destination="auI-B2-B5a" id="phs-bq-24V"/>
+                <outlet property="svContent" destination="ig1-N2-P7Y" id="XVf-EZ-u9f"/>
+                <outlet property="tvContent" destination="4Lp-lN-tCB" id="RMv-fs-G39"/>
+                <outlet property="view" destination="iN0-l3-epB" id="XcZ-gL-gPP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Lp-lN-tCB">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nu</string>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                </textView>
+                <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig1-N2-P7Y">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="auI-B2-B5a">
+                            <rect key="frame" x="10" y="10" width="394" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2K-P0-dTe">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="auI-B2-B5a" firstAttribute="leading" secondItem="ig1-N2-P7Y" secondAttribute="leading" constant="10" id="2AL-SM-wb2"/>
+                        <constraint firstAttribute="bottom" secondItem="auI-B2-B5a" secondAttribute="bottom" id="Hjm-oD-Eh3"/>
+                        <constraint firstItem="auI-B2-B5a" firstAttribute="width" secondItem="ig1-N2-P7Y" secondAttribute="width" constant="-20" id="KTj-Xm-W8D"/>
+                        <constraint firstItem="auI-B2-B5a" firstAttribute="trailing" secondItem="ig1-N2-P7Y" secondAttribute="trailing" constant="10" id="khu-jh-hQ7"/>
+                        <constraint firstItem="auI-B2-B5a" firstAttribute="top" secondItem="ig1-N2-P7Y" secondAttribute="top" constant="10" id="qW6-Qs-EUt"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ig1-N2-P7Y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="3OL-3X-5mr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ig1-N2-P7Y" secondAttribute="trailing" id="5hZ-ku-GhS"/>
+                <constraint firstItem="4Lp-lN-tCB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="H37-3G-QpY"/>
+                <constraint firstItem="ig1-N2-P7Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="R0t-Er-giE"/>
+                <constraint firstItem="4Lp-lN-tCB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RC6-4f-0SS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Lp-lN-tCB" secondAttribute="bottom" id="e7h-y2-7it"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ig1-N2-P7Y" secondAttribute="bottom" id="h9b-V6-vMb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4Lp-lN-tCB" secondAttribute="trailing" id="u8m-aD-onf"/>
+            </constraints>
+            <point key="canvasLocation" x="-72" y="27"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

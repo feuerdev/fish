@@ -36,6 +36,8 @@
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
 		2FC01C972552C55E00EDC211 /* FamilyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */; };
 		2FC01C9B2552C59800EDC211 /* FamilyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */; };
+		2FC8B78D259A6E750096862A /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8B78C259A6E750096862A /* InfoView.xib */; };
+		2FC8B790259A6E930096862A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8B78F259A6E930096862A /* InfoViewController.swift */; };
 		2FDEF1A1256E66E4004DDB9B /* UIDocumentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */; };
 		2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D4256A63510078550D /* LoadPhotoService.swift */; };
 		2FDEF3D9256A72730078550D /* FamilyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */; };
@@ -111,6 +113,8 @@
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
 		2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailViewController.swift; sourceTree = "<group>"; };
 		2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailPresenter.swift; sourceTree = "<group>"; };
+		2FC8B78C259A6E750096862A /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		2FC8B78F259A6E930096862A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		2FDEF1A0256E66E4004DDB9B /* UIDocumentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDocumentImageView.swift; sourceTree = "<group>"; };
 		2FDEF3D4256A63510078550D /* LoadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoService.swift; sourceTree = "<group>"; };
 		2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailInteractor.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				2F943B8C255EC33400F20236 /* FamilyDetailView.xib */,
 				2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */,
 				2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */,
+				2FC8B78C259A6E750096862A /* InfoView.xib */,
+				2FC8B78F259A6E930096862A /* InfoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				2FE7F917255A920D00FE7D1E /* FamilyListCell.xib in Resources */,
 				2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */,
 				2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */,
+				2FC8B78D259A6E750096862A /* InfoView.xib in Resources */,
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
 				2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */,
 				2F5120D5256E9BE800715612 /* FamilyListLoadingView.xib in Resources */,
@@ -489,6 +496,7 @@
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
 				2FDEF3D9256A72730078550D /* FamilyDetailInteractor.swift in Sources */,
 				2FE7F91B255A924E00FE7D1E /* FamilyListCell.swift in Sources */,
+				2FC8B790259A6E930096862A /* InfoViewController.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Family.swift in Sources */,
 				2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */,
 				2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */,
@@ -672,12 +680,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LQDASF64MT;
 				INFOPLIST_FILE = fishapp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.feuer.fish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -696,12 +706,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LQDASF64MT;
 				INFOPLIST_FILE = fishapp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.feuer.fish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
