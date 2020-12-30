@@ -34,7 +34,7 @@ class FamilyDetailViewController: UIViewController {
         self.lblSpecies.textColor = textTintColor
         self.lblNoPhoto.textColor = textTintColor
 
-        guard self.presenter != nil else {
+        guard let family = self.presenter?.interactor.family else {
             return
         }
         
@@ -45,50 +45,40 @@ class FamilyDetailViewController: UIViewController {
         let nib = UINib(nibName: "SpeciesListCell", bundle: nil)
         tvSpecies.register(nib, forCellReuseIdentifier: "SpeciesListCell")
         
-        lblScientific.text = presenter!.interactor.family.family
-        lblTaxonHierarchy.text = presenter!.presentableHierarchy()
+        lblScientific.text = family.family
+        lblTaxonHierarchy.text = presenter?.presentableHierarchy()
         
         self.ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
         self.lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
-        LoadVernacularService.loadVernacular(id: presenter!.interactor.family.familyId) { result in
-            switch result {
+        LoadVernacularService.loadVernacular(id: family.familyId) { result in
+            switch result.result {
             case .failure(_):
                 DispatchQueue.main.async {
-                    self.lblVernacular.text = self.presenter!.interactor.family.family
+                    self.lblVernacular.text = family.family
                     self.lblScientific.isHidden = true
                     self.lblVernacular.hideSkeleton()
                 }
                 break
-            case .success(let result):
+            case .success(let name):
                 DispatchQueue.main.async {
-                    self.lblVernacular.text = result.vernacular
+                    self.lblVernacular.text = name
                     self.lblVernacular.hideSkeleton()
                 }
             }
         }
-        
-        if let searchTerm = presenter!.interactor.family.family {
-            LoadPhotoService.loadPhoto(id: presenter!.interactor.family.familyId, searchParameter: searchTerm) { result in
-                switch result {
+       
+        if let searchTerm = family.family {
+            LoadPhotoService.loadPhoto(id: family.familyId, searchParameter: searchTerm) { result in
+                switch result.result {
                 case .failure(_):
-                    self.showNoPhoto(family: self.presenter!.interactor.family)
+                    self.showNoPhoto(family: family)
                     break
-                case .success(let result):
-                    ImageCache.shared.getImage(from: result.url) { [weak self] result in
-                        guard let self = self else {
-                            return
-                        }
-                        switch result {
-                        case .success((_, let image)):
-                            DispatchQueue.main.async() {
-                                self.ivPhoto.image = image
-                                self.ivPhoto.hideSkeleton()
-                            }
-                        case .failure(_):
-                            break
-                        }
+                case .success(let image):
+                    DispatchQueue.main.async() {
+                        self.ivPhoto.image = image
+                        self.ivPhoto.hideSkeleton()
                     }
                 }
             }

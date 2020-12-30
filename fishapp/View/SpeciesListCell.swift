@@ -18,12 +18,12 @@ class SpeciesListCell: UITableViewCell {
     @IBOutlet weak var lblScientificName: UILabel!
     @IBOutlet weak var lblNoPhoto: UILabel!
     
-    var cacheKey: String?
+    var cacheKey: Int?
     
     var species: Species? {
         didSet {
             if let species = species {
-                
+                self.cacheKey = species.taxonId
                 lblNoPhoto.isHidden = true
                 lblScientificName.text = species.getPresentableName()
                 lblAuthorship.text = species.getPresentableAuthorship()
@@ -37,7 +37,11 @@ class SpeciesListCell: UITableViewCell {
                 self.ivImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
                 
                 LoadVernacularService.loadVernacular(id: species.taxonId) { result in
-                    switch result {
+                    guard self.cacheKey == result.cacheKey else {
+                        return
+                    }
+                    
+                    switch result.result {
                     case .failure(_):
                         DispatchQueue.main.async {
                             self.lblName.text = species.getPresentableName()
@@ -45,39 +49,27 @@ class SpeciesListCell: UITableViewCell {
                             self.lblName.hideSkeleton()
                         }
                         break
-                    case .success(let result):
-                        if(species.taxonId == result.familyId) { //Prevent loading the result after the cell has already been reused
-                            DispatchQueue.main.async {
-                                self.lblName.text = result.vernacular
-                                self.lblName.hideSkeleton()
-                            }
+                    case .success(let name):
+                        DispatchQueue.main.async {
+                            self.lblName.text = name
+                            self.lblName.hideSkeleton()
                         }
                     }
                 }
                 
                 if let searchTerm = species.species {
                     LoadPhotoService.loadPhoto(id: species.taxonId, searchParameter: searchTerm) { result in
-                        switch result {
+                        guard result.cacheKey == self.cacheKey else {
+                            return
+                        }
+                        switch result.result {
                         case .failure(_):
                             self.showNoPhoto(species: species)
                             break
-                        case .success(let result):
-                            self.cacheKey = result.url
-                            ImageCache.shared.getImage(from: result.url) { [weak self] result in
-                                guard let self = self else {
-                                    return
-                                }
-                                switch result {
-                                case .success((let cacheKey, let image)):
-                                    if self.cacheKey == cacheKey {
-                                        DispatchQueue.main.async() {
-                                            self.ivImage.image = image
-                                            self.ivImage.hideSkeleton()
-                                        }
-                                    }
-                                case .failure(_):
-                                    break
-                                }
+                        case .success(let image):
+                            DispatchQueue.main.async() {
+                                self.ivImage.image = image
+                                self.ivImage.hideSkeleton()
                             }
                         }
                     }

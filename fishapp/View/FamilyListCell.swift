@@ -16,30 +16,32 @@ class FamilyListCell: UICollectionViewCell {
     @IBOutlet weak var lblNoPhoto: UILabel!
     @IBOutlet weak var ivPhoto: UIDocumentImageView!
     
-    var cacheKey: String?
+    var cacheKey: Int?
     
     func setFamily(_ family: Family) {
         //Reset
+        self.cacheKey = family.familyId
         self.lblNoPhoto.isHidden = true
         self.ivPhoto.backgroundColor = .clear
         self.ivPhoto.image = nil
         self.lblVernacular.text = ""
         self.lblLatin.text = ""
-        self.cacheKey = ""
         
         //Skeleton
-        self.view.isSkeletonable = true
         self.lblLatin.isSkeletonable = false
-        self.lblVernacular.isSkeletonable = false
+        self.view.isSkeletonable = true
+        self.lblVernacular.isSkeletonable = true
         self.ivPhoto.isSkeletonable = true
-        
         self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
+        //Set
         self.lblLatin.text = family.family
-        self.lblLatin.hideSkeleton()
         
         LoadVernacularService.loadVernacular(id: family.familyId) { result in
-            switch result {
+            guard result.cacheKey == self.cacheKey else {
+                return
+            }
+            switch result.result {
             case .failure(_):
                 DispatchQueue.main.async {
                     self.lblVernacular.text = family.family
@@ -47,41 +49,27 @@ class FamilyListCell: UICollectionViewCell {
                     self.lblVernacular.hideSkeleton()
                 }
                 break
-            case .success(let result):
-                if(family.familyId == result.familyId) { //Prevent loading the result after the cell has already been reused
-                    DispatchQueue.main.async {
-                        self.lblVernacular.text = result.vernacular
-                        self.lblVernacular.hideSkeleton()
-                    }
+            case .success(let name):
+                DispatchQueue.main.async {
+                    self.lblVernacular.text = name
+                    self.lblVernacular.hideSkeleton()
                 }
             }
         }
         
         if let searchTerm = family.family {
             LoadPhotoService.loadPhoto(id: family.familyId, searchParameter: searchTerm) { result in
-                switch result {
+                guard result.cacheKey == self.cacheKey else {
+                    return
+                }
+                switch result.result {
                 case .failure(_):
                     self.showNoPhoto(family: family)
                     break
-                case .success(let result):
-                    self.cacheKey = result.url
-                    ImageCache.shared.getImage(from: result.url) { [weak self] result in
-                        guard let self = self else {
-                            return
-                        }
-                        switch result {
-                        case .success((let cacheKey, let image)):
-                            if self.cacheKey == cacheKey {
-                                DispatchQueue.main.async() {
-                                    self.ivPhoto.image = image
-                                    self.ivPhoto.hideSkeleton()
-                                }
-                            }
-                        case .failure(let error):
-                            print(error)
-                            self.showNoPhoto(family: family)
-                            break
-                        }
+                case .success(let image):
+                    DispatchQueue.main.async() {
+                        self.ivPhoto.image = image
+                        self.ivPhoto.hideSkeleton()
                     }
                 }
             }
@@ -98,6 +86,10 @@ class FamilyListCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
+        //clear
+        self.lblVernacular.text = ""
+        self.lblLatin.text = ""
+        
         //Style
         self.view.layer.cornerRadius = defaultCornerRadius
         self.view.backgroundColor = backGroundColor2
