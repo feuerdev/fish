@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window.backgroundColor = backGroundColor
-        window.tintColor = tintColor
+        window.tintColor = pondColor
         
         if #available(iOS 13.0, *) {
             window.overrideUserInterfaceStyle = .light
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigationController.navigationBar.barStyle = .black
         navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.barTintColor = tintColor
+        navigationController.navigationBar.barTintColor = pondColor
         navigationController.navigationBar.tintColor = textTintColor
         navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: textTintColor]
     }

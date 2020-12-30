@@ -14,7 +14,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var svContent: UIScrollView!
     @IBOutlet weak var stvContent: UIStackView!
     override func viewDidLoad() {
-        self.view.backgroundColor = tintColor
+        self.view.backgroundColor = pondColor
         self.lblContent.textColor = textTintColor
         
         self.lblContent.text =

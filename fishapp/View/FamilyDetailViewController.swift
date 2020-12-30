@@ -27,7 +27,7 @@ class FamilyDetailViewController: UIViewController {
     override func viewDidLoad() {
         self.title = "Family"
         
-        self.view.backgroundColor = tintColor
+        self.view.backgroundColor = backGroundColor2
         self.lblVernacular.textColor = textTintColor
         self.lblScientific.textColor = textTintColor
         self.lblTaxonHierarchy.textColor = textTintColor
@@ -89,7 +89,7 @@ class FamilyDetailViewController: UIViewController {
         DispatchQueue.main.async() {
             self.ivPhoto.image = nil
             self.ivPhoto.hideSkeleton()
-            self.ivPhoto.backgroundColor = tintColor
+            self.ivPhoto.backgroundColor = pondColor
             self.lblNoPhoto.isHidden = false
         }
     }

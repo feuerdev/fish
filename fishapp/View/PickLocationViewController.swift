@@ -33,6 +33,9 @@ class PickLocationViewController : UIViewController {
             conSearchbarTop.constant = 44
         }
         
+        mvMap.layer.borderColor = pondColor.cgColor
+        view.backgroundColor = backGroundColor2
+        
         sbLocation.setTextColor(textTintColor)
         sbLocation.setSearchIconColor(textTintColor)
         sbLocation.backgroundColor = .clear
@@ -55,12 +58,7 @@ class PickLocationViewController : UIViewController {
         mvMap.delegate = self
         mvMap.mapType = .satellite
         
-        let template = "https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
-        let overlay = MKTileOverlay(urlTemplate: template)
-        overlay.canReplaceMapContent = true
-        mvMap.addOverlay(overlay, level: .aboveLabels)
-        
-        btnSearch.backgroundColor = tintColor
+        btnSearch.backgroundColor = pondColor
         btnSearch.setTitleColor(textTintColor, for: .normal)
         btnSearch.layer.cornerRadius = defaultCornerRadius
         

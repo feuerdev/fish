@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Vernacular Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-LZ-y0u">
-                        <rect key="frame" x="0.0" y="90" width="150" height="19.5"/>
+                        <rect key="frame" x="4" y="90" width="142" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -49,10 +49,10 @@
                     <constraint firstAttribute="bottom" secondItem="59N-pV-qQg" secondAttribute="bottom" constant="4" id="Tcc-lD-MyM"/>
                     <constraint firstItem="yq5-Uz-y2e" firstAttribute="centerY" secondItem="wmF-6z-4nC" secondAttribute="centerY" id="WUq-sY-xZP"/>
                     <constraint firstItem="yq5-Uz-y2e" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="8" id="cBG-No-BBz"/>
-                    <constraint firstAttribute="trailing" secondItem="PgE-LZ-y0u" secondAttribute="trailing" id="hia-QN-W4a"/>
+                    <constraint firstAttribute="trailing" secondItem="PgE-LZ-y0u" secondAttribute="trailing" constant="4" id="hia-QN-W4a"/>
                     <constraint firstAttribute="trailing" secondItem="wmF-6z-4nC" secondAttribute="trailing" id="lUD-DL-rrJ"/>
                     <constraint firstAttribute="trailing" secondItem="yq5-Uz-y2e" secondAttribute="trailing" constant="8" id="oXu-kW-83e"/>
-                    <constraint firstItem="PgE-LZ-y0u" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" id="t7J-Tf-u6p"/>
+                    <constraint firstItem="PgE-LZ-y0u" firstAttribute="leading" secondItem="Pax-Bx-KOF" secondAttribute="leading" constant="4" id="t7J-Tf-u6p"/>
                     <constraint firstItem="yq5-Uz-y2e" firstAttribute="centerX" secondItem="wmF-6z-4nC" secondAttribute="centerX" id="wjO-jJ-jE2"/>
                 </constraints>
             </collectionViewCellContentView>

@@ -91,7 +91,7 @@ class SpeciesListCell: UITableViewCell {
         DispatchQueue.main.async() {
             self.ivImage.image = nil
             self.ivImage.hideSkeleton()
-            self.ivImage.backgroundColor = self.tintColor
+            self.ivImage.backgroundColor = pondColor
             self.lblNoPhoto.isHidden = false
         }
     }

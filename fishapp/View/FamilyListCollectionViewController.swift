@@ -29,6 +29,9 @@ class FamilyListCollectionViewController: UICollectionViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         presenter?.viewDidLoad()
         
+        self.view.backgroundColor = backGroundColor2
+        
+        
         self.collectionView.isSkeletonable = true
         self.collectionView.showAnimatedSkeleton(usingColor: skeletonColor)
         

@@ -26,6 +26,7 @@ class FamilyListHeader: UICollectionReusableView {
     
     override func awakeFromNib() {
         self.view.layer.cornerRadius = defaultCornerRadius
+        self.lblTitle.textColor = categoyHeaderColor
         
         let grTap = UITapGestureRecognizer(target: self, action: #selector(showHideSection(_:)))
         self.view.addGestureRecognizer(grTap)

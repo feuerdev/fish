@@ -33,9 +33,27 @@ class FamilyListCell: UICollectionViewCell {
         self.view.isSkeletonable = true
         self.lblVernacular.isSkeletonable = true
         self.ivPhoto.isSkeletonable = true
-        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
         
         //Set
+        var color: UIColor
+        var textColor: UIColor
+        switch family.danger {
+        case .edGreen:
+            color = pondColor
+            textColor = textTintColor
+        default:
+            color = Danger.getColor(family.danger)
+            textColor = .black
+        }
+        
+        self.view.hideSkeleton()
+        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: color))
+        self.view.backgroundColor = color
+        self.ivPhoto.backgroundColor = color
+        self.lblVernacular.textColor = textColor
+        self.lblLatin.textColor = textColor
+        self.lblNoPhoto.textColor = textColor
+        
         self.lblLatin.text = family.family
         
         LoadVernacularService.loadVernacular(id: family.familyId) { result in
@@ -81,7 +99,6 @@ class FamilyListCell: UICollectionViewCell {
         DispatchQueue.main.async() {
             self.ivPhoto.image = nil
             self.ivPhoto.hideSkeleton()
-            self.ivPhoto.backgroundColor = self.tintColor
             self.lblNoPhoto.isHidden = false
         }
     }
@@ -93,9 +110,5 @@ class FamilyListCell: UICollectionViewCell {
         
         //Style
         self.view.layer.cornerRadius = defaultCornerRadius
-        self.view.backgroundColor = backGroundColor2
-        self.lblNoPhoto.textColor = textTintColor
-        self.lblLatin.textColor = textTintColor
-        self.lblVernacular.textColor = textTintColor
     }
 }
