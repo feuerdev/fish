@@ -161,6 +161,28 @@ class Species {
         }
         return result
     }
+    
+    func getPresentableColor() -> UIColor {
+        var color: UIColor
+        switch self.danger {
+        case .edGreen:
+            color = pondColor
+        default:
+            color = Danger.getColor(danger)
+        }
+        return color
+    }
+    
+    func getPresentableTextColor() -> UIColor {
+        var textColor: UIColor
+        switch danger {
+        case .edGreen:
+            textColor = textTintColor
+        default:
+            textColor = .black
+        }
+        return textColor
+    }
 }
 
 class Family {
@@ -198,5 +220,27 @@ class Family {
     
     init(_ familyId: Int) {
         self.familyId = familyId
+    }
+    
+    func getPresentableColor() -> UIColor {
+        var color: UIColor
+        switch self.danger {
+        case .edGreen:
+            color = pondColor
+        default:
+            color = Danger.getColor(danger)
+        }
+        return color
+    }
+    
+    func getPresentableTextColor() -> UIColor {
+        var textColor: UIColor
+        switch danger {
+        case .edGreen:
+            textColor = textTintColor
+        default:
+            textColor = .black
+        }
+        return textColor
     }
 }
