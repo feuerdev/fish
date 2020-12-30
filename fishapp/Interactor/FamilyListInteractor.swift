@@ -103,7 +103,8 @@ class FamilyListInteractor {
     }
     
     func filter(_ species:OBISSpecies) -> Bool {
-        let relevantIds = [species.phylumId,
+        let relevantIds = [species.kingdomId,
+                           species.phylumId,
                            species.subphylumId,
                            species.superclassId,
                            species.aclassId,
