@@ -65,8 +65,6 @@ class InfoViewController: UIViewController {
         tvContent.tintColor = textTintColor
         tvContent.linkTextAttributes = [.underlineStyle: 1]
         
-       
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
