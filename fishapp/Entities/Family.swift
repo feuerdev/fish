@@ -123,9 +123,9 @@ class Species {
     }
     
     func getPresentableCategory() -> NSMutableAttributedString {
-        let green = [NSAttributedString.Key.foregroundColor: greenColor]
-        let yellow = [NSAttributedString.Key.foregroundColor: yellowColor]
-        let red = [NSAttributedString.Key.foregroundColor: redColor]
+        let green = [NSAttributedString.Key.foregroundColor: greenColor.darker.darker]
+        let yellow = [NSAttributedString.Key.foregroundColor: yellowColor.darker.darker]
+        let red = [NSAttributedString.Key.foregroundColor: redColor.darker.darker]
         let result = NSMutableAttributedString(string: "Conservation status: ")
         switch category {
         case "EX":
