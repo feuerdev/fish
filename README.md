@@ -1,6 +1,6 @@
 # Big Pond
 
-![alt text](https://i.imgur.com/mN7aqgS.jpg)
+![alt text](https://i.imgur.com/TCu2q7S.jpg)
 
 **Explore Marine Life!**
 
