@@ -106,7 +106,7 @@ class PickLocationViewController : UIViewController {
     @IBAction func searchTapped(_ sender: Any) {
         
         guard let location = self.location else {
-            showToast(message: "Tap the map to select a location 🦈")
+            showToast(message: "Tap the map to select a location")
             return
         }
         
@@ -158,7 +158,7 @@ class PickLocationViewController : UIViewController {
         MKLocalSearch(request: request).start { (response, error) in
             guard let response = response,
                   let item = response.mapItems[safe: 0] else {
-                self.showSimpleError(title: "Oops 🐙", message: error?.localizedDescription, popViewController: false)
+                self.showSimpleError(title: "Oops", message: error?.localizedDescription, popViewController: false)
                 return
             }
             
@@ -227,7 +227,7 @@ extension PickLocationViewController: MKLocalSearchCompleterDelegate {
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
-        self.showSimpleError(title: "Oops 🐙", message: error.localizedDescription, popViewController: false)
+        self.showSimpleError(title: "Oops", message: error.localizedDescription, popViewController: false)
     }
 }
 extension PickLocationViewController: UITableViewDataSource {

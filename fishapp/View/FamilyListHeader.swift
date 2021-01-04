@@ -16,6 +16,7 @@ class FamilyListHeader: UICollectionReusableView {
     @IBOutlet weak var btnShowTitle: UIButton!
     @IBOutlet weak var btnShowImage: UIButton!
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var ivImage: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     
     var delegate: FamilyListHeaderDelegate?
@@ -48,14 +49,17 @@ class FamilyListHeader: UICollectionReusableView {
         self.collapsed = collapsed
         switch danger {
         case .edGreen:
+            ivImage.image = UIImage(named: "whale30")
             view.backgroundColor = greenColor
-            lblTitle.text = "Harmless and Wholesome 🐠"
+            lblTitle.text = "Harmless and Wholesome"
         case .edYellow:
+            ivImage.image = UIImage(named: "warning30")
             view.backgroundColor = yellowColor
-            lblTitle.text = "Safe, but don't touch or feed 🦈"
+            lblTitle.text = "Safe, but don't touch or feed"
         case .edRed:
+            ivImage.image = UIImage(named: "alert30")
             view.backgroundColor = redColor
-            lblTitle.text = "Dangerous, consult with local experts ⚠️"
+            lblTitle.text = "Dangerous, consult with local experts"
         }
         updateButton()
     }

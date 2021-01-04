@@ -19,8 +19,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-1b-6e1">
                     <rect key="frame" x="10" y="0.0" width="394" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Xoy-eJ-XPl">
-                            <rect key="frame" x="10" y="14.5" width="283.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Harmless and Wholesome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Xoy-eJ-XPl">
+                            <rect key="frame" x="10" y="14.5" width="212" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -42,16 +42,25 @@
                                 <imageReference key="image" image="icon_arrow_down" symbolScale="default" renderingMode="original"/>
                             </state>
                         </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whale30" translatesAutoresizingMaskIntoConstraints="NO" id="TQd-qN-pjC">
+                            <rect key="frame" x="226" y="15" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="KeA-77-Iut"/>
+                                <constraint firstAttribute="width" constant="20" id="mUb-nS-bhv"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstItem="Xoy-eJ-XPl" firstAttribute="leading" secondItem="dLo-1b-6e1" secondAttribute="leading" constant="10" id="Gum-uL-R8G"/>
                         <constraint firstAttribute="trailing" secondItem="g9j-EX-7cH" secondAttribute="trailing" constant="10" id="GwV-qt-Lcl"/>
+                        <constraint firstItem="TQd-qN-pjC" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" id="NQ6-SN-ZoT"/>
+                        <constraint firstItem="TQd-qN-pjC" firstAttribute="leading" secondItem="Xoy-eJ-XPl" secondAttribute="trailing" constant="4" id="RRh-Za-pp2"/>
                         <constraint firstItem="g9j-EX-7cH" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" constant="1" id="akD-P2-elz"/>
                         <constraint firstItem="Eef-kB-EtT" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" id="ee1-nf-WHH"/>
                         <constraint firstItem="Xoy-eJ-XPl" firstAttribute="centerY" secondItem="dLo-1b-6e1" secondAttribute="centerY" id="kQz-9b-pH8"/>
                         <constraint firstItem="g9j-EX-7cH" firstAttribute="height" secondItem="dLo-1b-6e1" secondAttribute="height" multiplier="0.35" id="qRL-Mh-Opl"/>
-                        <constraint firstItem="Eef-kB-EtT" firstAttribute="leading" secondItem="Xoy-eJ-XPl" secondAttribute="trailing" constant="8" id="tYN-Lt-5rZ"/>
+                        <constraint firstItem="Eef-kB-EtT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TQd-qN-pjC" secondAttribute="trailing" constant="8" id="r4j-mp-evD"/>
                         <constraint firstItem="g9j-EX-7cH" firstAttribute="leading" secondItem="Eef-kB-EtT" secondAttribute="trailing" constant="4" id="zHE-de-7Pb"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -69,6 +78,7 @@
             <connections>
                 <outlet property="btnShowImage" destination="g9j-EX-7cH" id="wqd-of-gcg"/>
                 <outlet property="btnShowTitle" destination="Eef-kB-EtT" id="pWQ-jv-J2I"/>
+                <outlet property="ivImage" destination="TQd-qN-pjC" id="0zN-ho-CgV"/>
                 <outlet property="lblTitle" destination="Xoy-eJ-XPl" id="KHL-K3-eXN"/>
                 <outlet property="view" destination="dLo-1b-6e1" id="BcA-G2-tqD"/>
             </connections>
@@ -77,6 +87,7 @@
     </objects>
     <resources>
         <image name="icon_arrow_down" width="140" height="140"/>
+        <image name="whale30" width="30" height="30"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

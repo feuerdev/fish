@@ -26,10 +26,11 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6a-Zi-MA8">
                     <rect key="frame" x="8" y="100" width="359" height="624"/>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-sX-Ti9">
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-sX-Ti9">
                     <rect key="frame" x="8" y="732" width="359" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Explore 🐠">
+                    <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="3"/>
+                    <state key="normal" title="Explore" image="whale24">
                         <color key="titleColor" red="0.99370659722222221" green="1" blue="0.98741319444444442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -71,4 +72,7 @@
             <point key="canvasLocation" x="232.80000000000001" y="209.11330049261085"/>
         </view>
     </objects>
+    <resources>
+        <image name="whale24" width="24" height="24"/>
+    </resources>
 </document>

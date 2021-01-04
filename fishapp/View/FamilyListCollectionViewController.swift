@@ -163,7 +163,7 @@ extension FamilyListCollectionViewController: AnimalListPresenterDelegate {
     }
     
     func showError(_ error: String) {
-        self.showSimpleError(title: "Oops 🐙", message: error, popViewController: true)
+        self.showSimpleError(title: "Oops", message: error, popViewController: true)
     }
     
     func updateLoadingStatus(percent: Float) {
