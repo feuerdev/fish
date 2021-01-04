@@ -45,7 +45,7 @@ class PickLocationViewController : UIViewController {
         sbLocation.setSearchIconColor(textTintColor)
         sbLocation.backgroundColor = .clear
         sbLocation.tintColor = textTintColor
-        sbLocation.placeholder = "Search Location"
+        sbLocation.placeholder = "Find Location..."
         sbLocation.delegate = self
         sbLocation.setTextField(color: backGroundColor)
         sbLocation.getTextField()?.layer.cornerRadius = defaultCornerRadius
@@ -77,6 +77,12 @@ class PickLocationViewController : UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //iOS 13 Workaround
+        if #available(iOS 13.0, *) {
+            self.sbLocation.searchTextField.attributedPlaceholder = NSAttributedString(string: "Find Location...", attributes: [NSAttributedString.Key.foregroundColor: placeHolderColor])
+        }
+    }
     @objc func onMapTap(gestureRecognizer:UITapGestureRecognizer) {
         for annotation in self.mvMap.selectedAnnotations {
             self.mvMap.deselectAnnotation(annotation, animated: false)
