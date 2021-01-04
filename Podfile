@@ -6,6 +6,8 @@ target 'fishapp' do
   use_frameworks!
 
   # Pods for fishapp
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   pod 'SkeletonView'
   pod 'ReachabilitySwift'
 

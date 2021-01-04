@@ -31,6 +31,7 @@
 		2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F943B8C255EC33400F20236 /* FamilyDetailView.xib */; };
 		2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A5BC02591FD0200DD8BE6 /* FamilyListHeader.xib */; };
 		2F9A5BC42592002500DD8BE6 /* FamilyListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */; };
+		2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */; };
 		2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B72A25480B200064E244 /* PickLocationViewController.swift */; };
 		2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9B72E25480B530064E244 /* PickLocationView.xib */; };
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
@@ -108,6 +109,7 @@
 		2F943B8C255EC33400F20236 /* FamilyDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailView.xib; sourceTree = "<group>"; };
 		2F9A5BC02591FD0200DD8BE6 /* FamilyListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyListHeader.xib; sourceTree = "<group>"; };
 		2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListHeader.swift; sourceTree = "<group>"; };
+		2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FB9B72A25480B200064E244 /* PickLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 		2FB9B72E25480B530064E244 /* PickLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickLocationView.xib; sourceTree = "<group>"; };
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		2F20E53325402ED300AFF548 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */,
 				2F4EDA9A253C3BFD00C5839C /* Info.plist */,
 				2F4EDA97253C3BFD00C5839C /* LaunchScreen.storyboard */,
 				2F4EDA95253C3BFD00C5839C /* Assets.xcassets */,
@@ -329,6 +332,7 @@
 				2F4EDA87253C3BFC00C5839C /* Resources */,
 				A535CCE6860D9F8A79CFD7CC /* [CP] Embed Pods Frameworks */,
 				2FFADEA62576179600AC906C /* Embed Frameworks */,
+				2FABEEE025A36FE300F4C85A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -408,6 +412,7 @@
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
 				2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */,
 				2F5120D5256E9BE800715612 /* FamilyListLoadingView.xib in Resources */,
+				2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */,
 				2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */,
 				2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */,
 			);
@@ -444,6 +449,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2FABEEE025A36FE300F4C85A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\n",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		A535CCE6860D9F8A79CFD7CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -681,6 +705,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = LQDASF64MT;
 				INFOPLIST_FILE = fishapp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
