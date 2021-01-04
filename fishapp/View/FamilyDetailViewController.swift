@@ -40,11 +40,7 @@ class FamilyDetailViewController: UIViewController {
         guard let family = self.presenter?.interactor.family else {
             return
         }
-        
-        if #available(iOS 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .never
-        }
-        
+    
         presenter?.viewDidLoad()
         
         tvSpecies.dataSource = self
@@ -109,7 +105,6 @@ class FamilyDetailViewController: UIViewController {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.backgroundColor = family.getPresentableColor()
             navBarAppearance.titleTextAttributes = [.foregroundColor: family.getPresentableTextColor()]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: family.getPresentableTextColor()]
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
             navigationController?.navigationBar.tintColor = family.getPresentableTextColor()
@@ -125,7 +120,6 @@ class FamilyDetailViewController: UIViewController {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.backgroundColor = pondColor
             navBarAppearance.titleTextAttributes = [.foregroundColor: textTintColor]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: textTintColor]
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
             navigationController?.navigationBar.tintColor = textTintColor

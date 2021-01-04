@@ -24,11 +24,17 @@ class PickLocationViewController : UIViewController {
     var location: Location?
     
     override func viewDidLoad() {
-        self.title = getAppName()
+        let title = UILabel()
+        title.text = getAppName()
+        title.font = UIFont.boldSystemFont(ofSize: 17)
+        title.textColor = textTintColor
         
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
+        let icon = UIImageView(image: UIImage(named: "whale24"))
+        
+        let v1 = UIBarButtonItem(customView: title)
+        let v2 = UIBarButtonItem(customView: icon)
+        
+        self.navigationItem.leftBarButtonItems = [v1, v2]
         
         mvMap.layer.cornerRadius = defaultCornerRadius
         mvMap.layer.borderWidth = 1

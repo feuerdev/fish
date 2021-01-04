@@ -38,10 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.backgroundColor = backGroundColor2
         window.tintColor = pondColor
         
-        if #available(iOS 11.0, *) {
-            navigationController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: textTintColor]
-        }
-        
         if #available(iOS 13.0, *) {
             window.overrideUserInterfaceStyle = .light
             
@@ -49,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.backgroundColor = pondColor
             navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             navigationController.navigationBar.standardAppearance = navBarAppearance
             navigationController.navigationBar.scrollEdgeAppearance = navBarAppearance
         }

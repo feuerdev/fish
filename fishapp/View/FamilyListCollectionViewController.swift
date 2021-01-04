@@ -24,14 +24,12 @@ class FamilyListCollectionViewController: UICollectionViewController {
         
         if #available(iOS 11.0, *) {
             self.additionalSafeAreaInsets = .init(top: 10, left: 0, bottom: 0, right: 0)
-            navigationItem.largeTitleDisplayMode = .never
         }
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         presenter?.viewDidLoad()
         
         self.view.backgroundColor = backGroundColor2
-        
         
         self.collectionView.isSkeletonable = true
         self.collectionView.showAnimatedSkeleton(usingColor: skeletonColor)
