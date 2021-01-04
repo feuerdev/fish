@@ -12,7 +12,7 @@ class WikiPhotoURLService {
     
     static func getPhotoUrl(scientificName: String, completionHandler: @escaping (Result<String, Error>) -> Void) {
         
-        let url = "https://en.wikipedia.org/w/api.php?action=query&redirects&prop=pageimages&format=json&piprop=original&titles=\(scientificName)"
+        let url = "https://en.wikipedia.org/w/api.php?action=query&redirects&prop=pageimages&format=json&piprop=original|thumbnail&titles=\(scientificName)"
         
         JSONWebservice.callWebservice(url: url, responseClass: WikiPhotoURLResult.self, completionHandler: { result in
             switch result {
@@ -43,6 +43,7 @@ struct WikiPhotoURLResult: Decodable {
     
     struct Page: Decodable {
         var original: Image?
+        var thumbnail: Image?
     }
     
     struct Image: Decodable {
