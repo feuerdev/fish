@@ -63,13 +63,18 @@ enum Danger: Int {
 }
 
 let filteredSpecies = [
+    4, //Fungi
     5, 6, //Bacteria
     7, 8, //Single Cells
     801, 852, //Algae
     882, //Worms
     155670, //Water fleas
     146420, //Sea squirts
-    889925, //Hexanauplia - Small crustaceans
+    889925, //Hexanauplia - small crustaceans
+    845957, //Superclass of small crustaceans
+    1069,   //Class of small crustaceans
+    123084, //Class of Brittle Stars
+    1836,   //Class of Birds
 ]
 
 class Species {
