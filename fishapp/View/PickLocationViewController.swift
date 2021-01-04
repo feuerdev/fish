@@ -69,6 +69,7 @@ class PickLocationViewController : UIViewController {
         btnSearch.backgroundColor = pondColor
         btnSearch.setTitleColor(textTintColor, for: .normal)
         btnSearch.layer.cornerRadius = defaultCornerRadius
+        btnSearch.imageView?.contentMode = .scaleAspectFit
         
         searchCompleter.delegate = self
         searchCompleter.filterType = .locationsOnly
@@ -83,7 +84,11 @@ class PickLocationViewController : UIViewController {
             self.sbLocation.searchTextField.attributedPlaceholder = NSAttributedString(string: "Find Location...", attributes: [NSAttributedString.Key.foregroundColor: placeHolderColor])
         }
     }
+    
     @objc func onMapTap(gestureRecognizer:UITapGestureRecognizer) {
+        //Close Keyboard
+        clearLocationSearch()
+        
         for annotation in self.mvMap.selectedAnnotations {
             self.mvMap.deselectAnnotation(annotation, animated: false)
         }
@@ -152,6 +157,7 @@ class PickLocationViewController : UIViewController {
     
     func selectLocation(_ row:Int) {
         guard let query = self.searchResults[safe: row] else {
+            self.clearLocationSearch()
             return
         }
         
