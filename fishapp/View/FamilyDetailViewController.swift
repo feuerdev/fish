@@ -78,17 +78,15 @@ class FamilyDetailViewController: UIViewController {
             }
         }
        
-        if let searchTerm = family.family {
-            LoadPhotoService.loadPhoto(id: family.familyId, searchParameter: searchTerm) { result in
-                switch result.result {
-                case .failure(_):
-                    self.showNoPhoto(family: family)
-                    break
-                case .success(let image):
-                    DispatchQueue.main.async() {
-                        self.ivPhoto.image = image
-                        self.ivPhoto.hideSkeleton()
-                    }
+        LoadPhotoService.loadPhoto(id: family.familyId, searchParameters: family.generatePhotoSearchterms()) { result in
+            switch result.result {
+            case .failure(_):
+                self.showNoPhoto(family: family)
+                break
+            case .success(let image):
+                DispatchQueue.main.async() {
+                    self.ivPhoto.image = image
+                    self.ivPhoto.hideSkeleton()
                 }
             }
         }

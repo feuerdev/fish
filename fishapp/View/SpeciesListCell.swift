@@ -63,20 +63,18 @@ class SpeciesListCell: UITableViewCell {
                     }
                 }
                 
-                if let searchTerm = species.species {
-                    LoadPhotoService.loadPhoto(id: species.taxonId, searchParameter: searchTerm) { result in
-                        guard result.cacheKey == self.cacheKey else {
-                            return
-                        }
-                        switch result.result {
-                        case .failure(_):
-                            self.showNoPhoto(species: species)
-                            break
-                        case .success(let image):
-                            DispatchQueue.main.async() {
-                                self.ivImage.image = image
-                                self.ivImage.hideSkeleton()
-                            }
+                LoadPhotoService.loadPhoto(id: species.taxonId, searchParameters: species.generatePhotoSearchterms()) { result in
+                    guard result.cacheKey == self.cacheKey else {
+                        return
+                    }
+                    switch result.result {
+                    case .failure(_):
+                        self.showNoPhoto(species: species)
+                        break
+                    case .success(let image):
+                        DispatchQueue.main.async() {
+                            self.ivImage.image = image
+                            self.ivImage.hideSkeleton()
                         }
                     }
                 }

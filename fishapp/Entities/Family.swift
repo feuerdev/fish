@@ -116,6 +116,32 @@ class Species {
         self.taxonId = taxonId
     }
     
+    func generatePhotoSearchterms() -> [String] {
+        var result = [String]()
+        if let species = species {
+            result.append(species)
+        }
+        if let genus = genus {
+            result.append(genus)
+        }
+        if let family = family {
+            result.append(family)
+        }
+        if let superfamily = self.superfamily {
+            result.append(superfamily)
+        }
+        if let order = self.order {
+            result.append(order)
+        }
+        if let subclass = self.subclass {
+            result.append(subclass)
+        }
+        if let aclass = self.aclass {
+            result.append(aclass)
+        }
+        return result
+    }
+    
     func getPresentableName() -> String {
         var name: String = ""
         if let taxonRank = self.taxonRank {
@@ -251,5 +277,33 @@ class Family {
             textColor = .black
         }
         return textColor
+    }
+    
+    func generatePhotoSearchterms() -> [String] {
+        var result = [String]()
+        if let family = self.family {
+            result.append(family)
+        }
+        for s in species {
+            if let species = s.species {
+                result.append(species)
+            }
+            if let genus = s.genus {
+                result.append(genus)
+            }
+        }
+        if let superfamily = self.superfamily {
+            result.append(superfamily)
+        }
+        if let order = self.order {
+            result.append(order)
+        }
+        if let subclass = self.subclass {
+            result.append(subclass)
+        }
+        if let aclass = self.aclass {
+            result.append(aclass)
+        }
+        return result
     }
 }

@@ -65,23 +65,22 @@ class FamilyListCell: UICollectionViewCell {
             }
         }
         
-        if let searchTerm = family.family {
-            LoadPhotoService.loadPhoto(id: family.familyId, searchParameter: searchTerm) { result in
-                guard result.cacheKey == self.cacheKey else {
-                    return
-                }
-                switch result.result {
-                case .failure(_):
-                    self.showNoPhoto(family: family)
-                    break
-                case .success(let image):
-                    DispatchQueue.main.async() {
-                        self.ivPhoto.image = image
-                        self.ivPhoto.hideSkeleton()
-                    }
+        LoadPhotoService.loadPhoto(id: family.familyId, searchParameters: family.generatePhotoSearchterms()) { result in
+            guard result.cacheKey == self.cacheKey else {
+                return
+            }
+            switch result.result {
+            case .failure(_):
+                self.showNoPhoto(family: family)
+                break
+            case .success(let image):
+                DispatchQueue.main.async() {
+                    self.ivPhoto.image = image
+                    self.ivPhoto.hideSkeleton()
                 }
             }
         }
+        
     }
     
     func showNoPhoto(family:Family) {
