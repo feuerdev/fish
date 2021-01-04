@@ -11,14 +11,18 @@ import UIKit
 enum Danger: Int {
     static let red = [
         484724, // Family Containing Box Jellyfish like Irukandji
+        135342, // Family Portuguese man o' war
+        105742, // Genus Great White Shark
         135479, // Species Portuguese man o' war
         344030, // Species Saltwater Crocodile
         105838, // Species White Shark
         105799, // Species Tiger Shark
     ]
     static let yellow = [
+        10209,  //Order of Mackerel Sharks
         266989, //Order of Venomous Box Jellyfish
         196069, //Order of Stingrays
+        105702, //Family of Great White + Mako
         105689, //Family Requiem Sharks
         105694, //Family Hammerhead Sharks
         125595, //Family Scorpionfish
