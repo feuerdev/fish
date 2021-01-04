@@ -8,6 +8,7 @@
 import UIKit
 import SkeletonView
 import Feuerlib
+import FirebaseAnalytics
 
 class FamilyListCollectionViewController: UICollectionViewController {
     
@@ -86,6 +87,9 @@ extension FamilyListCollectionViewController: SkeletonCollectionViewDataSource {
             let family = families[safe: indexPath.row] else {
             return
         }
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterItemID: family.familyId
+        ])
         presenter?.didSelectFamily(family)
     }
     
