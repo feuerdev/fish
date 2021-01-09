@@ -11,6 +11,7 @@ import SkeletonView
 class FamilyDetailInformationViewController: UIViewController {
 
     @IBOutlet weak var ivPhoto: UIImageView!
+    @IBOutlet weak var stvInfo: UIStackView!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
@@ -23,11 +24,11 @@ class FamilyDetailInformationViewController: UIViewController {
         lblScientific.isSkeletonable = true
         lblDescription.isSkeletonable = true
         
-        lblDescription.backgroundColor = .red
-        lblScientific.backgroundColor = .green
-        ivPhoto.backgroundColor = .blue
-        lblVernacular.backgroundColor = .cyan
+        lblDescription.skeletonLineSpacing = 0
         
-//        lblScientific.isHidden = true
+        ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
+        lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
+        lblScientific.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
+        lblDescription.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
     }
 }
