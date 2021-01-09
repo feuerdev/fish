@@ -22,8 +22,6 @@
 		2F42ED5A25A9887900136F90 /* FamilyDetailTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */; };
 		2F42ED6125A989E300136F90 /* FamilyDetailSpeciesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5F25A989E300136F90 /* FamilyDetailSpeciesListCell.swift */; };
 		2F42ED6225A989E300136F90 /* FamilyDetailSpeciesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED6025A989E300136F90 /* FamilyDetailSpeciesListCell.xib */; };
-		2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */; };
-		2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */; };
 		2F4CA993254AA452006D6121 /* OBISService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CA992254AA452006D6121 /* OBISService.swift */; };
 		2F4CA997254AA594006D6121 /* OBISResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CA996254AA594006D6121 /* OBISResponse.swift */; };
 		2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EDA8C253C3BFC00C5839C /* AppDelegate.swift */; };
@@ -107,8 +105,6 @@
 		2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailTabBarController.swift; sourceTree = "<group>"; };
 		2F42ED5F25A989E300136F90 /* FamilyDetailSpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailSpeciesListCell.swift; sourceTree = "<group>"; };
 		2F42ED6025A989E300136F90 /* FamilyDetailSpeciesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailSpeciesListCell.xib; sourceTree = "<group>"; };
-		2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListCell.swift; sourceTree = "<group>"; };
-		2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeciesListCell.xib; sourceTree = "<group>"; };
 		2F4CA992254AA452006D6121 /* OBISService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBISService.swift; sourceTree = "<group>"; };
 		2F4CA996254AA594006D6121 /* OBISResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBISResponse.swift; sourceTree = "<group>"; };
 		2F4EDA89253C3BFC00C5839C /* fishapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fishapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,8 +259,6 @@
 				2F42ED3A25A962D500136F90 /* FamilyList */,
 				2F42ED3B25A962F600136F90 /* FamilyDetail */,
 				2F42ED3D25A9632300136F90 /* Info */,
-				2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */,
-				2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -482,7 +476,6 @@
 				2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */,
 				2F5120D5256E9BE800715612 /* FamilyListLoadingView.xib in Resources */,
 				2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */,
-				2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */,
 				2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +605,6 @@
 				2F42ED4B25A9647700136F90 /* FamilyDetailDangerViewController.swift in Sources */,
 				2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */,
 				2F4CA997254AA594006D6121 /* OBISResponse.swift in Sources */,
-				2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */,
 				2F5120CD256E80C300715612 /* LoadVernacularService.swift in Sources */,
 				2F42ED4625A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift in Sources */,
 				2F5120D1256E9BD000715612 /* FamilyListLoadingView.swift in Sources */,

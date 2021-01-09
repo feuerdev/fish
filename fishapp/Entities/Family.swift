@@ -157,36 +157,57 @@ class Species {
         return name
     }
     
-    func getPresentableCategory() -> NSMutableAttributedString {
-        let green = [NSAttributedString.Key.foregroundColor: greenColor.darker.darker]
-        let yellow = [NSAttributedString.Key.foregroundColor: yellowColor.darker.darker]
-        let red = [NSAttributedString.Key.foregroundColor: redColor.darker.darker]
-        let result = NSMutableAttributedString(string: "Conservation status: ")
+    func getPresentableCategoryColor() -> UIColor {
+        let green = greenColor.darker.darker
+        let yellow = yellowColor.darker.darker
+        let red = redColor.darker.darker
         switch category {
         case "EX":
-            result.append(NSMutableAttributedString(string: "Extinct", attributes: red))
+            return red
         case "EW":
-            result.append(NSMutableAttributedString(string: "Extinct in the Wild", attributes: red))
+            return red
         case "CR":
-            result.append(NSMutableAttributedString(string: "Critically Endangered", attributes: red))
+            return red
         case "EN":
-            result.append(NSMutableAttributedString(string: "Endangered", attributes: red))
+            return red
         case "VU":
-            result.append(NSMutableAttributedString(string: "Vulnerable", attributes: yellow))
+            return yellow
         case "NT":
-            result.append(NSMutableAttributedString(string: "Near Threatened", attributes: yellow))
+            return yellow
         case "CD":
-            result.append(NSMutableAttributedString(string: "Conservation Dependent", attributes: yellow))
+            return yellow
         case "LC":
-            result.append(NSMutableAttributedString(string: "Least Concern", attributes: green))
+            return green
         default:
-            result.append(NSMutableAttributedString(string: "Not Threatened", attributes: green))
+            return green
         }
-        return result
+    }
+    
+    func getPresentableCategory() -> String {
+        switch category {
+        case "EX":
+            return "Extinct"
+        case "EW":
+            return "Extinct in the Wild"
+        case "CR":
+            return "Critically Endangered"
+        case "EN":
+            return "Endangered"
+        case "VU":
+            return "Vulnerable"
+        case "NT":
+            return "Near Threatened"
+        case "CD":
+            return "Conservation Dependent"
+        case "LC":
+            return "Least Concern"
+        default:
+            return "Not Threatened"
+        }
     }
     
     func getPresentableAuthorship() -> String {
-        var result = "Discovered by: "
+        var result = ""
         if let authorship = self.authorship {
             result.append(authorship
                 .replacingOccurrences(of: "(", with: "")
