@@ -5,24 +5,33 @@
 //  Created by Jannik Feuerhahn on 04.11.20.
 //
 
-import Foundation
+import UIKit
 
 protocol FamilyDetailPresenterDelegate {
-    //
+    func photoLoaded(_ photo:UIImage?)
+    func vernacularLoaded(_ vernacular:String?)
+    func descriptionLoaded(_ description:String?)
 }
 
 class FamilyDetailPresenter {
     
     var interactor: FamilyDetailInteractor
     var viewDelegate: FamilyDetailPresenterDelegate?
-    var router: AnimalDetailRouter?
     
     init(interactor: FamilyDetailInteractor) {
         self.interactor = interactor
     }
     
-    func viewDidLoad() {
-        //
+    func loadPhoto() {
+        interactor.loadPhoto()
+    }
+    
+    func loadVernacular() {
+        interactor.loadVernacular()
+    }
+    
+    func loadDescription() {
+        interactor.loadDescription()
     }
     
     func presentableHierarchy() -> String {
@@ -66,5 +75,15 @@ class FamilyDetailPresenter {
 }
 
 extension FamilyDetailPresenter: FamilyDetailInteractorDelegate {
-    //
+    func photoLoaded(_ photo: UIImage?) {
+        viewDelegate?.photoLoaded(photo)
+    }
+    
+    func vernacularLoaded(_ vernacular: String?) {
+        viewDelegate?.vernacularLoaded(vernacular)
+    }
+    
+    func descriptionLoaded(_ description: String?) {
+        viewDelegate?.descriptionLoaded(description)
+    }
 }
