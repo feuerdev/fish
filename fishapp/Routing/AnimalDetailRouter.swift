@@ -10,11 +10,13 @@ import UIKit
 class AnimalDetailRouter {
     
     static func createModule(animal: Family) -> UIViewController {
-        let tbc = UITabBarController()
         
         let interactor = FamilyDetailInteractor(family: animal)
         let presenter = FamilyDetailPresenter(interactor: interactor)
         interactor.presenterDelegate = presenter
+        
+        let tbc = FamilyDetailTabBarController()
+        tbc.presenter = presenter
         
         //Photo and Wiki Info
         let vc1 = FamilyDetailInformationViewController()

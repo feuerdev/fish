@@ -19,6 +19,9 @@
 		2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */; };
 		2F42ED5425A97EEE00136F90 /* LoadDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5325A97EEE00136F90 /* LoadDescriptionService.swift */; };
 		2F42ED5725A9801200136F90 /* WikiDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5625A9801200136F90 /* WikiDescriptionService.swift */; };
+		2F42ED5A25A9887900136F90 /* FamilyDetailTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */; };
+		2F42ED6125A989E300136F90 /* FamilyDetailSpeciesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5F25A989E300136F90 /* FamilyDetailSpeciesListCell.swift */; };
+		2F42ED6225A989E300136F90 /* FamilyDetailSpeciesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED6025A989E300136F90 /* FamilyDetailSpeciesListCell.xib */; };
 		2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */; };
 		2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */; };
 		2F4CA993254AA452006D6121 /* OBISService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CA992254AA452006D6121 /* OBISService.swift */; };
@@ -38,14 +41,12 @@
 		2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67225495BD100FCAB65 /* AnimalListRouter.swift */; };
 		2F84D67725495DF000FCAB65 /* FamilyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67625495DF000FCAB65 /* FamilyListPresenter.swift */; };
 		2F84D67B25495E0E00FCAB65 /* FamilyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84D67A25495E0E00FCAB65 /* FamilyListInteractor.swift */; };
-		2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F943B8C255EC33400F20236 /* FamilyDetailView.xib */; };
 		2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A5BC02591FD0200DD8BE6 /* FamilyListHeader.xib */; };
 		2F9A5BC42592002500DD8BE6 /* FamilyListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */; };
 		2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */; };
 		2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9B72A25480B200064E244 /* PickLocationViewController.swift */; };
 		2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB9B72E25480B530064E244 /* PickLocationView.xib */; };
 		2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */; };
-		2FC01C972552C55E00EDC211 /* FamilyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */; };
 		2FC01C9B2552C59800EDC211 /* FamilyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */; };
 		2FC8B78D259A6E750096862A /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8B78C259A6E750096862A /* InfoView.xib */; };
 		2FC8B790259A6E930096862A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8B78F259A6E930096862A /* InfoViewController.swift */; };
@@ -103,6 +104,9 @@
 		2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailTaxonomyViewController.xib; sourceTree = "<group>"; };
 		2F42ED5325A97EEE00136F90 /* LoadDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDescriptionService.swift; sourceTree = "<group>"; };
 		2F42ED5625A9801200136F90 /* WikiDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDescriptionService.swift; sourceTree = "<group>"; };
+		2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailTabBarController.swift; sourceTree = "<group>"; };
+		2F42ED5F25A989E300136F90 /* FamilyDetailSpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailSpeciesListCell.swift; sourceTree = "<group>"; };
+		2F42ED6025A989E300136F90 /* FamilyDetailSpeciesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailSpeciesListCell.xib; sourceTree = "<group>"; };
 		2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListCell.swift; sourceTree = "<group>"; };
 		2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeciesListCell.xib; sourceTree = "<group>"; };
 		2F4CA992254AA452006D6121 /* OBISService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBISService.swift; sourceTree = "<group>"; };
@@ -126,14 +130,12 @@
 		2F84D67225495BD100FCAB65 /* AnimalListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListRouter.swift; sourceTree = "<group>"; };
 		2F84D67625495DF000FCAB65 /* FamilyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListPresenter.swift; sourceTree = "<group>"; };
 		2F84D67A25495E0E00FCAB65 /* FamilyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListInteractor.swift; sourceTree = "<group>"; };
-		2F943B8C255EC33400F20236 /* FamilyDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailView.xib; sourceTree = "<group>"; };
 		2F9A5BC02591FD0200DD8BE6 /* FamilyListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyListHeader.xib; sourceTree = "<group>"; };
 		2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListHeader.swift; sourceTree = "<group>"; };
 		2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FB9B72A25480B200064E244 /* PickLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 		2FB9B72E25480B530064E244 /* PickLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickLocationView.xib; sourceTree = "<group>"; };
 		2FC01C922552C49300EDC211 /* AnimalDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailRouter.swift; sourceTree = "<group>"; };
-		2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailViewController.swift; sourceTree = "<group>"; };
 		2FC01C9A2552C59800EDC211 /* FamilyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailPresenter.swift; sourceTree = "<group>"; };
 		2FC8B78C259A6E750096862A /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		2FC8B78F259A6E930096862A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -261,8 +263,6 @@
 				2F42ED3A25A962D500136F90 /* FamilyList */,
 				2F42ED3B25A962F600136F90 /* FamilyDetail */,
 				2F42ED3D25A9632300136F90 /* Info */,
-				2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */,
-				2F943B8C255EC33400F20236 /* FamilyDetailView.xib */,
 				2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */,
 				2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */,
 			);
@@ -295,10 +295,13 @@
 		2F42ED3B25A962F600136F90 /* FamilyDetail */ = {
 			isa = PBXGroup;
 			children = (
+				2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */,
 				2F42ED3E25A9636F00136F90 /* FamilyDetailInformationViewController.swift */,
 				2F42ED3F25A9636F00136F90 /* FamilyDetailInformationViewController.xib */,
 				2F42ED4425A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift */,
 				2F42ED4525A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib */,
+				2F42ED5F25A989E300136F90 /* FamilyDetailSpeciesListCell.swift */,
+				2F42ED6025A989E300136F90 /* FamilyDetailSpeciesListCell.xib */,
 				2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */,
 				2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */,
 				2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */,
@@ -474,13 +477,13 @@
 				2F42ED4725A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib in Resources */,
 				2F42ED4125A9636F00136F90 /* FamilyDetailInformationViewController.xib in Resources */,
 				2FC8B78D259A6E750096862A /* InfoView.xib in Resources */,
+				2F42ED6225A989E300136F90 /* FamilyDetailSpeciesListCell.xib in Resources */,
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
 				2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */,
 				2F5120D5256E9BE800715612 /* FamilyListLoadingView.xib in Resources */,
 				2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */,
 				2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */,
 				2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */,
-				2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +591,7 @@
 				2FDEF3D9256A72730078550D /* FamilyDetailInteractor.swift in Sources */,
 				2FE7F91B255A924E00FE7D1E /* FamilyListCell.swift in Sources */,
 				2FC8B790259A6E930096862A /* InfoViewController.swift in Sources */,
+				2F42ED6125A989E300136F90 /* FamilyDetailSpeciesListCell.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Family.swift in Sources */,
 				2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */,
 				2F84D665254954E900FCAB65 /* PickLocationPresenter.swift in Sources */,
@@ -597,10 +601,10 @@
 				2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */,
 				2FC01C932552C49300EDC211 /* AnimalDetailRouter.swift in Sources */,
 				2F84D67325495BD100FCAB65 /* AnimalListRouter.swift in Sources */,
-				2FC01C972552C55E00EDC211 /* FamilyDetailViewController.swift in Sources */,
 				2F7F370D25622C2300DBF6ED /* WikiPhotoURLService.swift in Sources */,
 				2FDEF1A1256E66E4004DDB9B /* UIDocumentImageView.swift in Sources */,
 				2F42ED5725A9801200136F90 /* WikiDescriptionService.swift in Sources */,
+				2F42ED5A25A9887900136F90 /* FamilyDetailTabBarController.swift in Sources */,
 				2F84D67725495DF000FCAB65 /* FamilyListPresenter.swift in Sources */,
 				2F4CA993254AA452006D6121 /* OBISService.swift in Sources */,
 				2F84D67B25495E0E00FCAB65 /* FamilyListInteractor.swift in Sources */,
