@@ -21,6 +21,10 @@ class FamilyDetailInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let family = presenter?.interactor.family else {
+            return
+        }
+        
         //Don't let content be hidden under bottom Tab bar (Needed for iOS 10 and earlier, from iOS 11 use safe area layout guides)
         self.edgesForExtendedLayout = [.top, .left, .right]
 
@@ -31,10 +35,10 @@ class FamilyDetailInformationViewController: UIViewController {
         
         lblDescription.skeletonLineSpacing = 0
         
-        ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
-        lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
-        lblScientific.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
-        lblDescription.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: skeletonColor))
+        ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
+        lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
+        lblScientific.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
+        lblDescription.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
         
         presenter?.loadPhoto()
         presenter?.loadVernacular()
