@@ -8,6 +8,8 @@
 import UIKit
 
 class FamilyDetailSpeciesListTableViewController: UITableViewController {
+    
+    var presenter: FamilyDetailPresenter?
         
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,6 +16,8 @@ class FamilyDetailInformationViewController: UIViewController {
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     
+    var presenter: FamilyDetailPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,6 +9,8 @@ import UIKit
 
 class FamilyDetailDangerViewController: UIViewController {
 
+    var presenter: FamilyDetailPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

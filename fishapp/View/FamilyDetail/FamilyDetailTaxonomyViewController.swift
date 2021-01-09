@@ -8,7 +8,9 @@
 import UIKit
 
 class FamilyDetailTaxonomyViewController: UIViewController {
-
+    
+    var presenter: FamilyDetailPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
