@@ -20,6 +20,9 @@ class FamilyDetailInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Don't let content be hidden under bottom Tab bar (Needed for iOS 10 and earlier, from iOS 11 use safe area layout guides)
+        self.edgesForExtendedLayout = [.top, .left, .right]
 
         ivPhoto.isSkeletonable = true
         lblVernacular.isSkeletonable = true
