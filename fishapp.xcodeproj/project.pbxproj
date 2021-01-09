@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		2F11E7D52562C3FC005A13A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F11E7D42562C3FC005A13A6 /* Constants.swift */; };
 		2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F20E54F2541993500AFF548 /* GBIFResponse.swift */; };
+		2F42ED4025A9636F00136F90 /* FamilyDetailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED3E25A9636F00136F90 /* FamilyDetailInformationViewController.swift */; };
+		2F42ED4125A9636F00136F90 /* FamilyDetailInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED3F25A9636F00136F90 /* FamilyDetailInformationViewController.xib */; };
+		2F42ED4625A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED4425A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift */; };
+		2F42ED4725A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4525A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib */; };
+		2F42ED4B25A9647700136F90 /* FamilyDetailDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */; };
+		2F42ED4C25A9647700136F90 /* FamilyDetailDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */; };
+		2F42ED5025A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */; };
+		2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */; };
 		2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */; };
 		2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */; };
 		2F4CA993254AA452006D6121 /* OBISService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CA992254AA452006D6121 /* OBISService.swift */; };
@@ -83,6 +91,14 @@
 		2383300974FF113C629B4DCB /* Pods_fishapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fishapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F11E7D42562C3FC005A13A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2F20E54F2541993500AFF548 /* GBIFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBIFResponse.swift; sourceTree = "<group>"; };
+		2F42ED3E25A9636F00136F90 /* FamilyDetailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailInformationViewController.swift; sourceTree = "<group>"; };
+		2F42ED3F25A9636F00136F90 /* FamilyDetailInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailInformationViewController.xib; sourceTree = "<group>"; };
+		2F42ED4425A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailSpeciesListTableViewController.swift; sourceTree = "<group>"; };
+		2F42ED4525A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailSpeciesListTableViewController.xib; sourceTree = "<group>"; };
+		2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailDangerViewController.swift; sourceTree = "<group>"; };
+		2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailDangerViewController.xib; sourceTree = "<group>"; };
+		2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailTaxonomyViewController.swift; sourceTree = "<group>"; };
+		2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailTaxonomyViewController.xib; sourceTree = "<group>"; };
 		2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListCell.swift; sourceTree = "<group>"; };
 		2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeciesListCell.xib; sourceTree = "<group>"; };
 		2F4CA992254AA452006D6121 /* OBISService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBISService.swift; sourceTree = "<group>"; };
@@ -235,8 +251,30 @@
 		2F20E53625402F3300AFF548 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F42ED3925A962BE00136F90 /* PickLocation */,
+				2F42ED3A25A962D500136F90 /* FamilyList */,
+				2F42ED3B25A962F600136F90 /* FamilyDetail */,
+				2F42ED3D25A9632300136F90 /* Info */,
+				2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */,
+				2F943B8C255EC33400F20236 /* FamilyDetailView.xib */,
+				2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */,
+				2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F42ED3925A962BE00136F90 /* PickLocation */ = {
+			isa = PBXGroup;
+			children = (
 				2FB9B72A25480B200064E244 /* PickLocationViewController.swift */,
 				2FB9B72E25480B530064E244 /* PickLocationView.xib */,
+			);
+			path = PickLocation;
+			sourceTree = "<group>";
+		};
+		2F42ED3A25A962D500136F90 /* FamilyList */ = {
+			isa = PBXGroup;
+			children = (
 				2FE7F90C255A8B3100FE7D1E /* FamilyListCollectionViewController.swift */,
 				2FE7F91A255A924E00FE7D1E /* FamilyListCell.swift */,
 				2FE7F916255A920D00FE7D1E /* FamilyListCell.xib */,
@@ -244,14 +282,32 @@
 				2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */,
 				2F5120D0256E9BD000715612 /* FamilyListLoadingView.swift */,
 				2F5120D4256E9BE800715612 /* FamilyListLoadingView.xib */,
-				2FC01C962552C55E00EDC211 /* FamilyDetailViewController.swift */,
-				2F943B8C255EC33400F20236 /* FamilyDetailView.xib */,
-				2F48BE70256924CE0075C4E8 /* SpeciesListCell.swift */,
-				2F48BE71256924CE0075C4E8 /* SpeciesListCell.xib */,
+			);
+			path = FamilyList;
+			sourceTree = "<group>";
+		};
+		2F42ED3B25A962F600136F90 /* FamilyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2F42ED3E25A9636F00136F90 /* FamilyDetailInformationViewController.swift */,
+				2F42ED3F25A9636F00136F90 /* FamilyDetailInformationViewController.xib */,
+				2F42ED4425A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift */,
+				2F42ED4525A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib */,
+				2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */,
+				2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */,
+				2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */,
+				2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */,
+			);
+			path = FamilyDetail;
+			sourceTree = "<group>";
+		};
+		2F42ED3D25A9632300136F90 /* Info */ = {
+			isa = PBXGroup;
+			children = (
 				2FC8B78C259A6E750096862A /* InfoView.xib */,
 				2FC8B78F259A6E930096862A /* InfoViewController.swift */,
 			);
-			path = View;
+			path = Info;
 			sourceTree = "<group>";
 		};
 		2F4EDA80253C3BFC00C5839C = {
@@ -405,15 +461,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F42ED4C25A9647700136F90 /* FamilyDetailDangerViewController.xib in Resources */,
 				2FE7F917255A920D00FE7D1E /* FamilyListCell.xib in Resources */,
 				2FB9B72F25480B530064E244 /* PickLocationView.xib in Resources */,
 				2F4EDA99253C3BFD00C5839C /* LaunchScreen.storyboard in Resources */,
+				2F42ED4725A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib in Resources */,
+				2F42ED4125A9636F00136F90 /* FamilyDetailInformationViewController.xib in Resources */,
 				2FC8B78D259A6E750096862A /* InfoView.xib in Resources */,
 				2F4EDA96253C3BFD00C5839C /* Assets.xcassets in Resources */,
 				2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */,
 				2F5120D5256E9BE800715612 /* FamilyListLoadingView.xib in Resources */,
 				2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */,
 				2F48BE73256924CE0075C4E8 /* SpeciesListCell.xib in Resources */,
+				2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */,
 				2F943B8D255EC33400F20236 /* FamilyDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F42ED4025A9636F00136F90 /* FamilyDetailInformationViewController.swift in Sources */,
 				2FC01C9B2552C59800EDC211 /* FamilyDetailPresenter.swift in Sources */,
 				2F4EDA8D253C3BFC00C5839C /* AppDelegate.swift in Sources */,
 				2F20E5502541993500AFF548 /* GBIFResponse.swift in Sources */,
@@ -536,12 +597,15 @@
 				2F4CA993254AA452006D6121 /* OBISService.swift in Sources */,
 				2F84D67B25495E0E00FCAB65 /* FamilyListInteractor.swift in Sources */,
 				2FEB3010254AD2FE0032D178 /* JSONWebService.swift in Sources */,
+				2F42ED4B25A9647700136F90 /* FamilyDetailDangerViewController.swift in Sources */,
 				2FB9B72B25480B200064E244 /* PickLocationViewController.swift in Sources */,
 				2F4CA997254AA594006D6121 /* OBISResponse.swift in Sources */,
 				2F48BE72256924CE0075C4E8 /* SpeciesListCell.swift in Sources */,
 				2F5120CD256E80C300715612 /* LoadVernacularService.swift in Sources */,
+				2F42ED4625A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift in Sources */,
 				2F5120D1256E9BD000715612 /* FamilyListLoadingView.swift in Sources */,
 				2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */,
+				2F42ED5025A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift in Sources */,
 				2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */,
 				2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */,
 				2F9A5BC42592002500DD8BE6 /* FamilyListHeader.swift in Sources */,
