@@ -15,8 +15,6 @@
 		2F42ED4725A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4525A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib */; };
 		2F42ED4B25A9647700136F90 /* FamilyDetailDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */; };
 		2F42ED4C25A9647700136F90 /* FamilyDetailDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */; };
-		2F42ED5025A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */; };
-		2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */; };
 		2F42ED5425A97EEE00136F90 /* LoadDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5325A97EEE00136F90 /* LoadDescriptionService.swift */; };
 		2F42ED5725A9801200136F90 /* WikiDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5625A9801200136F90 /* WikiDescriptionService.swift */; };
 		2F42ED5A25A9887900136F90 /* FamilyDetailTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */; };
@@ -98,8 +96,6 @@
 		2F42ED4525A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailSpeciesListTableViewController.xib; sourceTree = "<group>"; };
 		2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailDangerViewController.swift; sourceTree = "<group>"; };
 		2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailDangerViewController.xib; sourceTree = "<group>"; };
-		2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailTaxonomyViewController.swift; sourceTree = "<group>"; };
-		2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDetailTaxonomyViewController.xib; sourceTree = "<group>"; };
 		2F42ED5325A97EEE00136F90 /* LoadDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDescriptionService.swift; sourceTree = "<group>"; };
 		2F42ED5625A9801200136F90 /* WikiDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDescriptionService.swift; sourceTree = "<group>"; };
 		2F42ED5925A9887900136F90 /* FamilyDetailTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailTabBarController.swift; sourceTree = "<group>"; };
@@ -298,8 +294,6 @@
 				2F42ED6025A989E300136F90 /* FamilyDetailSpeciesListCell.xib */,
 				2F42ED4925A9647700136F90 /* FamilyDetailDangerViewController.swift */,
 				2F42ED4A25A9647700136F90 /* FamilyDetailDangerViewController.xib */,
-				2F42ED4E25A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift */,
-				2F42ED4F25A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib */,
 			);
 			path = FamilyDetail;
 			sourceTree = "<group>";
@@ -476,7 +470,6 @@
 				2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */,
 				2F5120D5256E9BE800715612 /* FamilyListLoadingView.xib in Resources */,
 				2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */,
-				2F42ED5125A9649B00136F90 /* FamilyDetailTaxonomyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,7 +602,6 @@
 				2F42ED4625A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift in Sources */,
 				2F5120D1256E9BD000715612 /* FamilyListLoadingView.swift in Sources */,
 				2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */,
-				2F42ED5025A9649B00136F90 /* FamilyDetailTaxonomyViewController.swift in Sources */,
 				2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */,
 				2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */,
 				2F9A5BC42592002500DD8BE6 /* FamilyListHeader.swift in Sources */,

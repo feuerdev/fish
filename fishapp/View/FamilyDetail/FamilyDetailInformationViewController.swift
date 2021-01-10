@@ -15,6 +15,16 @@ class FamilyDetailInformationViewController: UIViewController {
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblScientific: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblKingdom: UILabel!
+    @IBOutlet weak var lblPhylum: UILabel!
+    @IBOutlet weak var lblSubphylum: UILabel!
+    @IBOutlet weak var lblSuperclass: UILabel!
+    @IBOutlet weak var lblClass: UILabel!
+    @IBOutlet weak var lblSubclass: UILabel!
+    @IBOutlet weak var lblOrder: UILabel!
+    @IBOutlet weak var lblSuperfamily: UILabel!
+    @IBOutlet weak var lblFamily: UILabel!
+    @IBOutlet var ocTaxLabels: [UILabel]!
     
     var presenter: FamilyDetailPresenter?
     
@@ -33,8 +43,6 @@ class FamilyDetailInformationViewController: UIViewController {
         lblScientific.isSkeletonable = true
         lblDescription.isSkeletonable = true
         
-        lblDescription.skeletonLineSpacing = 0
-        
         ivPhoto.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
         lblVernacular.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
         lblScientific.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
@@ -43,6 +51,23 @@ class FamilyDetailInformationViewController: UIViewController {
         presenter?.loadPhoto()
         presenter?.loadVernacular()
         presenter?.loadDescription()
+        
+        
+        lblKingdom.text = presenter?.interactor.family.kingdom
+        lblPhylum.text = presenter?.interactor.family.phylum
+        lblSubphylum.text = presenter?.interactor.family.subphylum
+        lblSuperclass.text = presenter?.interactor.family.superclass
+        lblClass.text = presenter?.interactor.family.aclass
+        lblSubclass.text = presenter?.interactor.family.subclass
+        lblOrder.text = presenter?.interactor.family.order
+        lblSuperfamily.text = presenter?.interactor.family.superfamily
+        lblFamily.text = presenter?.interactor.family.family
+        
+        for lbl in ocTaxLabels {
+            if lbl.text == nil {
+                lbl.superview?.isHidden = true
+            }
+        }
     }
 }
 
@@ -79,7 +104,6 @@ extension FamilyDetailInformationViewController: FamilyDetailPresenterDelegate {
             } else {
                 self.lblDescription.text = "Sorry, couldn't find a description :("
             }
-            
             self.lblDescription.hideSkeleton()
         }
     }

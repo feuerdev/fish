@@ -37,13 +37,7 @@ class AnimalDetailRouter {
         vc3.tabBarItem.image = UIImage(named: "whale20")
         vc3.presenter = presenter
         
-        //Taxonomy
-        let vc4 = FamilyDetailTaxonomyViewController()
-        vc4.tabBarItem.title = "Taxonomy"
-        vc4.tabBarItem.image = UIImage(named: "whale20")
-        vc4.presenter = presenter
-        
-        tbc.viewControllers = [vc1, vc2, vc3, vc4]
+        tbc.viewControllers = [vc1, vc2, vc3]
         
         return tbc
     }
