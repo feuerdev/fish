@@ -40,7 +40,7 @@ class FamilyListCollectionViewController: UICollectionViewController {
         self.collectionView.register(cell, forCellWithReuseIdentifier: IDENTIFIER_CELL)
         self.collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: IDENTIFIER_HEADER)
         
-        self.collectionView.backgroundColor = .white
+        self.collectionView.backgroundColor = backGroundColor2
 
         self.loadingView = FamilyListLoadingView(centerIn: UIApplication.shared.keyWindow!)
         

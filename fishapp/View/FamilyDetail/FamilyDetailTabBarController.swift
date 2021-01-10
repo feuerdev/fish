@@ -14,6 +14,10 @@ class FamilyDetailTabBarController: UITabBarController {
     
     var presenter: FamilyDetailPresenter?
     
+    override func viewDidLoad() {
+        self.view.backgroundColor = backGroundColor2
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         guard let family = self.presenter?.interactor.family else {
             return
