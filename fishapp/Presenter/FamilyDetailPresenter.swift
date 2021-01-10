@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FamilyDetailPresenterDelegate {
+protocol FamilyDetailPresenterDelegate: AnyObject {
     func photoLoaded(_ photo:UIImage?)
     func vernacularLoaded(_ vernacular:String?)
     func descriptionLoaded(_ description:String?)
@@ -16,7 +16,7 @@ protocol FamilyDetailPresenterDelegate {
 class FamilyDetailPresenter {
     
     var interactor: FamilyDetailInteractor
-    var viewDelegate: FamilyDetailPresenterDelegate?
+    weak var viewDelegate: FamilyDetailPresenterDelegate?
     
     init(interactor: FamilyDetailInteractor) {
         self.interactor = interactor

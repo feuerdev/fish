@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PickLocationPresenterDelegate {
+protocol PickLocationPresenterDelegate: AnyObject {
     //
 }
 
@@ -15,7 +15,7 @@ class PickLocationPresenter {
     
     var router: PickLocationRouter?
     
-    var viewDelegate: PickLocationPresenterDelegate?
+    weak var viewDelegate: PickLocationPresenterDelegate?
     
     func search(view: PickLocationPresenterDelegate, location: Location) -> Void {
         router?.pushToAnimalListView(view: view, with: location)

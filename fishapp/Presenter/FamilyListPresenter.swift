@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AnimalListPresenterDelegate {
+protocol AnimalListPresenterDelegate: AnyObject {
     func updateLoadingStatus(status: String) -> Void
     func updateLoadingStatus(percent: Float) -> Void
     func refreshCells()
@@ -19,7 +19,7 @@ class FamilyListPresenter {
     
     var interactor: FamilyListInteractor?
     var router: AnimalListRouter?
-    var viewDelegate: AnimalListPresenterDelegate?
+    weak var viewDelegate: AnimalListPresenterDelegate?
     
     func viewDidLoad() {
         interactor?.loadAnimals()

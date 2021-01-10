@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FamilyListInteractorDelegate {
+protocol FamilyListInteractorDelegate: AnyObject {
     func loadAnimalsSuccess()
     func loadAnimalsFailure(error: String)
     func loadAnimalsStatusUpdate(status: String)
@@ -20,7 +20,7 @@ class FamilyListInteractor {
     
     var location: Location?
     
-    var presenterDelegate: FamilyListInteractorDelegate?
+    weak var presenterDelegate: FamilyListInteractorDelegate?
     
     func loadAnimals() {
         /*

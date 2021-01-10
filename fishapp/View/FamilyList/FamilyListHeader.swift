@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FamilyListHeaderDelegate {
+protocol FamilyListHeaderDelegate: AnyObject {
     func didCollapse(danger:Danger, collapsed:Bool)
 }
 
@@ -19,7 +19,7 @@ class FamilyListHeader: UICollectionReusableView {
     @IBOutlet weak var ivImage: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     
-    var delegate: FamilyListHeaderDelegate?
+    weak var delegate: FamilyListHeaderDelegate?
     
     var danger:Danger = .edGreen
     var count = 0
