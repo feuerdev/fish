@@ -10,62 +10,62 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="327" id="KGk-i7-Jjw" customClass="FamilyDetailSpeciesListCell" customModule="fishapp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="560" height="327"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="470" id="KGk-i7-Jjw" customClass="FamilyDetailSpeciesListCell" customModule="fishapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="560" height="327"/>
+                <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xv9-Xe-D5w">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="558" height="300"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="cEN-K3-ZOW"/>
+                            <constraint firstAttribute="height" constant="300" id="cEN-K3-ZOW"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tZR-K8-VFA">
-                        <rect key="frame" x="10" y="208" width="540" height="109"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tZR-K8-VFA">
+                        <rect key="frame" x="10" y="308" width="538" height="152"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-Qw-w06">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-Qw-w06">
+                                <rect key="frame" x="0.0" y="0.0" width="538" height="50.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hs-96-ur2">
-                                <rect key="frame" x="0.0" y="20.5" width="540" height="47.5"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hs-96-ur2">
+                                <rect key="frame" x="0.0" y="50.5" width="538" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zzU-F2-vPS">
-                                <rect key="frame" x="0.0" y="68" width="540" height="20.5"/>
+                                <rect key="frame" x="0.0" y="50.5" width="538" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discovered by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-Dd-hMu">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwB-vm-rWO">
-                                        <rect key="frame" x="117" y="0.0" width="423" height="20.5"/>
+                                        <rect key="frame" x="117" y="0.0" width="421" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mjx-8d-ERM">
-                                <rect key="frame" x="0.0" y="88.5" width="540" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mjx-8d-ERM">
+                                <rect key="frame" x="0.0" y="101.5" width="538" height="50.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conservation Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-Ww-hqD">
-                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="50.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjw-ZA-Mj6">
-                                        <rect key="frame" x="162.5" y="0.0" width="377.5" height="20.5"/>
+                                        <rect key="frame" x="162.5" y="0.0" width="375.5" height="50.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -86,6 +86,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="ivPhoto" destination="xv9-Xe-D5w" id="8Cx-6y-J5v"/>
                 <outlet property="lblAuthorship" destination="pwB-vm-rWO" id="iOL-E1-JA9"/>
@@ -93,7 +94,7 @@
                 <outlet property="lblScientific" destination="4hs-96-ur2" id="o60-uA-lL6"/>
                 <outlet property="lblVernacular" destination="N1p-Qw-w06" id="1WZ-Gp-Bc0"/>
             </connections>
-            <point key="canvasLocation" x="-163.768115942029" y="137.61160714285714"/>
+            <point key="canvasLocation" x="-165.21739130434784" y="184.82142857142856"/>
         </tableViewCell>
     </objects>
 </document>
