@@ -185,7 +185,7 @@ class FamilyListInteractor {
                        let classification = Classification.data[id] {
                         species.danger = classification.danger
                         species.dangerExplanation = classification.explanation
-                        continue
+                        break
                     }
                 }
             }
