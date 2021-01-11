@@ -43,6 +43,7 @@ class FamilyListLoadingView: UIView {
         
         contentView?.layer.cornerRadius = defaultCornerRadius
         self.backgroundColor = .init(white: 0, alpha: 0)
+        self.view.backgroundColor = .init(white: 0, alpha: 0.6)
     }
     
     func loadViewFromNib() -> UIView? {
