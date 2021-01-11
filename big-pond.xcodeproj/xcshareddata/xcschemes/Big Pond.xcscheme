@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2F4EDA88253C3BFC00C5839C"
-               BuildableName = "fishapp.app"
-               BlueprintName = "fishapp"
-               ReferencedContainer = "container:fishapp.xcodeproj">
+               BuildableName = "big-pond.app"
+               BlueprintName = "big-pond"
+               ReferencedContainer = "container:big-pond.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2F4EDACE253E100000C5839C"
-               BuildableName = "fishappTests.xctest"
-               BlueprintName = "fishappTests"
-               ReferencedContainer = "container:fishapp.xcodeproj">
+               BuildableName = "big-pondTests.xctest"
+               BlueprintName = "big-pondTests"
+               ReferencedContainer = "container:big-pond.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F4EDA88253C3BFC00C5839C"
-            BuildableName = "fishapp.app"
-            BlueprintName = "fishapp"
-            ReferencedContainer = "container:fishapp.xcodeproj">
+            BuildableName = "big-pond.app"
+            BlueprintName = "big-pond"
+            ReferencedContainer = "container:big-pond.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F4EDA88253C3BFC00C5839C"
-            BuildableName = "fishapp.app"
-            BlueprintName = "fishapp"
-            ReferencedContainer = "container:fishapp.xcodeproj">
+            BuildableName = "big-pond.app"
+            BlueprintName = "big-pond"
+            ReferencedContainer = "container:big-pond.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
