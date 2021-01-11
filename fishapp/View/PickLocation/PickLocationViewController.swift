@@ -261,7 +261,7 @@ extension PickLocationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchResults.count
+        return min(9, self.searchResults.count)
     }
 }
 
