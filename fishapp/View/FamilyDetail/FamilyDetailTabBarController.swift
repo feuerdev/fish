@@ -15,13 +15,21 @@ class FamilyDetailTabBarController: UITabBarController {
     var presenter: FamilyDetailPresenter?
     
     override func viewDidLoad() {
-        self.view.backgroundColor = backGroundColor2
+        self.title = "Family"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         guard let family = self.presenter?.interactor.family else {
             return
         }
+        
+        self.view.backgroundColor = backGroundColor2
+        
+//        tabBar.isTranslucent = false
+        tabBar.barTintColor = family.getPresentableColor()
+        tabBar.tintColor = family.getPresentableTextColor()
+        tabBar.unselectedItemTintColor = family.getPresentableInactiveTextColor()
+        
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.backgroundColor = family.getPresentableColor()

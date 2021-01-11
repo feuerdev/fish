@@ -248,6 +248,19 @@ class Family {
         return textColor
     }
     
+    func getPresentableInactiveTextColor() -> UIColor {
+        var textColor: UIColor
+        switch danger {
+        case .edGreen:
+            textColor = .init(white: 0.82, alpha: 1)
+        default:
+            textColor = .init(white: 0.3, alpha: 1)
+        }
+        return textColor
+    }
+    
+    
+    
     func generatePhotoSearchterms() -> [String] {
         var result = [String]()
         if let family = self.family {
