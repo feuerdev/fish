@@ -25,12 +25,6 @@ class InfoViewController: UIViewController {
             
             Q: Why is there no photo?
             A: I'm currently getting the photos from Wikipedia. If the Wiki article has no photo, I can not display it in the app.
-
-            Q: What are the three categories?
-            A: The animals are evaluated in three categories:
-                    Red: This animal is dangerous to humans
-                    Yellow: This animal could potentially harm humans, but is usually not aggressive
-                    Green: This animal is harmless to humans
                         
             Q: Where do you get the animal data from?
             A: Animal occurence data comes from OBIS - A Marine Life Database

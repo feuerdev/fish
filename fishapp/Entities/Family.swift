@@ -59,7 +59,7 @@ class Species {
     var isTerrestrial: Bool?
     var records: Int?
     var danger: Danger = .edGreen
-    var dangerExplanation: String?
+    var dangerExplanation: String = "This species is harmless"
     
     init(_ taxonId: Int) {
         self.taxonId = taxonId
@@ -91,19 +91,18 @@ class Species {
         return result
     }
     
-    func getPresentableName() -> String {
-        var name: String = ""
-        if let taxonRank = self.taxonRank {
-            switch taxonRank {
-            case "Species":
-                name = self.species ?? ""
-            case "Genus":
-                name = self.genus ?? ""
-            default:
-                break
-            }
+    func getPresentableName() -> String? {
+        guard let taxonRank = self.taxonRank else {
+            return nil
         }
-        return name
+        switch taxonRank {
+        case "Species":
+            return self.species
+        case "Genus":
+            return self.genus
+        default:
+            return nil
+        }
     }
     
     func getPresentableCategoryColor() -> UIColor {
