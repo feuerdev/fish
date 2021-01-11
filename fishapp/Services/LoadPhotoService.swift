@@ -14,7 +14,7 @@ import Feuerlib
 class LoadPhotoService {
 
     static func loadPhoto(id: Int, searchParameters: [String], completionHandler: @escaping (CachableResult<Int, UIImage, Error>) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async() {
+        DispatchQueue.global(qos: .userInteractive).async() {
             //Step 1: Check in UserDefaults for url
             if let url = UserDefaults.standard.string(forKey: "photourl-\(id)") {
                 //Download or load photo from Cache
