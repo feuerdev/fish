@@ -10,14 +10,12 @@ import UIKit
 class InfoViewController: UIViewController {
     @IBOutlet weak var tvContent: UITextView!
     
-    @IBOutlet weak var lblContent: UILabel!
-    @IBOutlet weak var svContent: UIScrollView!
-    @IBOutlet weak var stvContent: UIStackView!
+
     override func viewDidLoad() {
-        self.view.backgroundColor = pondColor
-        self.lblContent.textColor = textTintColor
+        self.view.backgroundColor = backGroundColor2
+        self.tvContent.textColor = .black
         
-        self.lblContent.text =
+        self.tvContent.text =
             """
             Thank you for using my App!
             
@@ -31,6 +29,9 @@ class InfoViewController: UIViewController {
 
             Q: Where do you get the vernacular(common) name from?
             A: I get the english name of the animals from WORMS - Another Marine Life Database
+
+            Q: Where do you get the description name from?
+            A: I get the description from Wikipedia
 
             Q: Where does the categorization come from?
             A: That was me! I'm not an expert though, so if you want to change a classification please let me know!
@@ -55,14 +56,8 @@ class InfoViewController: UIViewController {
 
             """
         
-        tvContent.text = lblContent.text
         tvContent.tintColor = textTintColor
         tvContent.linkTextAttributes = [.underlineStyle: 1]
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        svContent.contentSize = CGSize(width: svContent.frame.width, height: stvContent.frame.height)
-    }
-    
 }
