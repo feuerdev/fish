@@ -8,59 +8,7 @@
 import Foundation
 import UIKit
 
-enum Danger: Int {
-    static let red = [
-        484724, // Family Containing Box Jellyfish like Irukandji
-        135342, // Family Portuguese man o' war
-        105742, // Genus Great White Shark
-        135479, // Species Portuguese man o' war
-        344030, // Species Saltwater Crocodile
-        105838, // Species White Shark
-        105799, // Species Tiger Shark
-    ]
-    static let yellow = [
-        10209,  //Order of Mackerel Sharks
-        266989, //Order of Venomous Box Jellyfish
-        196069, //Order of Stingrays
-        105702, //Family of Great White + Mako
-        105689, //Family Requiem Sharks
-        105694, //Family Hammerhead Sharks
-        125595, //Family Scorpionfish
-        154251, //Family Stonefish
-        196202, //Family Crown of Thorns
-        135239, //Family Containing Lion's mane jellyfish
-        14107,  //Family Cone Snails
-        125431, //Family Moray Eels
-        125451, //Family Needlefishes
-        342638, //Family of Venomous Snakes
-        413301, //Sub-Family of Sea snakes
-        341430, //Genus Blue Ringed Octopus
-        205902, //Genus Fire Corals
-        123391, //Genus Toxopneustes (Toxic Sea Urchins)
-        135261, //Genus Sea Nettles
-        206646, //Genus Also Sea Nettles?
-        135306, //Species Moon Jellyfish
-        291140, //Species Cannonball Jellyfish
-        219890, //Species Lagoon Triggerfish
-        219875, //Species Titan Triggerfish
-        135305, //Species Feuerqualle
-        135301, //Species Feuerqualle
-        135304, //Species Feuerqualle
-    ]
-    
-    static func getColor(_ danger:Danger) -> UIColor {
-        switch danger {
-        case .edGreen:
-            return greenColor
-        case .edYellow:
-            return yellowColor
-        case .edRed:
-            return redColor
-        }
-    }
-    
-    case edGreen = 2, edYellow = 1, edRed = 0
-}
+
 
 let filteredSpecies = [
     4, //Fungi
@@ -111,6 +59,7 @@ class Species {
     var isTerrestrial: Bool?
     var records: Int?
     var danger: Danger = .edGreen
+    var dangerExplanation: String?
     
     init(_ taxonId: Int) {
         self.taxonId = taxonId

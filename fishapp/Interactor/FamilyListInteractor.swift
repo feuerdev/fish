@@ -167,29 +167,25 @@ class FamilyListInteractor {
         for family in families {
             for species in family.species {
                 
-                let relevantIds = [species.phylumId,
-                                   species.subphylumId,
-                                   species.superclassId,
-                                   species.aclassId,
-                                   species.subclassId,
-                                   species.orderId,
-                                   species.superfamilyId,
-                                   species.familyId,
-                                   species.genusId,
-                                   species.taxonId]
+                //relevantId's are in order of specificity
+                let relevantIds = [
+                    species.taxonId,
+                    species.genusId,
+                    species.familyId,
+                    species.superfamilyId,
+                    species.orderId,
+                    species.subclassId,
+                    species.aclassId,
+                    species.superclassId,
+                    species.subphylumId,
+                    species.phylumId]
                 
                 for id in relevantIds {
-                    for red in Danger.red {
-                        if id == red {
-                            species.danger = .edRed
-                            continue
-                        }
-                    }
-                    for yellow in Danger.yellow {
-                        if id == yellow {
-                            species.danger = .edYellow
-                            continue
-                        }
+                    if let id = id,
+                       let classification = Classification.data[id] {
+                        species.danger = classification.danger
+                        species.dangerExplanation = classification.explanation
+                        continue
                     }
                 }
             }

@@ -51,6 +51,7 @@
 		2FDEF3D9256A72730078550D /* FamilyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */; };
 		2FE06BEE254FF871002213BE /* WORMSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BED254FF871002213BE /* WORMSService.swift */; };
 		2FE06BF2254FF984002213BE /* WORMSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE06BF1254FF984002213BE /* WORMSResponse.swift */; };
+		2FE5B06125AC2AAA00B37335 /* Danger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5B06025AC2AAA00B37335 /* Danger.swift */; };
 		2FE7F90D255A8B3100FE7D1E /* FamilyListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F90C255A8B3100FE7D1E /* FamilyListCollectionViewController.swift */; };
 		2FE7F917255A920D00FE7D1E /* FamilyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE7F916255A920D00FE7D1E /* FamilyListCell.xib */; };
 		2FE7F91B255A924E00FE7D1E /* FamilyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7F91A255A924E00FE7D1E /* FamilyListCell.swift */; };
@@ -136,6 +137,7 @@
 		2FDEF3D8256A72730078550D /* FamilyDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDetailInteractor.swift; sourceTree = "<group>"; };
 		2FE06BED254FF871002213BE /* WORMSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSService.swift; sourceTree = "<group>"; };
 		2FE06BF1254FF984002213BE /* WORMSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORMSResponse.swift; sourceTree = "<group>"; };
+		2FE5B06025AC2AAA00B37335 /* Danger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Danger.swift; sourceTree = "<group>"; };
 		2FE7F90C255A8B3100FE7D1E /* FamilyListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListCollectionViewController.swift; sourceTree = "<group>"; };
 		2FE7F916255A920D00FE7D1E /* FamilyListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyListCell.xib; sourceTree = "<group>"; };
 		2FE7F91A255A924E00FE7D1E /* FamilyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListCell.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				2F4EDAF72540039500C5839C /* Family.swift */,
 				2F84D66E2549583D00FCAB65 /* Location.swift */,
+				2FE5B06025AC2AAA00B37335 /* Danger.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				2F42ED4625A963CA00136F90 /* FamilyDetailSpeciesListTableViewController.swift in Sources */,
 				2F5120D1256E9BD000715612 /* FamilyListLoadingView.swift in Sources */,
 				2FFAE70E2546F91600B928CF /* PickLocationRouter.swift in Sources */,
+				2FE5B06125AC2AAA00B37335 /* Danger.swift in Sources */,
 				2F4EDAFC254007BE00C5839C /* GBIFManager.swift in Sources */,
 				2FDEF3D5256A63510078550D /* LoadPhotoService.swift in Sources */,
 				2F9A5BC42592002500DD8BE6 /* FamilyListHeader.swift in Sources */,
