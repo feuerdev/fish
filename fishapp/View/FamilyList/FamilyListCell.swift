@@ -28,13 +28,10 @@ class FamilyListCell: UICollectionViewCell {
         self.lblVernacular.text = ""
         self.lblLatin.text = ""
         
-        //Skeleton
+        //Set
         self.lblLatin.isSkeletonable = false
-        self.view.isSkeletonable = true
         self.lblVernacular.isSkeletonable = true
         self.ivPhoto.isSkeletonable = true
-        
-        //Set
         self.view.hideSkeleton()
         self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: family.getPresentableColor()))
         self.view.backgroundColor = family.getPresentableColor()
@@ -97,6 +94,10 @@ class FamilyListCell: UICollectionViewCell {
         self.lblLatin.text = ""
         
         //Style
-        self.view.layer.cornerRadius = defaultCornerRadius
+        self.layer.cornerRadius = defaultCornerRadius
+        
+        //Skeleton
+        self.isSkeletonable = true
+        self.view.isSkeletonable = true
     }
 }
