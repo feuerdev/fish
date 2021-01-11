@@ -77,6 +77,8 @@ class PickLocationViewController : UIViewController {
         if #available(iOS 13.0, *) {
             searchCompleter.pointOfInterestFilter = .excludingAll
         }
+        
+        self.navigationItem.rightBarButtonItem = .init(image: UIImage(named: "icon_info"), style: .plain, target: self, action: #selector(infoTapped))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +87,11 @@ class PickLocationViewController : UIViewController {
             self.sbLocation.searchTextField.attributedPlaceholder = NSAttributedString(string: "Find Location...", attributes: [NSAttributedString.Key.foregroundColor: placeHolderColor])
         }
     }
+    
+    @objc func infoTapped() {
+        self.navigationController?.pushViewController(InfoViewController(), animated: true)
+    }
+    
     
     @objc func onMapTap(gestureRecognizer:UITapGestureRecognizer) {
         //Close Keyboard
