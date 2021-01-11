@@ -16,14 +16,13 @@ class LoadPhotoService {
     static func loadPhoto(id: Int, searchParameters: [String], completionHandler: @escaping (CachableResult<Int, UIImage, Error>) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async() {
             //Step 1: Check in UserDefaults for url
-            if let url = UserDefaults.standard.string(forKey: "photo-\(id)") {
+            if let url = UserDefaults.standard.string(forKey: "photourl-\(id)") {
                 //Download or load photo from Cache
                 ImageCache.shared.getImage(from: url) { result in
                     switch result.result {
                     case .success(let image):
                         completionHandler(CachableResult(.success(image), id))
                     case .failure(let error):
-                        print(error)
                         completionHandler(CachableResult(.failure(error), id))
                         break
                     }
@@ -32,7 +31,7 @@ class LoadPhotoService {
                 //Step 4: Never looked for Photo. Ask Wiki for it.
                 for param in searchParameters {
                     //Check if we found phot in a previous iteration
-                    guard UserDefaults.standard.string(forKey: "photo-\(id)") == nil else {
+                    guard UserDefaults.standard.string(forKey: "photourl-\(id)") == nil else {
                         return
                     }
                     
@@ -48,7 +47,7 @@ class LoadPhotoService {
                             ImageCache.shared.getImage(from: url) { result in
                                 switch result.result {
                                 case .success(let image):
-                                    UserDefaults.standard.setValue(url, forKey: "photo-\(id)")
+                                    UserDefaults.standard.setValue(url, forKey: "photourl-\(id)")
                                     completionHandler(CachableResult(.success(image), id))
                                     dgroup.leave()
                                 case .failure(_):
@@ -61,7 +60,7 @@ class LoadPhotoService {
                     dgroup.wait()
                 }
                 //After all the search parameters have been tried, check if still no image was found.
-                let url = UserDefaults.standard.string(forKey: "photo-\(id)")
+                let url = UserDefaults.standard.string(forKey: "photourl-\(id)")
 
                 guard url == nil else {
                     return
