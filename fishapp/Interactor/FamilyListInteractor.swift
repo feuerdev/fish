@@ -116,7 +116,7 @@ class FamilyListInteractor {
                            species.taxonID]
         
         for speciesId in relevantIds {
-            for filterId in filteredSpecies {
+            for filterId in filteredTaxons {
                 if speciesId == filterId {
                     return true
                 }
@@ -182,7 +182,7 @@ class FamilyListInteractor {
                 
                 for id in relevantIds {
                     if let id = id,
-                       let classification = Classification.data[id] {
+                       let classification = classifications[id] {
                         species.danger = classification.danger
                         species.dangerExplanation = classification.explanation
                         break
