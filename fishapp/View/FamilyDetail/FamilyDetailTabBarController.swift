@@ -24,8 +24,6 @@ class FamilyDetailTabBarController: UITabBarController {
         }
         
         self.view.backgroundColor = backGroundColor2
-        
-//        tabBar.isTranslucent = false
         tabBar.barTintColor = family.getPresentableColor()
         tabBar.tintColor = family.getPresentableTextColor()
         tabBar.unselectedItemTintColor = family.getPresentableInactiveTextColor()
