@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 
 protocol AnimalListPresenterDelegate: AnyObject {
     func updateLoadingStatus(status: String) -> Void
@@ -25,8 +26,11 @@ class FamilyListPresenter {
         interactor?.loadAnimals()
     }
     
-    func didSelectFamily(_ family:Family) {
+    func familySelected(_ family:Family) {
         router?.pushToAnimalDetailView(view: viewDelegate!, with: family)
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterItemID: family.familyId
+        ])
     }
 }
 

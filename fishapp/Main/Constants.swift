@@ -7,6 +7,9 @@
 
 import UIKit
 
+//Identifier
+let IDENTIFIER_FAMILY_CELL = "FamilyListCell"
+let IDENTIFIER_FAMILY_HEADER = "FamilyListHeader"
 
 //Fallback Data
 let FAMILY_NO_VERNACULAR = "NONE"

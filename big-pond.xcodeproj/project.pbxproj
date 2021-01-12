@@ -41,6 +41,7 @@
 		2F871B5025AD8145004BA869 /* InteractorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F871B4F25AD8145004BA869 /* InteractorExtensions.swift */; };
 		2F871B5425AD84CC004BA869 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F871B5325AD84CC004BA869 /* Species.swift */; };
 		2F871B5725AD84EA004BA869 /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F871B5625AD84EA004BA869 /* Classification.swift */; };
+		2F871B6125AD993D004BA869 /* FamilyListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F871B6025AD993D004BA869 /* FamilyListDataSource.swift */; };
 		2F9A5BC12591FD0200DD8BE6 /* FamilyListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A5BC02591FD0200DD8BE6 /* FamilyListHeader.xib */; };
 		2F9A5BC42592002500DD8BE6 /* FamilyListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */; };
 		2FABEEBF25A35C9100F4C85A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */; };
@@ -130,6 +131,7 @@
 		2F871B4F25AD8145004BA869 /* InteractorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorExtensions.swift; sourceTree = "<group>"; };
 		2F871B5325AD84CC004BA869 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		2F871B5625AD84EA004BA869 /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
+		2F871B6025AD993D004BA869 /* FamilyListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListDataSource.swift; sourceTree = "<group>"; };
 		2F9A5BC02591FD0200DD8BE6 /* FamilyListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyListHeader.xib; sourceTree = "<group>"; };
 		2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyListHeader.swift; sourceTree = "<group>"; };
 		2FABEEBE25A35C9100F4C85A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				2F9A5BC32592002500DD8BE6 /* FamilyListHeader.swift */,
 				2F5120D0256E9BD000715612 /* FamilyListLoadingView.swift */,
 				2F5120D4256E9BE800715612 /* FamilyListLoadingView.xib */,
+				2F871B6025AD993D004BA869 /* FamilyListDataSource.swift */,
 			);
 			path = FamilyList;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				2FE7F91B255A924E00FE7D1E /* FamilyListCell.swift in Sources */,
 				2FC8B790259A6E930096862A /* InfoViewController.swift in Sources */,
 				2F871B5025AD8145004BA869 /* InteractorExtensions.swift in Sources */,
+				2F871B6125AD993D004BA869 /* FamilyListDataSource.swift in Sources */,
 				2F42ED6125A989E300136F90 /* FamilyDetailSpeciesListCell.swift in Sources */,
 				2F4EDAF82540039500C5839C /* Family.swift in Sources */,
 				2F871B4B25AD804F004BA869 /* PresenterExtensions.swift in Sources */,
