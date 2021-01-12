@@ -14,7 +14,7 @@ class FamilyListCell: UICollectionViewCell {
     @IBOutlet weak var lblLatin: UILabel!
     @IBOutlet weak var lblVernacular: UILabel!
     @IBOutlet weak var lblNoPhoto: UILabel!
-    @IBOutlet weak var ivPhoto: UIDocumentImageView!
+    @IBOutlet weak var ivPhoto: UIImageView!
     
     var cacheKey: Int?
     
