@@ -54,6 +54,7 @@ class PickLocationViewController : UIViewController {
         sbLocation.setPlaceholderTextColor(placeHolderColor)
         
         tvLocationResults.backgroundColor = backGroundColor
+        tvLocationResults.separatorColor = .white
         tvLocationResults.layer.cornerRadius = defaultCornerRadius
         tvLocationResults.dataSource = self
         tvLocationResults.delegate = self
@@ -91,7 +92,6 @@ class PickLocationViewController : UIViewController {
     @objc func infoTapped() {
         self.navigationController?.pushViewController(InfoViewController(), animated: true)
     }
-    
     
     @objc func onMapTap(gestureRecognizer:UITapGestureRecognizer) {
         //Close Keyboard
@@ -257,9 +257,16 @@ extension PickLocationViewController: MKLocalSearchCompleterDelegate {
         self.showSimpleError(title: "Oops", message: error.localizedDescription, popViewController: false)
     }
 }
+
 extension PickLocationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        let cell: UITableViewCell = {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+                return UITableViewCell(style: .default, reuseIdentifier: "cell")
+            }
+            return cell
+        }()
         
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = textTintColor
