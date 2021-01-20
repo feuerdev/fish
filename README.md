@@ -2,6 +2,8 @@
 
 ![alt text](https://i.imgur.com/TCu2q7S.jpg)
 
+<a href="https://apps.apple.com/de/app/big-pond/id1546346139?itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-US?size=250x83&amp;releaseDate=1609545600&h=7c36c8caafd134563bbededcfe99382e" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+
 **Explore Marine Life!**
 
 Have you ever wondered what exactly is roaming around at your favorite beach, surfing or diving spot?
