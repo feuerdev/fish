@@ -1,6 +1,12 @@
 # Big Pond
 
-![alt text](https://i.imgur.com/TCu2q7S.jpg)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=feuerdev_fish&metric=ncloc)](https://sonarcloud.io/dashboard?id=feuerdev_fish) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=feuerdev_fish&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=feuerdev_fish) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=feuerdev_fish&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=feuerdev_fish) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=feuerdev_fish&metric=security_rating)](https://sonarcloud.io/dashboard?id=feuerdev_fish)
+
+
+
+
+
+![Hero Image](https://i.imgur.com/TCu2q7S.jpg)
 
 <a href="https://apps.apple.com/de/app/big-pond/id1546346139?itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-US?size=250x83&amp;releaseDate=1609545600&h=7c36c8caafd134563bbededcfe99382e" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
