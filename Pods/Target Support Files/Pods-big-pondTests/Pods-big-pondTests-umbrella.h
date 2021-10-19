@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_fishappVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_fishappVersionString[];
+FOUNDATION_EXPORT double Pods_big_pondTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_big_pondTestsVersionString[];
 

@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-fishapp/Pods-fishapp-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-big-pond/Pods-big-pond-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework
