@@ -155,10 +155,10 @@ class FamilyListInteractor {
         new.taxonomicStatus = species.taxonomicStatus
         new.authorship = species.scientificNameAuthorship
         new.category = species.category
-        new.isMarine = species.is_marine
-        new.isBrackish = species.is_brackish
-        new.isFreshwater = species.is_freshwater
-        new.isTerrestrial = species.is_terrestrial
+        new.isMarine = species.isMarine
+        new.isBrackish = species.isBrackish
+        new.isFreshwater = species.isFreshwater
+        new.isTerrestrial = species.isTerrestrial
         new.records = species.records
         return new
     }

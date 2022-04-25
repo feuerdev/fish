@@ -29,10 +29,10 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     let aclass: String?
     let family: String?
     let genus: String?
-    let is_brackish: Bool?
-    let is_freshwater: Bool?
-    let is_marine: Bool?
-    let is_terrestrial: Bool?
+    let isBrackish: Bool?
+    let isFreshwater: Bool?
+    let isMarine: Bool?
+    let isTerrestrial: Bool?
     let kingdom: String?
     let order: String?
     let phylum: String?
@@ -75,10 +75,10 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
         case species
         case scientificName
         case scientificNameAuthorship
-        case is_brackish
-        case is_freshwater
-        case is_marine
-        case is_terrestrial
+        case isBrackish = "is_brackish"
+        case isFreshwater = "is_freshwater"
+        case isMarine = "is_marine"
+        case isTerrestrial = "is_terrestrial"
         case taxonID
         case taxonRank
         case taxonomicStatus

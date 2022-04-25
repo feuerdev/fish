@@ -29,10 +29,8 @@ class WORMSService {
     }
 
     private static func getEnglishNameFromResponse(response: [WORMSResponse]) -> String? {
-        for item in response {
-            if item.language_code == "eng" {
-                return item.vernacular!.capitalized
-            }
+        for item in response where item.language_code == "eng" {
+            return item.vernacular!.capitalized
         }
         return nil
     }
