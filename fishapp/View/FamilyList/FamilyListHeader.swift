@@ -8,14 +8,14 @@
 import UIKit
 
 class FamilyListHeader: UICollectionReusableView {
-    
+
     @IBOutlet weak var btnShowTitle: UIButton!
     @IBOutlet weak var btnShowImage: UIButton!
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var ivImage: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
-    
-    var danger:Danger = .edGreen {
+
+    var danger: Danger = .edGreen {
         didSet {
             switch danger {
             case .edGreen:
@@ -33,29 +33,29 @@ class FamilyListHeader: UICollectionReusableView {
             }
         }
     }
-    
+
     var count = 0 {
         didSet {
             self.btnShowTitle.setTitle("(\(self.count))", for: .normal)
         }
     }
-    
+
     var collapsed = false {
         didSet {
             self.btnShowImage.transform = !self.collapsed ? .identity : .init(rotationAngle: 180 * CGFloat.pi/180)
         }
     }
-    
+
     var onCollapse: ((Danger, Bool) -> Void)?
-    
+
     override func awakeFromNib() {
         self.view.layer.cornerRadius = defaultCornerRadius
         self.lblTitle.textColor = categoyHeaderColor
-        
+
         let grTap = UITapGestureRecognizer(target: self, action: #selector(showHideSection(_:)))
         self.view.addGestureRecognizer(grTap)
     }
-    
+
     @IBAction func showHideSection(_ sender: Any) {
         self.collapsed = !self.collapsed
         self.onCollapse?(danger, self.collapsed)

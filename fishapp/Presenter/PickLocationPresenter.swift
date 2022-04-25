@@ -12,12 +12,12 @@ protocol PickLocationPresenterDelegate: AnyObject {
 }
 
 class PickLocationPresenter {
-    
+
     var router: PickLocationRouter?
-    
+
     weak var viewDelegate: PickLocationPresenterDelegate?
-    
-    func search(view: PickLocationPresenterDelegate, location: Location) -> Void {
+
+    func search(view: PickLocationPresenterDelegate, location: Location) {
         router?.pushToAnimalListView(view: view, with: location)
     }
 }

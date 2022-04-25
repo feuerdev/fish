@@ -15,13 +15,13 @@ protocol FamilyListInteractorDelegate: AnyObject {
 }
 
 class FamilyListInteractor {
-    
+
     var animals = [Family]()
-    
+
     var location: Location?
-    
+
     weak var presenterDelegate: FamilyListInteractorDelegate?
-    
+
     func loadAnimals() {
         /*
          Task 1
@@ -36,7 +36,7 @@ class FamilyListInteractor {
             presenterDelegate?.loadAnimalsFailure(error: "No location set")
             return
         }
-        
+
         OBISService.getCheckList(location: location, onStatus: {_ in
             self.presenterDelegate?.loadAnimalsStatusUpdate(status: "Searching Animals...")
             self.presenterDelegate?.loadAnimalsStatusUpdate(percent: 0.05)
@@ -54,15 +54,15 @@ class FamilyListInteractor {
             }
         }
     }
-    
-    func createFamilies(_ species:OBISResponse) -> [Family] {
+
+    func createFamilies(_ species: OBISResponse) -> [Family] {
         var families = [Family]()
         for species in species.results {
             guard species.familyId != nil else {
                 continue
             }
-            
-            if(!self.filter(species)) {
+
+            if !self.filter(species) {
                 var alreadyAdded = false
                 for fam in families {
                     if species.familyId == fam.familyId {
@@ -87,7 +87,7 @@ class FamilyListInteractor {
                         new.subclass = species.subclass
                         new.order = species.order
                         new.superfamily = species.superfamily
-                        
+
                         let newSpecies = createSpecies(from: species)
                         if let records = newSpecies.records {
                             new.sumRecords += records
@@ -101,8 +101,8 @@ class FamilyListInteractor {
         evaluateDanger(families)
         return families
     }
-    
-    func filter(_ species:OBISSpecies) -> Bool {
+
+    func filter(_ species: OBISSpecies) -> Bool {
         let relevantIds = [species.kingdomId,
                            species.phylumId,
                            species.subphylumId,
@@ -114,7 +114,7 @@ class FamilyListInteractor {
                            species.familyId,
                            species.genusId,
                            species.taxonID]
-        
+
         for speciesId in relevantIds {
             for filterId in filteredTaxons {
                 if speciesId == filterId {
@@ -124,11 +124,11 @@ class FamilyListInteractor {
         }
         return false
     }
-    
-    func createSpecies(from species:OBISSpecies) -> Species {
+
+    func createSpecies(from species: OBISSpecies) -> Species {
         let new = Species(species.taxonID)
         new.category = species.category
-        
+
         new.kingdomId = species.kingdomId
         new.phylumId = species.phylumId
         new.subphylumId = species.subphylumId
@@ -139,7 +139,7 @@ class FamilyListInteractor {
         new.superfamilyId = species.superfamilyId
         new.familyId = species.familyId
         new.genusId = species.genusId
-        
+
         new.kingdom = species.kingdom
         new.phylum = species.phylum
         new.subphylum = species.subphylum
@@ -162,12 +162,12 @@ class FamilyListInteractor {
         new.records = species.records
         return new
     }
-    
-    func evaluateDanger(_ families:[Family]) {
+
+    func evaluateDanger(_ families: [Family]) {
         for family in families {
             for species in family.species {
-                
-                //relevantId's are in order of specificity
+
+                // relevantId's are in order of specificity
                 let relevantIds = [
                     species.taxonId,
                     species.genusId,
@@ -179,7 +179,7 @@ class FamilyListInteractor {
                     species.superclassId,
                     species.subphylumId,
                     species.phylumId]
-                
+
                 for id in relevantIds {
                     if let id = id,
                        let classification = classifications[id] {

@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class AnimalListRouter {
-    
+
     static func createModule(location: Location) -> UIViewController {
         let vc = FamilyListCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        
+
         let presenter = FamilyListPresenter()
         let interactor = FamilyListInteractor()
         let router = AnimalListRouter()
@@ -23,13 +23,13 @@ class AnimalListRouter {
         presenter.interactor = interactor
         interactor.location = location
         interactor.presenterDelegate = presenter
-        
+
         return vc
     }
-    
-    func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal:Family) {
+
+    func pushToAnimalDetailView(view: AnimalListPresenterDelegate, with animal: Family) {
         let newVC = AnimalDetailRouter.createModule(animal: animal)
-        
+
         let oldVC = view as! UIViewController
         oldVC.navigationController?.pushViewController(newVC, animated: true)
     }

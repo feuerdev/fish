@@ -7,9 +7,8 @@
 
 import UIKit
 
-
 extension Family {
-    
+
     func getPresentableColor() -> UIColor {
         var color: UIColor
         switch self.danger {
@@ -20,7 +19,7 @@ extension Family {
         }
         return color
     }
-    
+
     func getPresentableTextColor() -> UIColor {
         var textColor: UIColor
         switch danger {
@@ -31,7 +30,7 @@ extension Family {
         }
         return textColor
     }
-    
+
     func getPresentableInactiveTextColor() -> UIColor {
         var textColor: UIColor
         switch danger {
@@ -58,7 +57,7 @@ extension Species {
             return nil
         }
     }
-    
+
     func getPresentableCategoryColor() -> UIColor {
         let green = greenColor.darker.darker
         let yellow = yellowColor.darker.darker
@@ -84,7 +83,7 @@ extension Species {
             return green
         }
     }
-    
+
     func getPresentableCategory() -> String {
         switch category {
         case "EX":
@@ -107,7 +106,7 @@ extension Species {
             return "Not Threatened"
         }
     }
-    
+
     func getPresentableAuthorship() -> String {
         var result = ""
         if let authorship = self.authorship {
@@ -119,7 +118,7 @@ extension Species {
         }
         return result
     }
-    
+
     func getPresentableColor() -> UIColor {
         var color: UIColor
         switch self.danger {
@@ -130,7 +129,7 @@ extension Species {
         }
         return color
     }
-    
+
     func getPresentableTextColor() -> UIColor {
         var textColor: UIColor
         switch danger {
@@ -144,7 +143,7 @@ extension Species {
 }
 
 extension Danger {
-    static func getColor(_ danger:Danger) -> UIColor {
+    static func getColor(_ danger: Danger) -> UIColor {
         switch danger {
         case .edGreen:
             return greenColor

@@ -19,7 +19,7 @@ class Species {
     var superfamilyId: Int?
     var familyId: Int?
     var genusId: Int?
-    
+
     var kingdom: String?
     var phylum: String?
     var subphylum: String?
@@ -42,7 +42,7 @@ class Species {
     var records: Int?
     var danger: Danger = .edGreen
     var dangerExplanation: String = "This species is harmless"
-    
+
     init(_ taxonId: Int) {
         self.taxonId = taxonId
     }

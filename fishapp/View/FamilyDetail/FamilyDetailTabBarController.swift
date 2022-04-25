@@ -11,23 +11,23 @@ import UIKit
  This ovverride only exists, to color the statusbar in yellow or red categories
  */
 class FamilyDetailTabBarController: UITabBarController {
-    
+
     var presenter: FamilyDetailPresenter?
-    
+
     override func viewDidLoad() {
         self.title = "Family"
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         guard let family = self.presenter?.interactor.family else {
             return
         }
-        
+
         self.view.backgroundColor = backGroundColor2
         tabBar.barTintColor = family.getPresentableColor()
         tabBar.tintColor = family.getPresentableTextColor()
         tabBar.unselectedItemTintColor = family.getPresentableInactiveTextColor()
-        
+
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.backgroundColor = family.getPresentableColor()
@@ -41,7 +41,7 @@ class FamilyDetailTabBarController: UITabBarController {
             navigationController?.navigationBar.tintColor = family.getPresentableTextColor()
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()

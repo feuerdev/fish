@@ -8,12 +8,12 @@
 import Foundation
 
 struct GBIFResponse: Decodable {
-    
+
     let offset: Int
     let limit: Int
     let endOfRecords: Bool
     let count: Int
-    
+
     let results: [GBIFOccurrence]
 }
 
@@ -34,15 +34,13 @@ struct GBIFOccurrence: Decodable, Hashable, Equatable {
     let specificEpithet: String
     let vernacularName: String
     let occurrenceID: String
-    
-    static func ==(left:GBIFOccurrence, right:GBIFOccurrence) -> Bool {
+
+    static func ==(left: GBIFOccurrence, right: GBIFOccurrence) -> Bool {
         return left.familyKey == right.familyKey
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(familyKey)
     }
 
-    
 }
-

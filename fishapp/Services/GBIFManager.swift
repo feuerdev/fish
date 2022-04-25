@@ -5,13 +5,13 @@
 ////  Created by Jannik Feuerhahn on 21.10.20.
 ////
 //
-//import Foundation
+// import Foundation
 //
-//class GBIFError: Error {
+// class GBIFError: Error {
 //    
-//}
+// }
 //
-//class GBIFManager {
+// class GBIFManager {
 //    
 //    let config: URLSessionConfiguration
 //    let session: URLSession
@@ -63,4 +63,4 @@
 //        }
 //        task.resume()
 //    }
-//}
+// }

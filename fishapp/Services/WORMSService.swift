@@ -9,7 +9,7 @@ import Foundation
 import Feuerlib
 
 class WORMSService {
-    
+
     static func getVernacular(id: Int,
                               completionHandler: @escaping (Result<String, Error>) -> Void) {
         let url = "https://www.marinespecies.org/rest/AphiaVernacularsByAphiaID/\(id)"
@@ -27,7 +27,7 @@ class WORMSService {
             }
         }
     }
-    
+
     private static func getEnglishNameFromResponse(response: [WORMSResponse]) -> String? {
         for item in response {
             if item.language_code == "eng" {

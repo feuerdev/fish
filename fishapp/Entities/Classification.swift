@@ -8,6 +8,6 @@
 import Foundation
 
 struct Classification {
-    let danger:Danger
-    let explanation:String
+    let danger: Danger
+    let explanation: String
 }

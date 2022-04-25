@@ -14,7 +14,7 @@ struct OBISResponse: Decodable {
 }
 
 struct OBISSpecies: Decodable, Hashable, Equatable {
-    
+
     let kingdomId: Int?
     let phylumId: Int?
     let subphylumId: Int?
@@ -49,15 +49,15 @@ struct OBISSpecies: Decodable, Hashable, Equatable {
     let taxonomicStatus: String?
     let taxonRank: String?
     let category: String?
-    
-    static func ==(left:OBISSpecies, right:OBISSpecies) -> Bool {
+
+    static func ==(left: OBISSpecies, right: OBISSpecies) -> Bool {
         return left.familyId == right.familyId
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(familyId)
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case family
         case genus

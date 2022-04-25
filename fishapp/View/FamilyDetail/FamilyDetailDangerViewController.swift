@@ -13,10 +13,10 @@ class FamilyDetailDangerViewController: UIViewController {
     @IBOutlet weak var lblExplanation: UILabel!
     @IBOutlet weak var lblGeneralInformation: UILabel!
     var presenter: FamilyDetailPresenter?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.lblEvaluation.text = presenter?.presentableEvaluation()
         self.lblExplanation.text = presenter?.presentableDangerExplanation()
         self.lblGeneralInformation.text = presenter?.presentableGeneralInformation()

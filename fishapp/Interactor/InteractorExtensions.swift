@@ -8,7 +8,7 @@
 import Foundation
 
 extension Family {
-    
+
     /**
      Calculates
      */
@@ -21,14 +21,14 @@ extension Family {
                 yellow = true
             }
         }
-        
+
         if yellow {
             return .edYellow
         } else {
             return .edGreen
         }
     }
-    
+
     func generatePhotoSearchterms() -> [String] {
         var result = [String]()
         if let family = self.family {

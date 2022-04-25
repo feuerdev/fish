@@ -8,22 +8,22 @@
 import UIKit
 
 class FamilyDetailSpeciesListTableViewController: UITableViewController {
-    
+
     var presenter: FamilyDetailPresenter?
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let nib = UINib(nibName: "FamilyDetailSpeciesListCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "FamilyDetailSpeciesListCell")
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 300
         self.tableView.allowsSelection = false
-        
-        //Hide extra dividers
+
+        // Hide extra dividers
         self.tableView.hideAdditionalDividers()
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,15 +34,15 @@ class FamilyDetailSpeciesListTableViewController: UITableViewController {
         }
         return count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FamilyDetailSpeciesListCell", for: indexPath) as! FamilyDetailSpeciesListCell
         guard let species = presenter?.interactor.family.species[indexPath.row] else {
             return cell
         }
-        
+
         cell.species = species
-        
+
         return cell
     }
 }

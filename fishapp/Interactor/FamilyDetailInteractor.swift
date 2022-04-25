@@ -8,49 +8,49 @@
 import UIKit
 
 protocol FamilyDetailInteractorDelegate: AnyObject {
-    func photoLoaded(_ photo:UIImage?)
-    func vernacularLoaded(_ vernacular:String?)
-    func descriptionLoaded(_ description:String?)
+    func photoLoaded(_ photo: UIImage?)
+    func vernacularLoaded(_ vernacular: String?)
+    func descriptionLoaded(_ description: String?)
 }
 
 class FamilyDetailInteractor {
-    
+
     let family: Family
     weak var presenterDelegate: FamilyDetailInteractorDelegate?
-    
+
     init(family: Family) {
         self.family = family
     }
-    
+
     func loadPhoto() {
         LoadPhotoService.loadPhoto(id: family.familyId, searchParameters: family.generatePhotoSearchterms()) { [weak self] result in
             switch result.result {
             case .success(let image):
                 self?.presenterDelegate?.photoLoaded(image)
-            case .failure(_):
+            case .failure:
                 self?.presenterDelegate?.photoLoaded(nil)
             }
         }
     }
-    
+
     func loadVernacular() {
         LoadVernacularService.loadVernacular(id: family.familyId) { [weak self] result in
             switch result.result {
             case .success(let vernacular):
                 self?.presenterDelegate?.vernacularLoaded(vernacular)
-            case .failure(_):
+            case .failure:
                 self?.presenterDelegate?.vernacularLoaded(nil)
             }
         }
     }
-    
+
     func loadDescription() {
         if let searchTerm = family.family {
             LoadDescriptionService.loadDescription(id: family.familyId, searchTerm: searchTerm) { [weak self] result in
                 switch result {
                 case .success(let description):
                     self?.presenterDelegate?.descriptionLoaded(description)
-                case .failure(_):
+                case .failure:
                     self?.presenterDelegate?.descriptionLoaded(nil)
                 }
             }
@@ -58,5 +58,5 @@ class FamilyDetailInteractor {
             self.presenterDelegate?.descriptionLoaded(nil)
         }
     }
-    
+
 }

@@ -8,11 +8,9 @@
 import Foundation
 import UIKit
 
-
-
 class Family {
     let familyId: Int
-    
+
     var kingdom: String?
     var phylum: String?
     var subphylum: String?
@@ -23,11 +21,9 @@ class Family {
     var superfamily: String?
     var family: String?
     var sumRecords: Int = 0
-    
+
     var species: [Species] = []
-    
-    
-    
+
     init(_ familyId: Int) {
         self.familyId = familyId
     }

@@ -9,21 +9,20 @@ import UIKit
 
 class InfoViewController: UIViewController {
     @IBOutlet weak var tvContent: UITextView!
-    
 
     override func viewDidLoad() {
         self.view.backgroundColor = backGroundColor2
         self.tvContent.textColor = .black
-        
+
         self.tvContent.text =
             """
             Thank you for using my App!
-            
+
             FAQ:
-            
+
             Q: Why is there no photo?
             A: I'm currently getting the photos from Wikipedia. If the Wiki article has no photo, I can not display it in the app.
-                        
+
             Q: Where do you get the animal data from?
             A: Animal occurence data comes from OBIS - A Marine Life Database
 
@@ -37,7 +36,7 @@ class InfoViewController: UIViewController {
             A: That was me! I'm not an expert though, so if you want to change a classification please let me know!
 
             Credit:
-            
+
             OBIS - Marine Life Data:
                 OBIS (YEAR) Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.iobis.org.
 
@@ -47,7 +46,7 @@ class InfoViewController: UIViewController {
             Map Tiles - OSM
                 © OpenStreetMap contributors
                 www.openstreetmap.org/copyright or www.opendatacommons.org/licenses/odbl.
-                
+
 
             Contact Info:
             jannik@feuer.dev
@@ -55,9 +54,9 @@ class InfoViewController: UIViewController {
 
 
             """
-        
+
         tvContent.tintColor = textTintColor
         tvContent.linkTextAttributes = [.underlineStyle: 1]
-        
+
     }
 }

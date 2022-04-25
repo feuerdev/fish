@@ -7,6 +7,6 @@
 
 import UIKit
 
-enum Danger:Int {
-    case edRed, edYellow, edGreen 
+enum Danger: Int {
+    case edRed, edYellow, edGreen
 }
